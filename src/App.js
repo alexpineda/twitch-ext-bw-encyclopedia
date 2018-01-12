@@ -5,6 +5,7 @@ import './App.css';
 import { Race, Races } from './Races';
 import { Unit, Units, Weapon, Upgrade, Ability } from './Units';
 import { Links } from './Extra';
+import Compare from './Compare';
 
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
@@ -64,6 +65,8 @@ class App extends Component {
          <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade/:more" component={Upgrade}/>
          <Route exact path="/race/:race/unit/:unit/ability/:ability" component={Ability}/>
          <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
+         <Route exact path="/compare" component={Compare}/>
+         <Route exact path="/compare/:race" component={Compare}/>
         </div>
       </Router>
       </Provider>

@@ -40,6 +40,8 @@ const Race = ({match}) => {
             <h1 style={{textAlign:'center'}}>{race.Name}</h1>
             <p>{race.Description}</p>
             <p style={{textAlign:'center'}}><Link to={`/race/${race.Name}/units`} className='action-item'>See {race.Name} Units</Link></p>
+            <p style={{textAlign:'center'}}>or</p>
+            <p className="action-item" style={{textAlign:'center'}}><Link to={`/compare/${race.Name}`}>Compare Units</Link></p>
         </div>;
 }
 

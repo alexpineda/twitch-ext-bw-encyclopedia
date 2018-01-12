@@ -100,3 +100,12 @@ a {
 .back-button:hover {
   opacity: 1;
 }
+
+.compare-container {
+  padding:1em;
+}
+
+.compare-container tr {
+  height: 3.5em;
+}
+
