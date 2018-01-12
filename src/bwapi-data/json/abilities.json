@@ -1,0 +1,350 @@
+[{
+    "Name": "Stim Packs",
+    "Icon": "cmdbtn cmdbtn-icon237",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Researched at": "Terran Academy",
+    "Used by": ["Terran Firebat", "Terran Marine", "Hero Jim Raynor Marine", "Hero Gui Montag"]
+}, {
+    "Name": "Lockdown",
+    "Icon": "cmdbtn cmdbtn-icon240",
+    "Race": "Terran",
+    "Cost": "200  200",
+    "Research Time": "1500 frames",
+    "Energy Cost": "100",
+    "Researched at": "Terran Covert Ops",
+    "Targets": "Units",
+    "Weapon": "Lockdown",
+    "Order": "CastLockdown",
+    "Used by": ["Terran Ghost", "Hero Alexei Stukov", "Hero Sarah Kerrigan", "Hero Infested Duran", "Hero Samir Duran"]
+}, {
+    "Name": "EMP Shockwave",
+    "Icon": "cmdbtn cmdbtn-icon241",
+    "Race": "Terran",
+    "Cost": "200  200",
+    "Research Time": "1800 frames",
+    "Energy Cost": "100",
+    "Researched at": "Terran Science Facility",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "EMP Shockwave",
+    "Order": "CastEMPShockwave",
+    "Used by": ["Terran Science Vessel", "Hero Magellan"]
+}, {
+    "Name": "Spider Mines",
+    "Icon": "cmdbtn cmdbtn-icon243",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Researched at": "Terran Machine Shop",
+    "Targets": "Positions",
+    "Weapon": "Spider Mines",
+    "Order": "PlaceMine",
+    "Used by": ["Terran Vulture", "Hero Jim Raynor Vulture"]
+}, {
+    "Name": "Scanner Sweep",
+    "Icon": "cmdbtn cmdbtn-icon250",
+    "Race": "Terran",
+    "Energy Cost": "50",
+    "Targets": ["Positions", "Units"],
+    "Order": "CastScannerSweep",
+    "Used by": "Terran Comsat Station"
+}, {
+    "Name": "Tank Siege Mode",
+    "Icon": "cmdbtn cmdbtn-icon245",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Research Time": "1200 frames",
+    "Researched at": "Terran Machine Shop",
+    "Used by": ["Terran Siege Tank Tank Mode", "Terran Siege Tank Siege Mode", "Hero Edmund Duke Tank Mode", "Hero Edmund Duke Siege Mode"]
+}, {
+    "Name": "Defensive Matrix",
+    "Icon": "cmdbtn cmdbtn-icon247",
+    "Race": "Terran",
+    "Energy Cost": "100",
+    "Targets": "Units",
+    "Order": "CastDefensiveMatrix",
+    "Used by": ["Terran Science Vessel", "Hero Magellan"]
+}, {
+    "Name": "Irradiate",
+    "Icon": "cmdbtn cmdbtn-icon242",
+    "Race": "Terran",
+    "Cost": "200  200",
+    "Research Time": "1200 frames",
+    "Energy Cost": "75",
+    "Researched at": "Terran Science Facility",
+    "Targets": "Units",
+    "Weapon": "Irradiate",
+    "Order": "CastIrradiate",
+    "Used by": ["Terran Science Vessel", "Hero Magellan"]
+}, {
+    "Name": "Yamato Gun",
+    "Icon": "cmdbtn cmdbtn-icon251",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1800 frames",
+    "Energy Cost": "150",
+    "Researched at": "Terran Physics Lab",
+    "Targets": "Units",
+    "Weapon": "Yamato Gun",
+    "Order": "FireYamatoGun",
+    "Used by": ["Hero Hyperion", "Terran Battlecruiser", "Hero Gerard DuGalle", "Hero Norad II"]
+}, {
+    "Name": "Cloaking Field",
+    "Icon": "cmdbtn cmdbtn-icon252",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Research Time": "1500 frames",
+    "Energy Cost": "25",
+    "Researched at": "Terran Control Tower",
+    "Used by": ["Terran Wraith", "Hero Tom Kazansky"]
+}, {
+    "Name": "Personnel Cloaking",
+    "Icon": "cmdbtn cmdbtn-icon252",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Energy Cost": "25",
+    "Researched at": "Terran Covert Ops",
+    "Used by": ["Terran Ghost", "Hero Alexei Stukov", "Hero Sarah Kerrigan", "Hero Infested Duran", "Hero Infested Kerrigan", "Hero Samir Duran"]
+}, {
+    "Name": "Restoration",
+    "Icon": "cmdbtn cmdbtn-icon366",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Energy Cost": "50",
+    "Researched at": "Terran Academy",
+    "Targets": "Units",
+    "Weapon": "Restoration",
+    "Order": "CastRestoration",
+    "Used by": "Terran Medic"
+}, {
+    "Name": "Optical Flare",
+    "Icon": "cmdbtn cmdbtn-icon373",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Research Time": "1800 frames",
+    "Energy Cost": "75",
+    "Researched at": "Terran Academy",
+    "Targets": "Units",
+    "Weapon": "Optical Flare",
+    "Order": "CastOpticalFlare",
+    "Used by": "Terran Medic"
+}, {
+    "Name": "Healing",
+    "Icon": "cmdbtn cmdbtn-icon365",
+    "Race": "Terran",
+    "Energy Cost": "1",
+    "Targets": ["Positions", "Units"],
+    "Order": "MedicHeal",
+    "Used by": "Terran Medic"
+}, {
+    "Name": "Nuclear Strike",
+    "Icon": "cmdbtn cmdbtn-icon0",
+    "Race": "Terran",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Nuclear Strike",
+    "Order": "NukePaint",
+    "Used by": "Terran Ghost"
+}, {
+    "Name": "Burrowing",
+    "Icon": "cmdbtn cmdbtn-icon259",
+    "Race": "Zerg",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Researched at": "Zerg Hatchery",
+    "Used by": ["Hero Hunter Killer", "Zerg Zergling", "Hero Devouring One", "Zerg Defiler", "Zerg Hydralisk", "Zerg Drone", "Zerg Infested Terran", "Hero Unclean One", "Zerg Lurker"]
+}, {
+    "Name": "Infestation",
+    "Icon": "cmdbtn cmdbtn-icon313",
+    "Race": "Zerg",
+    "Targets": "Units",
+    "Order": "CastInfestation",
+    "Used by": ["Zerg Queen", "Hero Matriarch"]
+}, {
+    "Name": "Spawn Broodlings",
+    "Icon": "cmdbtn cmdbtn-icon40",
+    "Race": "Zerg",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Energy Cost": "150",
+    "Researched at": "Zerg Queens Nest",
+    "Targets": "Units",
+    "Weapon": "Spawn Broodlings",
+    "Order": "CastSpawnBroodlings",
+    "Used by": ["Zerg Queen", "Hero Matriarch"]
+}, {
+    "Name": "Dark Swarm",
+    "Icon": "cmdbtn cmdbtn-icon270",
+    "Race": "Zerg",
+    "Energy Cost": "100",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Dark Swarm",
+    "Order": "CastDarkSwarm",
+    "Used by": ["Zerg Defiler", "Hero Unclean One"]
+}, {
+    "Name": "Plague",
+    "Icon": "cmdbtn cmdbtn-icon265",
+    "Race": "Zerg",
+    "Cost": "200  200",
+    "Research Time": "1500 frames",
+    "Energy Cost": "150",
+    "Researched at": "Zerg Defiler Mound",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Plague",
+    "Order": "CastPlague",
+    "Used by": ["Zerg Defiler", "Hero Unclean One"]
+}, {
+    "Name": "Consume",
+    "Icon": "cmdbtn cmdbtn-icon302",
+    "Race": "Zerg",
+    "Cost": "100  100",
+    "Research Time": "1500 frames",
+    "Researched at": "Zerg Defiler Mound",
+    "Targets": "Units",
+    "Weapon": "Consume",
+    "Order": "CastConsume",
+    "Used by": ["Zerg Defiler", "Hero Unclean One", "Hero Infested Kerrigan", "Hero Infested Duran"]
+}, {
+    "Name": "Ensnare",
+    "Icon": "cmdbtn cmdbtn-icon267",
+    "Race": "Zerg",
+    "Cost": "100  100",
+    "Research Time": "1200 frames",
+    "Energy Cost": "75",
+    "Researched at": "Zerg Queens Nest",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Ensnare",
+    "Order": "CastEnsnare",
+    "Used by": ["Zerg Queen", "Hero Matriarch", "Hero Infested Kerrigan"]
+}, {
+    "Name": "Parasite",
+    "Icon": "cmdbtn cmdbtn-icon271",
+    "Race": "Zerg",
+    "Energy Cost": "75",
+    "Targets": "Units",
+    "Weapon": "Parasite",
+    "Order": "CastParasite",
+    "Used by": ["Zerg Queen", "Hero Matriarch"]
+}, {
+    "Name": "Lurker Aspect",
+    "Icon": "cmdbtn cmdbtn-icon376",
+    "Race": "Zerg",
+    "Cost": "200  200",
+    "Research Time": "1800 frames",
+    "Researched at": "Zerg Hydralisk Den",
+    "Requires": "Zerg Lair",
+    "Used by": "Zerg Hydralisk"
+}, {
+    "Name": "Psionic Storm",
+    "Icon": "cmdbtn cmdbtn-icon275",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Research Time": "1800 frames",
+    "Energy Cost": "75",
+    "Researched at": "Protoss Templar Archives",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Psionic Storm",
+    "Order": "CastPsionicStorm",
+    "Used by": ["Hero Infested Kerrigan", "Protoss High Templar", "Hero Tassadar"]
+}, {
+    "Name": "Hallucination",
+    "Icon": "cmdbtn cmdbtn-icon277",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Research Time": "1200 frames",
+    "Energy Cost": "100",
+    "Researched at": "Protoss Templar Archives",
+    "Targets": "Units",
+    "Order": "CastHallucination",
+    "Used by": ["Protoss High Templar", "Hero Tassadar"]
+}, {
+    "Name": "Recall",
+    "Icon": "cmdbtn cmdbtn-icon280",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Research Time": "1800 frames",
+    "Energy Cost": "150",
+    "Researched at": "Protoss Arbiter Tribunal",
+    "Targets": ["Positions", "Units"],
+    "Order": "CastRecall",
+    "Used by": ["Protoss Arbiter", "Hero Danimoth"]
+}, {
+    "Name": "Stasis Field",
+    "Icon": "cmdbtn cmdbtn-icon278",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Research Time": "1500 frames",
+    "Energy Cost": "100",
+    "Researched at": "Protoss Arbiter Tribunal",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Stasis Field",
+    "Order": "CastStasisField",
+    "Used by": ["Protoss Arbiter", "Hero Danimoth"]
+}, {
+    "Name": "Archon Warp",
+    "Icon": "cmdbtn cmdbtn-icon68",
+    "Race": "Protoss",
+    "Targets": "Units",
+    "Used by": "Protoss High Templar"
+}, {
+    "Name": "Disruption Web",
+    "Icon": "cmdbtn cmdbtn-icon369",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Research Time": "1200 frames",
+    "Energy Cost": "125",
+    "Researched at": "Protoss Fleet Beacon",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Disruption Web",
+    "Order": "CastDisruptionWeb",
+    "Used by": ["Protoss Corsair", "Hero Raszagal"]
+}, {
+    "Name": "Mind Control",
+    "Icon": "cmdbtn cmdbtn-icon371",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Research Time": "1800 frames",
+    "Energy Cost": "150",
+    "Researched at": "Protoss Templar Archives",
+    "Targets": "Units",
+    "Weapon": "Mind Control",
+    "Order": "CastMindControl",
+    "Used by": "Protoss Dark Archon"
+}, {
+    "Name": "Dark Archon Meld",
+    "Icon": "cmdbtn cmdbtn-icon63",
+    "Race": "Protoss",
+    "Targets": "Units",
+    "Used by": "Protoss Dark Templar"
+}, {
+    "Name": "Feedback",
+    "Icon": "cmdbtn cmdbtn-icon372",
+    "Race": "Protoss",
+    "Cost": "100  100",
+    "Research Time": "1800 frames",
+    "Energy Cost": "50",
+    "Targets": "Units",
+    "Weapon": "Feedback",
+    "Order": "CastFeedback",
+    "Used by": "Protoss Dark Archon"
+}, {
+    "Name": "Maelstrom",
+    "Icon": "cmdbtn cmdbtn-icon381",
+    "Race": "Protoss",
+    "Cost": "100  100",
+    "Research Time": "1500 frames",
+    "Energy Cost": "100",
+    "Researched at": "Protoss Templar Archives",
+    "Targets": ["Positions", "Units"],
+    "Weapon": "Maelstrom",
+    "Order": "CastMaelstrom",
+    "Used by": "Protoss Dark Archon"
+}, {
+    "Name": "",
+    "Icon": ""
+}, {
+    "Name": "",
+    "Icon": ""
+}]

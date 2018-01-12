@@ -1,0 +1,451 @@
+[ {
+    "Name": "Terran Infantry Armor",
+    "Icon": "cmdbtn cmdbtn-icon292",
+    "Race": "Terran",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Engineering Bay",
+    "Used by": ["Terran Firebat", "Hero Sarah Kerrigan", "Terran Marine", "Terran Ghost", "Terran Civilian", "Terran SCV", "Terran Medic", "Hero Gui Montag", "Hero Jim Raynor Marine", "Hero Samir Duran", "Hero Alexei Stukov"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "Terran Vehicle Plating",
+    "Icon": "cmdbtn cmdbtn-icon293",
+    "Race": "Terran",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Armory",
+    "Used by": ["Terran Vulture", "Hero Jim Raynor Vulture", "Terran Goliath", "Terran Siege Tank Tank Mode", "Hero Edmund Duke Siege Mode", "Hero Alan Schezar", "Hero Edmund Duke Tank Mode", "Terran Siege Tank Siege Mode"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "Terran Ship Plating",
+    "Icon": "cmdbtn cmdbtn-icon291",
+    "Race": "Terran",
+    "Cost": "150 + lvl*75  150 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Armory",
+    "Used by": ["Terran Wraith", "Terran Science Vessel", "Hero Arcturus Mengsk", "Terran Dropship", "Hero Hyperion", "Terran Battlecruiser", "Hero Norad II", "Hero Tom Kazansky", "Hero Magellan", "Terran Valkyrie", "Hero Gerard DuGalle"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "Terran Infantry Weapons",
+    "Icon": "cmdbtn cmdbtn-icon288",
+    "Race": "Terran",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Engineering Bay",
+    "Used by": ["Terran Firebat", "Hero Sarah Kerrigan", "Terran Marine", "Hero Jim Raynor Marine", "Terran Ghost", "Hero Gui Montag", "Hero Samir Duran", "Special Wall Flame Trap", "Special Right Wall Flame Trap", "Hero Alexei Stukov", "Hero Infested Duran"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "Terran Vehicle Weapons",
+    "Icon": "cmdbtn cmdbtn-icon289",
+    "Race": "Terran",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Armory",
+    "Used by": ["Terran Vulture", "Special Floor Missile Trap", "Terran Goliath", "Hero Jim Raynor Vulture", "Hero Edmund Duke Siege Mode", "Special Floor Gun Trap", "Hero Alan Schezar", "Terran Siege Tank Tank Mode", "Terran Siege Tank Siege Mode", "Hero Edmund Duke Tank Mode", "Special Wall Missile Trap", "Special Right Wall Missile Trap"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "Terran Ship Weapons",
+    "Icon": "cmdbtn cmdbtn-icon290",
+    "Race": "Terran",
+    "Cost": "100 + lvl*50  100 + lvl*50",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Terran Armory",
+    "Used by": ["Terran Wraith", "Hero Norad II", "Hero Tom Kazansky", "Hero Hyperion", "Terran Battlecruiser", "Hero Arcturus Mengsk", "Hero Gerard DuGalle", "Terran Valkyrie"],
+    "Level 2 Requires": "Terran Science Facility",
+    "Level 3 Requires": "Terran Science Facility"
+}, {
+    "Name": "U 238 Shells",
+    "Icon": "cmdbtn cmdbtn-icon238",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Terran Academy",
+    "Used by": "Terran Marine"
+}, {
+    "Name": "Ion Thrusters",
+    "Icon": "cmdbtn cmdbtn-icon287",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Terran Machine Shop",
+    "Used by": "Terran Vulture"
+}, {
+    "Name": "Titan Reactor",
+    "Icon": "cmdbtn cmdbtn-icon248",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Science Facility",
+    "Used by": "Terran Science Vessel"
+}, {
+    "Name": "Ocular Implants",
+    "Icon": "cmdbtn cmdbtn-icon249",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Covert Ops",
+    "Used by": "Terran Ghost"
+}, {
+    "Name": "Moebius Reactor",
+    "Icon": "cmdbtn cmdbtn-icon256",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Covert Ops",
+    "Used by": "Terran Ghost"
+}, {
+    "Name": "Apollo Reactor",
+    "Icon": "cmdbtn cmdbtn-icon284",
+    "Race": "Terran",
+    "Cost": "200  200",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Control Tower",
+    "Used by": "Terran Wraith"
+}, {
+    "Name": "Colossus Reactor",
+    "Icon": "cmdbtn cmdbtn-icon285",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Physics Lab",
+    "Used by": "Terran Battlecruiser"
+}, {
+    "Name": "Caduceus Reactor",
+    "Icon": "cmdbtn cmdbtn-icon384",
+    "Race": "Terran",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Terran Academy",
+    "Used by": "Terran Medic"
+}, {
+    "Name": "Charon Boosters",
+    "Icon": "cmdbtn cmdbtn-icon380",
+    "Race": "Terran",
+    "Cost": "100  100",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Terran Machine Shop",
+    "Used by": "Terran Goliath",
+    "Level 1 Requires": "Terran Armory"
+}, {
+    "Name": "Zerg Carapace",
+    "Icon": "cmdbtn cmdbtn-icon297",
+    "Race": "Zerg",
+    "Cost": "150 + lvl*75  150 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Zerg Evolution Chamber",
+    "Used by": ["Zerg Larva", "Zerg Egg", "Zerg Zergling", "Zerg Defiler", "Zerg Hydralisk", "Zerg Lurker", "Zerg Ultralisk", "Hero Torrasque", "Hero Infested Duran", "Zerg Broodling", "Zerg Drone", "Zerg Infested Terran", "Hero Infested Kerrigan", "Hero Unclean One", "Hero Hunter Killer", "Hero Devouring One", "Zerg Cocoon", "Zerg Lurker Egg"],
+    "Level 2 Requires": "Zerg Lair",
+    "Level 3 Requires": "Zerg Hive"
+}, {
+    "Name": "Zerg Flyer Carapace",
+    "Icon": "cmdbtn cmdbtn-icon298",
+    "Race": "Zerg",
+    "Cost": "150 + lvl*75  150 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Zerg Spire",
+    "Used by": ["Zerg Overlord", "Zerg Mutalisk", "Zerg Guardian", "Zerg Queen", "Hero Kukulza Mutalisk", "Zerg Scourge", "Hero Yggdrasill", "Hero Matriarch", "Hero Kukulza Guardian", "Zerg Devourer"],
+    "Level 2 Requires": "Zerg Lair",
+    "Level 3 Requires": "Zerg Hive"
+}, {
+    "Name": "Zerg Melee Attacks",
+    "Icon": "cmdbtn cmdbtn-icon299",
+    "Race": "Zerg",
+    "Cost": "100 + lvl*50  100 + lvl*50",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Zerg Evolution Chamber",
+    "Used by": ["Zerg Zergling", "Hero Devouring One", "Hero Infested Kerrigan", "Zerg Ultralisk", "Zerg Broodling", "Hero Torrasque"],
+    "Level 2 Requires": "Zerg Lair",
+    "Level 3 Requires": "Zerg Hive"
+}, {
+    "Name": "Zerg Missile Attacks",
+    "Icon": "cmdbtn cmdbtn-icon300",
+    "Race": "Zerg",
+    "Cost": "100 + lvl*50  100 + lvl*50",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Zerg Evolution Chamber",
+    "Used by": ["Zerg Hydralisk", "Hero Hunter Killer", "Zerg Lurker"],
+    "Level 2 Requires": "Zerg Lair",
+    "Level 3 Requires": "Zerg Hive"
+}, {
+    "Name": "Zerg Flyer Attacks",
+    "Icon": "cmdbtn cmdbtn-icon301",
+    "Race": "Zerg",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Zerg Spire",
+    "Used by": ["Zerg Mutalisk", "Hero Kukulza Mutalisk", "Hero Kukulza Guardian", "Zerg Guardian", "Zerg Devourer"],
+    "Level 2 Requires": "Zerg Lair",
+    "Level 3 Requires": "Zerg Hive"
+}, {
+    "Name": "Ventral Sacs",
+    "Icon": "cmdbtn cmdbtn-icon261",
+    "Race": "Zerg",
+    "Cost": "200  200",
+    "Upgrade Time": "2400 frames",
+    "Upgraded at": "Zerg Lair",
+    "Used by": "Zerg Overlord"
+}, {
+    "Name": "Antennae",
+    "Icon": "cmdbtn cmdbtn-icon262",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Zerg Lair",
+    "Used by": "Zerg Overlord"
+}, {
+    "Name": "Pneumatized Carapace",
+    "Icon": "cmdbtn cmdbtn-icon296",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Zerg Lair",
+    "Used by": "Zerg Overlord"
+}, {
+    "Name": "Metabolic Boost",
+    "Icon": "cmdbtn cmdbtn-icon263",
+    "Race": "Zerg",
+    "Cost": "100  100",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Zerg Spawning Pool",
+    "Used by": "Zerg Zergling"
+}, {
+    "Name": "Adrenal Glands",
+    "Icon": "cmdbtn cmdbtn-icon264",
+    "Race": "Zerg",
+    "Cost": "200  200",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Zerg Spawning Pool",
+    "Used by": "Zerg Zergling",
+    "Level 1 Requires": "Zerg Hive"
+}, {
+    "Name": "Muscular Augments",
+    "Icon": "cmdbtn cmdbtn-icon266",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Zerg Hydralisk Den",
+    "Used by": "Zerg Hydralisk"
+}, {
+    "Name": "Grooved Spines",
+    "Icon": "cmdbtn cmdbtn-icon268",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Zerg Hydralisk Den",
+    "Used by": "Zerg Hydralisk"
+}, {
+    "Name": "Gamete Meiosis",
+    "Icon": "cmdbtn cmdbtn-icon294",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Zerg Queens Nest",
+    "Used by": "Zerg Queen"
+}, {
+    "Name": "Metasynaptic Node",
+    "Icon": "cmdbtn cmdbtn-icon295",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Zerg Defiler Mound",
+    "Used by": "Zerg Defiler"
+}, {
+    "Name": "Chitinous Plating",
+    "Icon": "cmdbtn cmdbtn-icon379",
+    "Race": "Zerg",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Zerg Ultralisk Cavern",
+    "Used by": "Zerg Ultralisk"
+}, {
+    "Name": "Anabolic Synthesis",
+    "Icon": "cmdbtn cmdbtn-icon378",
+    "Race": "Zerg",
+    "Cost": "200  200",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Zerg Ultralisk Cavern",
+    "Used by": "Zerg Ultralisk"
+}, {
+    "Name": "Protoss Ground Armor",
+    "Icon": "cmdbtn cmdbtn-icon303",
+    "Race": "Protoss",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Protoss Forge",
+    "Used by": ["Protoss Dark Templar", "Protoss Dark Archon", "Protoss Probe", "Protoss Zealot", "Hero Dark Templar", "Protoss Dragoon", "Hero Zeratul", "Protoss High Templar", "Protoss Archon", "Hero Tassadar Zeratul Archon", "Hero Fenix Zealot", "Hero Fenix Dragoon", "Hero Tassadar", "Hero Warbringer", "Protoss Reaver", "Hero Aldaris"],
+    "Level 2 Requires": "Protoss Templar Archives",
+    "Level 3 Requires": "Protoss Templar Archives"
+}, {
+    "Name": "Protoss Air Armor",
+    "Icon": "cmdbtn cmdbtn-icon304",
+    "Race": "Protoss",
+    "Cost": "150 + lvl*75  150 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Protoss Cybernetics Core",
+    "Used by": ["Protoss Observer", "Protoss Corsair", "Protoss Shuttle", "Protoss Scout", "Protoss Arbiter", "Hero Mojo", "Protoss Carrier", "Protoss Interceptor", "Hero Gantrithor", "Hero Danimoth", "Hero Artanis", "Hero Raszagal"],
+    "Level 2 Requires": "Protoss Fleet Beacon",
+    "Level 3 Requires": "Protoss Fleet Beacon"
+}, {
+    "Name": "Protoss Ground Weapons",
+    "Icon": "cmdbtn cmdbtn-icon305",
+    "Race": "Protoss",
+    "Cost": "100 + lvl*50  100 + lvl*50",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Protoss Forge",
+    "Used by": ["Protoss Zealot", "Hero Fenix Zealot", "Hero Dark Templar", "Protoss Dragoon", "Hero Fenix Dragoon", "Hero Aldaris", "Hero Tassadar", "Hero Tassadar Zeratul Archon", "Protoss Archon", "Hero Zeratul", "Protoss Dark Templar"],
+    "Level 2 Requires": "Protoss Templar Archives",
+    "Level 3 Requires": "Protoss Templar Archives"
+}, {
+    "Name": "Protoss Air Weapons",
+    "Icon": "cmdbtn cmdbtn-icon306",
+    "Race": "Protoss",
+    "Cost": "100 + lvl*75  100 + lvl*75",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Protoss Cybernetics Core",
+    "Used by": ["Hero Danimoth", "Protoss Scout", "Hero Artanis", "Protoss Carrier", "Hero Mojo", "Protoss Arbiter", "Protoss Interceptor", "Protoss Corsair"],
+    "Level 2 Requires": "Protoss Fleet Beacon",
+    "Level 3 Requires": "Protoss Fleet Beacon"
+}, {
+    "Name": "Protoss Plasma Shields",
+    "Icon": "cmdbtn cmdbtn-icon310",
+    "Race": "Protoss",
+    "Cost": "200 + lvl*100  200 + lvl*100",
+    "Upgrade Time": "4000 + lvl*480 frames",
+    "Maximum Level": "3",
+    "Upgraded at": "Protoss Forge",
+    "Used by": ["Protoss Archon", "Protoss Corsair", "Protoss Shuttle", "Protoss Dark Templar", "Protoss Dark Archon", "Protoss Probe", "Protoss Zealot", "Protoss Dragoon", "Protoss High Templar", "Protoss Scout", "Protoss Arbiter", "Protoss Carrier", "Protoss Interceptor", "Hero Dark Templar", "Hero Zeratul", "Hero Tassadar Zeratul Archon", "Hero Fenix Zealot", "Hero Fenix Dragoon", "Hero Tassadar", "Hero Mojo", "Hero Warbringer", "Hero Gantrithor", "Protoss Reaver", "Protoss Observer", "Hero Danimoth", "Hero Aldaris", "Hero Artanis", "Hero Raszagal"],
+    "Level 2 Requires": "Protoss Cybernetics Core",
+    "Level 3 Requires": "Protoss Cybernetics Core"
+}, {
+    "Name": "Singularity Charge",
+    "Icon": "cmdbtn cmdbtn-icon281",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Cybernetics Core",
+    "Used by": "Protoss Dragoon"
+}, {
+    "Name": "Leg Enhancements",
+    "Icon": "cmdbtn cmdbtn-icon307",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Protoss Citadel of Adun",
+    "Used by": "Protoss Zealot"
+}, {
+    "Name": "Scarab Damage",
+    "Icon": "cmdbtn cmdbtn-icon314",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Robotics Support Bay",
+    "Used by": "Protoss Reaver"
+}, {
+    "Name": "Reaver Capacity",
+    "Icon": "cmdbtn cmdbtn-icon315",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Robotics Support Bay",
+    "Used by": "Protoss Reaver"
+}, {
+    "Name": "Gravitic Drive",
+    "Icon": "cmdbtn cmdbtn-icon316",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Robotics Support Bay",
+    "Used by": "Protoss Shuttle"
+}, {
+    "Name": "Sensor Array",
+    "Icon": "cmdbtn cmdbtn-icon317",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Protoss Observatory",
+    "Used by": "Protoss Observer"
+}, {
+    "Name": "Gravitic Boosters",
+    "Icon": "cmdbtn cmdbtn-icon276",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2000 frames",
+    "Upgraded at": "Protoss Observatory",
+    "Used by": "Protoss Observer"
+}, {
+    "Name": "Khaydarin Amulet",
+    "Icon": "cmdbtn cmdbtn-icon318",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Templar Archives",
+    "Used by": "Protoss High Templar"
+}, {
+    "Name": "Apial Sensors",
+    "Icon": "cmdbtn cmdbtn-icon319",
+    "Race": "Protoss",
+    "Cost": "100  100",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Fleet Beacon",
+    "Used by": "Protoss Scout"
+}, {
+    "Name": "Gravitic Thrusters",
+    "Icon": "cmdbtn cmdbtn-icon320",
+    "Race": "Protoss",
+    "Cost": "200  200",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Fleet Beacon",
+    "Used by": "Protoss Scout"
+}, {
+    "Name": "Carrier Capacity",
+    "Icon": "cmdbtn cmdbtn-icon321",
+    "Race": "Protoss",
+    "Cost": "100  100",
+    "Upgrade Time": "1500 frames",
+    "Upgraded at": "Protoss Fleet Beacon",
+    "Used by": "Protoss Carrier"
+}, {
+    "Name": "Khaydarin Core",
+    "Icon": "cmdbtn cmdbtn-icon322",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Arbiter Tribunal",
+    "Used by": "Protoss Arbiter"
+}, {
+    "Name": "Argus Jewel",
+    "Icon": "cmdbtn cmdbtn-icon383",
+    "Race": "Protoss",
+    "Cost": "100  100",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Fleet Beacon",
+    "Used by": "Protoss Corsair"
+}, {
+    "Name": "Argus Talisman",
+    "Icon": "cmdbtn cmdbtn-icon385",
+    "Race": "Protoss",
+    "Cost": "150  150",
+    "Upgrade Time": "2500 frames",
+    "Upgraded at": "Protoss Templar Archives",
+    "Used by": "Protoss Dark Archon"
+}]

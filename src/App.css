@@ -1,28 +1,69 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+* {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	box-sizing: border-box; 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#twitch-extension {
+  width:320px;
+  height:300px;
+  background-color:#ddd;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.races-container {
+  height:100%;
+  padding: 1em;
 }
 
-.App-title {
-  font-size: 1.5em;
+.races {
+  flex-direction: row;
+  display: flex;
+  
 }
 
-.App-intro {
-  font-size: large;
+.race-description {
+  font-size: 15px;
+  text-indent: 1em;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.races-list-item {
+  flex:1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-item {
+  font-family: Bungee, 'sans serif';
+}
+
+.races-list-item:hover {
+  background-color: white;
+}
+
+.races-list-item a {
+  text-decoration: none;
+  color:black;
+}
+
+.race {
+  flex:1;
+  padding: 1em;
+}
+
+.unit-labels-container {
+  height: 100%;
+}
+
+.unit-labels {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.unit-label {
+  flex:1;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const allUnits = require('broodwar-json/json/units.json');
-const allWeapons = require('broodwar-json/json/weapons.json');
-const allUpgrades = require('broodwar-json/json/upgrades.json');
-const allAbilities = require('broodwar-json/json/abilities.json');
+const allUnits = require('./bwapi-data/json/units.json');
+const allWeapons = require('./bwapi-data/json/weapons.json');
+const allUpgrades = require('./bwapi-data/json/upgrades.json');
+const allAbilities = require('./bwapi-data/json/abilities.json');
 
 const strToArray = (strOrArray) => {
     if (!strOrArray) return [];
@@ -210,16 +210,23 @@ const Unit = ({match}) => {
     </div>;
 }
 
+const getUnitList = (units, start, match) => {
+    return units.map(unit => {
+        return <div class='unit-label' key={unit.Name} ><Link to={`/race/${match.params.race}/units/${unit.Name}`} ><span><i className={unit.Icon}></i>{unit.Name}</span></Link></div>
+    }).slice(start, start+5);
+};
+
+let unitStartPos = 0;
+
 const Units = ({match}) => {
     const units = allUnits.filter(unit => unit.Race == match.params.race);
 
-    return <div>
+    return <div class='unit-labels-container'>
         <Link to={`/race/${match.params.race}`}>Back</Link>
-        <div>
-            {units.map(unit => {
-                return <div key={unit.Name} ><Link to={`/race/${match.params.race}/units/${unit.Name}`} ><span><i className={unit.Icon}></i>{unit.Name}</span></Link></div>
-            })}
+        <div class='unit-labels'>
+            {getUnitList(units, unitStartPos, match)}
         </div>
+        <div onClick={_=>{console.log(unitStartPos); unitStartPos++;}}>More</div>
     </div>;
 };
 
