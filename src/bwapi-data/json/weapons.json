@@ -124,7 +124,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Radial Splash",
     "Maximum Range": "10",
@@ -216,7 +216,6 @@
     "Damage Bonus": "1",
     "Base Cooldown": "15",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "10",
@@ -417,7 +416,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "15",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Normal",
     "Maximum Range": "224",
@@ -534,7 +533,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "32",
@@ -599,7 +598,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "15",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "224",
@@ -612,7 +611,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "32",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Normal",
     "Maximum Range": "224",
@@ -625,7 +624,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Radial Splash",
     "Maximum Range": "3",
@@ -639,7 +638,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "3",
@@ -652,7 +651,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "32",
@@ -875,7 +874,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "224",
@@ -888,7 +887,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "224",
@@ -1009,7 +1008,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Normal",
     "Maximum Range": "128",
@@ -1076,7 +1075,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "15",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Yamato Gun",
     "Maximum Range": "320",
@@ -1090,7 +1089,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Explosive",
     "ExplosionType": "Nuclear Missile",
     "Maximum Range": "3",
@@ -1105,7 +1104,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Concussive",
     "ExplosionType": "Lockdown",
     "Maximum Range": "256",
@@ -1119,7 +1118,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Concussive",
     "ExplosionType": "EMP Shockwave",
     "Maximum Range": "256",
@@ -1134,7 +1133,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "75",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Ignore Armor",
     "ExplosionType": "Irradiate",
     "Maximum Range": "288",
@@ -1148,7 +1147,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Parasite",
     "Maximum Range": "384",
@@ -1162,7 +1161,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Broodlings",
     "Maximum Range": "288",
@@ -1176,7 +1175,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Ensnare",
     "Maximum Range": "288",
@@ -1190,7 +1189,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Dark Swarm",
     "Maximum Range": "288",
@@ -1204,7 +1203,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Plague",
     "Maximum Range": "288",
@@ -1218,7 +1217,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Consume",
     "Maximum Range": "16",
@@ -1232,7 +1231,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Stasis Field",
     "Maximum Range": "288",
@@ -1246,7 +1245,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "45",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Ignore Armor",
     "ExplosionType": "Radial Splash",
     "Maximum Range": "288",
@@ -1261,7 +1260,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Ignore Armor",
     "ExplosionType": "Disruption Web",
     "Maximum Range": "288",
@@ -1275,7 +1274,7 @@
     "Damage Bonus": "0",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Ignore Armor",
     "ExplosionType": "Restoration",
     "Maximum Range": "192",
@@ -1289,7 +1288,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Normal",
     "ExplosionType": "Mind Control",
     "Maximum Range": "256",
@@ -1303,7 +1302,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Ignore Armor",
     "ExplosionType": "Feedback",
     "Maximum Range": "320",
@@ -1317,7 +1316,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "22",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Optical Flare",
     "Maximum Range": "288",
@@ -1331,7 +1330,7 @@
     "Damage Bonus": "1",
     "Base Cooldown": "1",
     "Damage Factor": "1",
-    "Upgrade": "Upgrade 60",
+    
     "DamageType": "Independent",
     "ExplosionType": "Maelstrom",
     "Maximum Range": "320",

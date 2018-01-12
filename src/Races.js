@@ -12,9 +12,9 @@ const RaceItem = ({name, match}) => {
 
 const Races = (props) => {
     return <div class='races-container'>
-        <h6 style={{textAlign:'center',padding:'1em 0 0 0', margin:'0'}}>Welcome to </h6>
+        <h6 style={{textAlign:'center',padding:'1em 0 0 0', margin:'0'}}>Learn about </h6>
         <h1 style={{textAlign:'center', marginTop:'0'}}>StarCraft</h1>
-        <p class='race-description'>A player can pick one of three unique Races with which to play: The Protoss, Zerg and Terran. All three races have their own qualities and weaknesses as well as units, abilities and gameplay mechanics. <small><a href="http://liquipedia.net/starcraft/StarCraft" target="_top">-Liquipedia</a></small></p>
+        <p className='race-description'>A player can pick one of three unique Races with which to play: The Protoss, Zerg and Terran. All three races have their own qualities and weaknesses as well as units, abilities and gameplay mechanics. <small><a href="http://liquipedia.net/starcraft/StarCraft" target="_top">-Liquipedia</a></small></p>
         <div class='races'>
     
                 <RaceItem name="Terran" {...props} />
@@ -35,8 +35,8 @@ const Race = ({match}) => {
     
     const name = '', description = '', liquipedia = '';
 
-    return <div class='race'>
-            <Link to="/">Back</Link>
+    return <div className='race'>
+            <Link to="/"><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link><Link to={`/race/${race.Name}/units`} className='action-item'>See {race.Name} Units</Link>
             <h1 style={{textAlign:'center'}}>{race.Name}</h1>
             <p>{race.Description}</p>
             <p style={{textAlign:'center'}}><Link to={`/race/${race.Name}/units`} className='action-item'>See {race.Name} Units</Link></p>

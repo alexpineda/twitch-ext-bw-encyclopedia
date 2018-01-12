@@ -6,19 +6,27 @@
 	
 	box-sizing: border-box; 
 }
+a {
+  text-decoration: none;
+}
 
 #twitch-extension {
   width:320px;
-  height:300px;
+  height:400px;
   background-color:#ddd;
 }
 
 .text {
   padding: 4px;
+  position: relative;
+}
+
+.text:hover {
+  z-index: 99;
+  transform: scale(1.6);
 }
 
 .races-container {
-  height:100%;
   padding: 1em;
 }
 
@@ -54,12 +62,12 @@
 }
 
 .race {
-  flex:1;
+  /* flex:1; */
   padding: 1em;
 }
 
 .unit-labels-container {
-  height: 100%;
+  padding: 1em;
 }
 
 .unit-labels {
@@ -72,4 +80,23 @@
 
 .unit-label {
   flex:1;
+}
+
+.unit, .upgrade, .ability, .weapon {
+  padding: 1em;
+}
+
+.unit__title, .upgrade__title, .ability__title, .weapon__title {
+  text-align: center;
+}
+.unit__title i, .upgrade__title i, .ability__title i, .weapon__title i{
+  zoom:1.4;
+}
+
+.back-button {
+  opacity: 0.5;
+}
+
+.back-button:hover {
+  opacity: 1;
 }

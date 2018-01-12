@@ -13,7 +13,7 @@ import logger from 'redux-logger';
 import Thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import createHistory from 'history/createHashHistory';
+import createHistory from 'history/createMemoryHistory';
 import {
   ConnectedRouter,
   routerMiddleware,
