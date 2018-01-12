@@ -16,9 +16,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createHistory from 'history/createHashHistory';
 import {
   ConnectedRouter,
-  routerReducer,
   routerMiddleware,
-  push
 } from 'react-router-redux';
 
 import reducers from './reducers';
@@ -50,18 +48,25 @@ function logPageView(location) {
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
       <Router>
         <div id='twitch-extension'>
          <Route exact path="/" component={Races}/>
          <Route exact path="/links" component={Links}/>
          <Route exact path="/race/:race" component={Race}/>
          <Route exact path="/race/:race/units" component={Units}/>
-         <Route exact path="/race/:race/units/:unit" component={Unit}/>
-         <Route exact path="/race/:race/units/:unit/weapon/:weapon" component={Weapon}/>
-         <Route exact path="/race/:race/units/:unit/upgrade/:upgrade" component={Upgrade}/>
-         <Route exact path="/race/:race/units/:unit/ability/:ability" component={Ability}/>
+         <Route exact path="/race/:race/units/:page" component={Units}/>
+         <Route exact path="/race/:race/unit/:unit" component={Unit}/>
+         <Route exact path="/race/:race/unit/:unit/:more" component={Unit}/>
+         <Route exact path="/race/:race/unit/:unit/weapon/:weapon" component={Weapon}/>
+         <Route exact path="/race/:race/unit/:unit/weapon/:weapon/:more" component={Weapon}/>
+         <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade" component={Upgrade}/>
+         <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade/:more" component={Upgrade}/>
+         <Route exact path="/race/:race/unit/:unit/ability/:ability" component={Ability}/>
+         <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
         </div>
       </Router>
+      </Provider>
     );
   }
 }

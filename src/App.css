@@ -13,6 +13,10 @@
   background-color:#ddd;
 }
 
+.text {
+  padding: 4px;
+}
+
 .races-container {
   height:100%;
   padding: 1em;
@@ -60,8 +64,10 @@
 
 .unit-labels {
   display:flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: black;
+  /* height: 100%; */
 }
 
 .unit-label {
