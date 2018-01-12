@@ -22,6 +22,26 @@ import {
 
 import reducers from './reducers';
 
+
+
+const allWeapons = require('./bwapi-data/json/weapons.json');
+const allUpgrades = require('./bwapi-data/json/upgrades.json');
+const allAbilities = require('./bwapi-data/json/abilities.json');
+
+const allUnits = require('./bwapi-data/json/units.json')
+    .filter(unit=>unit.Race !== 'None')
+    .map(unit => {
+        const cost = unit.Cost.match(/([0-9]+)\s+([0-9]+)\s+([0-9]+)/);
+        unit['Mineral Cost'] = cost[1];
+        unit['Vespine Cost'] = cost[2];
+        unit['Supply Cost'] = cost[3]/2;
+
+        unit['Build Time'] = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
+        unit['Seek Range'] = unit['Seek Range']/32;
+        unit['Sight Range'] = unit['Sight Range']/32;
+        return unit;
+    });
+
 // history
 const history = createHistory();
 // commenting for dev :)

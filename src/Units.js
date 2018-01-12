@@ -195,9 +195,10 @@ const Unit = ({match}) => {
     }
 
     ///24 frames per second fastest
+    console.log('bt',unit['Build Time']);
 
     const cost = unit.Cost.match(/([0-9]+)\s+([0-9]+)\s+([0-9]+)/);
-    const buildTime = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
+    // const buildTime = Math.round(((unit['Build Time']||'0 frames').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
 
     return <div className='unit'>
         <div>{backLink()}</div>
@@ -212,14 +213,14 @@ const Unit = ({match}) => {
             <tr style={{display:unit['Cost']?'':'none'}}>
                 <td>Cost</td>
                 <td>
-                <img src="/resources/Mineral.gif" alt="Minerals"/> {cost[1]}&nbsp;
-                <img src="/resources/Vespine.gif" alt="Vespine" /> {cost[2]} &nbsp;
-                <img src={`/resources/Supply_${unit.Race}.png`} alt="Supply" /> {cost[3]/2}</td>
+                <img src="/resources/Mineral.gif" alt="Minerals"/> {unit['Mineral Cost']}&nbsp;
+                <img src="/resources/Vespine.gif" alt="Vespine" /> {unit['Vespine Cost']} &nbsp;
+                <img src={`/resources/Supply_${unit.Race}.png`} alt="Supply" /> {unit['Supply Cost']}</td>
             </tr>
 
             <tr>
                 <td>Build Time</td>
-                <td>{buildTime} seconds (fastest)</td>
+                <td>{unit['Build Time']} seconds (fastest)</td>
             </tr>
 
             <tr style={{display:unit['Ground Weapon']?'':'none'}}>
@@ -287,11 +288,11 @@ const Unit = ({match}) => {
                 </tr>
                 <tr style={{display:unit['Sight Range']?'':'none'}}>
                     <td>Sight Range</td>
-                    <td>{unit['Sight Range']/32}</td>
+                    <td>{unit['Sight Range']}</td>
                 </tr>
                 <tr style={{display:unit['Seek Range']?'':'none'}}>
                     <td>Seek Range</td>
-                    <td>{unit['Seek Range']/32}</td>
+                    <td>{unit['Seek Range']}</td>
                 </tr>
                 <tr style={{display:strToArray(unit['Attributes']).length ? '' : 'none'}}>
                     <td>Attributes</td>
@@ -305,7 +306,6 @@ const Unit = ({match}) => {
 
             </tbody>
         </table>
-
 
     </div>;
 }
