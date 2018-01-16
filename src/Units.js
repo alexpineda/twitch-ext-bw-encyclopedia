@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import history from './history';
 
 const allUnits = require('./bwapi-data/json/units.json');
 const allWeapons = require('./bwapi-data/json/weapons.json');
 const allUpgrades = require('./bwapi-data/json/upgrades.json');
 const allAbilities = require('./bwapi-data/json/abilities.json');
+
 
 const strToArray = (strOrArray) => {
     if (!strOrArray) return [];
@@ -50,6 +52,8 @@ const createAbilityLink = (unitName, abilityName, race) => {
 };
 
 const createUnitLink = (unitName, race) => {
+    if (!unitName) return '';
+    
     let extra = '';
     switch (unitName){
         case '2 x Protoss High Templar':
@@ -71,26 +75,43 @@ const createUnitLink = (unitName, race) => {
 const Ability = ({match}) => {
     const ability = allAbilities.find(ability => ability.Name == match.params.ability);
 
+    const getAbilityDescription = () => {
+        if (!ability.Description) return '';
+        return ability.Description.replace(/{unit}/g, match.params.unit);
+    };
+
     return <div className='ability'>
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link></div>
             <div className="ability__title"><i className={ability.Icon}></i> {ability.Name}</div>
-            <dl>
-                <dt>Cost</dt>
-                <dd>{ability['Cost']}</dd>
-
-                <dt>Research Time</dt>
-                <dd>{ability['Research Time']}</dd>
-
-                <dt>Energy Cost</dt>
-                <dd>{ability['Energy Cost']}</dd>
-
-                <dt>Researched at</dt>
-                <dd>{createUnitLink(ability['Researched at'], match.params.race)}</dd>
-
-                <dt>Targets</dt>
-                <dd>{ability['Targets']}</dd>
-           
-            </dl>
+            <p>{getAbilityDescription()}</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Cost</td>
+                        <td>{ability['Cost']}</td>
+                    </tr>
+                    <tr>
+                        <td>Research Time</td>
+                        <td>{ability['Research Time']}</td>
+                    </tr>
+                    <tr>
+                        <td>Energy Cost</td>
+                        <td>{ability['Energy Cost']}</td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td>{ability.Duration}</td>
+                    </tr>
+                    <tr>
+                        <td>Researched at</td>
+                        <td>{createUnitLink(ability['Researched at'], match.params.race)}</td>
+                    </tr>
+                    <tr>
+                        <td>Targets</td>
+                        <td>{ability['Targets']}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>;
 }
 
@@ -186,24 +207,39 @@ const Unit = ({match}) => {
     const unit = allUnits.find(unit => unit.Name === match.params.unit);
     const showAdvanced = match.params.more;
 
+    const goBack = (event) => {
+        event.preventDefault();
+        console.log(history);
+        history.goBack();
+    }
     const backLink = () => {
-        if (showAdvanced) {
+        if (showAdvanced === 'stats') {
             return <Link to={`/race/${match.params.race}/unit/${unit.Name}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+        } else if (showAdvanced === 'more') {
+            return <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         } else {
             return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         }
     }
 
-    ///24 frames per second fastest
-    console.log('bt',unit['Build Time']);
-
-    const cost = unit.Cost.match(/([0-9]+)\s+([0-9]+)\s+([0-9]+)/);
-    // const buildTime = Math.round(((unit['Build Time']||'0 frames').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
+    const getDescription = () => {
+        if (!unit.Description) return '';
+        if (!unit.Link) return unit.Description;
+        return unit.Description + ` <a target="_top" href="${unit.Link}">[1]</a>`;
+    }
 
     return <div className='unit'>
         <div>{backLink()}</div>
+        <div><a onClick={goBack} href='#'>Back</a></div>
+
         <div className="unit__title" ><i className={unit.Icon}></i> {unit.Name}</div> 
-        <table style={{display:showAdvanced ? 'none':'block'}}>
+        <p style={{display: !showAdvanced ? 'block':'none'}} dangerouslySetInnerHTML={{__html:getDescription()}}></p>
+
+        <div style={{textAlign:'center'}}>
+        <Link className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/stats`} style={{display: !showAdvanced ? 'block':'none'}}> Show Stats</Link>
+        </div>
+
+        <table style={{display:showAdvanced === 'stats' ? 'block':'none'}}>
             <tbody>
             <tr>
                 <td>Hit Points</td>
@@ -259,9 +295,11 @@ const Unit = ({match}) => {
             </tbody>
         </table>
 
-        <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`} style={{display:showAdvanced ? 'none':'block'}}> Show Advanced</Link>
+        <div style={{textAlign:'center', paddingTop:'0.5em'}}>
+        <Link  className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/more`} style={{display:showAdvanced === 'stats' ? 'block':'none'}}> Show More</Link>
+        </div>
 
-        <table style={{display:showAdvanced ? 'block':'none'}}>
+        <table style={{display:showAdvanced === 'more' ? 'block':'none'}}>
             <tbody>
                 <tr style={{display:strToArray(unit['Upgrades']).length ? '' : 'none'}}>
                     <td>Upgrades</td>
@@ -299,7 +337,7 @@ const Unit = ({match}) => {
                     <td><small>{strToArray(unit['Attributes']).join(', ')}</small></td>
                 </tr>
 
-                <tr>
+                <tr style={{display:unit['Created By'] ? '' : 'none'}}>
                     <td>Created By</td>
                     <td>{createUnitLink(unit['Created By'], unit.Race)}</td>
                 </tr>

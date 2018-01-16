@@ -36,12 +36,12 @@ const Race = ({match}) => {
     const name = '', description = '', liquipedia = '';
 
     return <div className='race'>
-            <Link to="/"><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link><Link to={`/race/${race.Name}/units`} className='action-item'>See {race.Name} Units</Link>
+            <Link to="/"><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>
             <h1 style={{textAlign:'center'}}>{race.Name}</h1>
             <p>{race.Description}</p>
             <p style={{textAlign:'center'}}><Link to={`/race/${race.Name}/units`} className='action-item'>See {race.Name} Units</Link></p>
-            <p style={{textAlign:'center'}}>or</p>
-            <p className="action-item" style={{textAlign:'center'}}><Link to={`/compare/${race.Name}`}>Compare Units</Link></p>
+            {/* <p style={{textAlign:'center'}}>or</p>
+            <p className="action-item" style={{textAlign:'center'}}><Link to={`/compare/${race.Name}`}>Compare Units</Link></p> */}
         </div>;
 }
 

@@ -8,13 +8,12 @@ import { Links } from './Extra';
 import Compare from './Compare';
 
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
-
+import history from './history';
 import ReactGA from 'react-ga';
 import logger from 'redux-logger';
 import Thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import createHistory from 'history/createMemoryHistory';
 import {
   ConnectedRouter,
   routerMiddleware,
@@ -43,7 +42,7 @@ const allUnits = require('./bwapi-data/json/units.json')
     });
 
 // history
-const history = createHistory();
+
 // commenting for dev :)
 // history.listen((location, action) => {
 //   logPageView(location);

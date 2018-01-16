@@ -1,5 +1,6 @@
 [{
     "Name": "Stim Packs",
+    "Description": "Reduces the cooldown and increases the movement speed of {unit} by 50%. Stim Pack effects are not cumulative. If the {unit} has 10 or less health they cannot use Stimpack.",
     "Icon": "cmdbtn cmdbtn-icon237",
     "Race": "Terran",
     "Cost": "100  100",
@@ -100,6 +101,8 @@
     "Used by": ["Terran Wraith", "Hero Tom Kazansky"]
 }, {
     "Name": "Personnel Cloaking",
+    "Description": "Makes the Ghost invisible to all units except detectors.",
+    "Duration": "0.93 energy drain per second",
     "Icon": "cmdbtn cmdbtn-icon252",
     "Race": "Terran",
     "Cost": "100  100",
@@ -141,7 +144,8 @@
     "Used by": "Terran Medic"
 }, {
     "Name": "Nuclear Strike",
-    "Icon": "cmdbtn cmdbtn-icon0",
+    "Description": "Launches a nuclear strike at the targeted spot. Requires a Nuclear Silo equipped with a Nuke.",
+    "Icon": "cmdbtn cmdbtn-icon311",
     "Race": "Terran",
     "Targets": ["Positions", "Units"],
     "Weapon": "Nuclear Strike",

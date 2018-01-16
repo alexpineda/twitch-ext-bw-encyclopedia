@@ -88,7 +88,9 @@ a {
 
 .unit__title, .upgrade__title, .ability__title, .weapon__title {
   text-align: center;
+  padding: 1em;
 }
+
 .unit__title i, .upgrade__title i, .ability__title i, .weapon__title i{
   zoom:1.4;
 }

@@ -1,5 +1,7 @@
 [{
     "Name": "Terran Firebat",
+    "Description": "The Firebat is an infantry support unit. Its main attack is a flamethrower that consists of two short parallel line splash of 8 concussive damage. This is further enhanced by a radial splash of 8 concussive damage near the end of the flame that damages units that were not hit by both line splash attacks.",
+    "Link": "http://liquipedia.net/starcraft/Firebat",
     "Icon": "cmdbtn cmdbtn-icon32",
     "Race": "Terran",
     "Hit Points": "50",
@@ -26,6 +28,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Terran Ghost",
+    "Description": "The Ghost is a specialised infantry-type spellcaster unit. The Ghost has a long ranged attack that deals 10 concussive damage at a rapid rate, but its real power lies in its special abilities.",
+    "Link": "http://liquipedia.net/starcraft/Ghost",
     "Icon": "cmdbtn cmdbtn-icon1",
     "Race": "Terran",
     "Hit Points": "45",
@@ -54,6 +58,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Terran Goliath",
+    "Description":"The Goliath is most useful for its powerful anti-air attack, although it can attack both air and ground targets. It has high range and deals substantial damage to the opponent's air units.",
+    "Link":"http://liquipedia.net/starcraft/Goliath",
     "Icon": "cmdbtn cmdbtn-icon3",
     "Race": "Terran",
     "Hit Points": "125",
@@ -80,6 +86,8 @@
     "Attributes": "Mechanical"
 }, {
     "Name": "Terran Marine",
+    "Description":"The Marine is the base Terran combat unit. When upgraded with Stim Packs, it can sacrifice 10 hit points in order to double its rate of fire and increase move speed. Marines work very well with medics. They can be loaded into a Bunker, protecting them and further increasing their range by one.",
+    "Link":"http://liquipedia.net/starcraft/Marine",
     "Icon": "cmdbtn cmdbtn-icon0",
     "Race": "Terran",
     "Hit Points": "40",
@@ -107,6 +115,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Terran Medic",
+    "Description":"The Medic its primary function healing friendly biological units. Healing is automatic but directable and causes the Medic to use up exhaustible energy like a spellcaster (2HP per 1 energy).",
+    "Link":"http://liquipedia.net/starcraft/Medic",
     "Icon": "cmdbtn cmdbtn-icon34",
     "Race": "Terran",
     "Hit Points": "60",
@@ -133,6 +143,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Terran SCV",
+    "Description":"The SCV (Space Construction Vehicle) is the Terran worker unit. It harvests resources, constructs buildings and can repair all Terran mechanical units and buildings. ",
+    "Link":"http://liquipedia.net/starcraft/SCV",
     "Icon": "cmdbtn cmdbtn-icon7",
     "Race": "Terran",
     "Hit Points": "60",
@@ -158,6 +170,8 @@
     "Attributes": ["Organic", "Mechanical", "Worker"]
 }, {
     "Name": "Terran Siege Tank Siege Mode",
+    "Description": "The Siege Tank, or simply Tank, is a Terran mechanical unit. While in Siege Mode, the Siege Tank is incapable of movement and gains a range of 12, but also has a minimum range of 2. The Siege Tank is able to freely transform between the two modes with a short transformation sequence. ",
+    "Link":"http://liquipedia.net/starcraft/Siege_Tank",
     "Icon": "cmdbtn cmdbtn-icon30",
     "Race": "Terran",
     "Hit Points": "150",
@@ -182,6 +196,8 @@
     "Attributes": "Mechanical"
 }, {
     "Name": "Terran Siege Tank Tank Mode",
+    "Description": "The Siege Tank, or simply Tank, is a Terran mechanical unit. A Siege Tank in Tank Mode deals 30 explosive damage, and one that is in Siege Mode deals 70 explosive damage plus splash. These can further be upgraded at the Armory. The Siege Tank is able to freely transform between the two modes with a short transformation sequence. ",
+    "Link":"http://liquipedia.net/starcraft/Siege_Tank",
     "Icon": "cmdbtn cmdbtn-icon5",
     "Race": "Terran",
     "Hit Points": "150",
@@ -208,6 +224,8 @@
     "Attributes": "Mechanical"
 }, {
     "Name": "Terran Vulture",
+    "Description": "The Vulture is an extremely mobile and dangerous Terran unit produced from the Factory. Vultures are the epitome of cost-efficiency; properly microed, they can take down an unlimited number of some units and Spider Mines give them further unique potential cost-efficiency.",
+    "Link":"http://liquipedia.net/starcraft/Vulture",
     "Icon": "cmdbtn cmdbtn-icon2",
     "Race": "Terran",
     "Hit Points": "80",
@@ -234,11 +252,12 @@
     "Attributes": "Mechanical"
 }, {
     "Name": "Terran Vulture Spider Mine",
+    "Description": "Spider Mines are placed on the ground by Vultures. Once deployed, the mine burrows into the ground rendering it invisible. When a unit comes into range, the mine unburrows and, after a brief delay, launches itself at the target far faster than most units can avoid. A player cannot manually order mines to move.",
+    "Link":"http://liquipedia.net/starcraft/Spider_Mine",
     "Icon": "cmdbtn cmdbtn-icon13",
     "Race": "Terran",
     "Hit Points": "20",
     "Armor": "0",
-    
     "Cost": "1  0  0",
     "Build Time": "1 frames",
     "Destroy Score": "25",
@@ -254,6 +273,8 @@
     "Attributes": ""
 }, {
     "Name": "Terran Battlecruiser",
+    "Description":"The Battlecruiser (Commonly abbreviated as BC) is one of the strongest air units in the game. However, its cost, build time, and high supply requirement  makes sure that it is also one of the lesser used units in competitive StarCraft. When Battlecruisers do get used, the Yamato Gun upgrade is very popular due to its extremely high damage.",
+    "Link":"http://liquipedia.net/starcraft/Battlecruiser",
     "Icon": "cmdbtn cmdbtn-icon12",
     "Race": "Terran",
     "Hit Points": "500",
@@ -281,6 +302,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Terran Dropship",
+    "Description":"The Dropship is the Terran air transport unit.Compared to the other transport units, the Zerg Overlord and the Protoss Shuttle, the Dropship has the fastest movement speed. While the Overlord and Shuttle speeds can be upgraded, the Dropship has no further speed upgrade available.",
+    "Link":"http://liquipedia.net/starcraft/Dropship",
     "Icon": "cmdbtn cmdbtn-icon11",
     "Race": "Terran",
     "Hit Points": "150",
@@ -326,6 +349,8 @@
     "Attributes": ["Flyer", "Invincible"]
 }, {
     "Name": "Terran Science Vessel",
+    "Description":"The Science Vessel is an airborne detector caster unit. In the Terran army, it generally serves a support role. It's casting abilities are especially important in late game scenarios.",
+    "Link":"http://liquipedia.net/starcraft/Science_Vessel",
     "Icon": "cmdbtn cmdbtn-icon9",
     "Race": "Terran",
     "Hit Points": "200",
@@ -351,6 +376,8 @@
     "Attributes": ["Flyer", "Mechanical", "Detector"]
 }, {
     "Name": "Terran Valkyrie",
+    "Description": "The Valkyrie is a Terran air-to-air unit. Valkyries employ an air-to-air attack that issues a volley of eight small missiles at its target. These missiles impact not only on their target, but also damage any enemy units within a 3 x 3 matrix area. Each missile does a small amount of splash damage in this target area.",
+    "Link":"http://liquipedia.net/starcraft/Valkyrie",
     "Icon": "cmdbtn cmdbtn-icon58",
     "Race": "Terran",
     "Hit Points": "200",
@@ -375,6 +402,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Terran Wraith",
+    "Description":"The Wraith is the initial Terran air unit which can be built from the Starport without any addons. It deals 8 normal damage against ground units, and 20 explosive damage against air units. It can be upgraded with Cloak, which renders it invisible, and it can be upgraded with an energy upgrade to give it 50 extra energy.",
+    "Link":"http://liquipedia.net/starcraft/Wraith",
     "Icon": "cmdbtn cmdbtn-icon8",
     "Race": "Terran",
     "Hit Points": "120",
