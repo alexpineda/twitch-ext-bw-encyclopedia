@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { Race, Races } from './Races';
@@ -21,11 +20,93 @@ import {
 
 import reducers from './reducers';
 
+import ReactTooltip from 'react-tooltip';
+import { readSync } from 'fs';
+
+
 
 
 const allWeapons = require('./bwapi-data/json/weapons.json');
-const allUpgrades = require('./bwapi-data/json/upgrades.json');
-const allAbilities = require('./bwapi-data/json/abilities.json');
+  
+
+const allUpgrades = require('./bwapi-data/json/upgrades.json')
+  .map(upgrade => {
+    upgrade['Maximum Level'] = upgrade['Maximum Level'] || 1;
+
+
+    ///4000 + lvl*480 frames
+    const upgradeTime = upgrade['Upgrade Time'].match(/([0-9]+)\s+[+]\s+lvl\*([0-9]+)/);
+    if (upgradeTime) {
+      upgrade['Upgrade Time Base'] = Number(upgradeTime[1]);
+      upgrade['Upgrade Time Multiplier'] = Number(upgradeTime[2]);
+    } else {
+      const upgradeTime = upgrade['Upgrade Time'].match(/([0-9]+)\s+frames/);
+      upgrade['Upgrade Time Base'] = Number(upgradeTime[1]);
+      upgrade['Upgrade Time Multiplier'] = 0;
+    }
+
+    upgrade.getUpgradeTime = (level) => {
+      if (level > upgrade['Maximum Level']) {
+        return null;
+      }
+      return Math.round((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/24);
+    }
+
+    const cost = upgrade.Cost.match(/([0-9]+)\s+[+]\slvl\*([0-9]+)\s+([0-9]+)\s+[+]\slvl\*([0-9]+)/);
+
+    if (cost) {
+      upgrade['Base Mineral Cost'] = Number(cost[1]);
+      upgrade['Mineral Cost Multiplier'] = Number(cost[2]);
+      upgrade['Base Vespine Cost'] = Number(cost[3]);
+      upgrade['Vespine Cost Multiplier'] = Number(cost[4]);
+    } else {
+      const cost = upgrade.Cost.match(/([0-9]+)\s+([0-9]+)/);
+      upgrade['Base Mineral Cost'] = Number(cost[1]);
+      upgrade['Mineral Cost Multiplier'] = 0;
+      upgrade['Base Vespine Cost'] = Number(cost[2]);
+      upgrade['Vespine Cost Multiplier'] = 0;
+    }
+
+    upgrade.getMineralCost = (level) => {
+      if (level > upgrade['Maximum Level']) {
+        return null;
+      }
+
+      return upgrade['Base Mineral Cost'] + ((level-1) * upgrade['Mineral Cost Multiplier']);
+    }
+
+    upgrade.getVespineCost = (level) => {
+      if (level > upgrade['Maximum Level']) {
+        return null;
+      }
+
+      return upgrade['Base Vespine Cost'] + ((level-1) * upgrade['Vespine Cost Multiplier']);
+    }
+
+    return upgrade;
+  });
+
+const allAbilities = require('./bwapi-data/json/abilities.json')
+  .map(ability => {
+
+    if (ability.Cost) {
+      const cost = ability.Cost.match(/([0-9]+)\s+([0-9]+)/);
+      ability['Mineral Cost'] = cost[1];
+      ability['Vespine Cost'] = cost[2];
+    } else {
+      ability['Mineral Cost'] = 0;
+      ability['Vespine Cost'] = 0;
+    }
+
+    
+
+    if (ability['Research Time']) {
+      const researchTime = ability['Research Time'].match(/([0-9]+)\s+frames/);
+      ability['Research Time'] = researchTime ? Math.round(Number(researchTime[1])/24) : 0;
+    }
+
+    return ability;
+  })
 
 const allUnits = require('./bwapi-data/json/units.json')
     .filter(unit=>unit.Race !== 'None')
@@ -71,6 +152,7 @@ class App extends Component {
       <Provider store={store}>
       <Router>
         <div id='twitch-extension'>
+        {/* <ReactTooltip place="bottom" type="dark" effect="solid" offset={{top: -10, left: -10}} delayShow={500}/> */}
          <Route exact path="/" component={Races}/>
          <Route exact path="/links" component={Links}/>
          <Route exact path="/race/:race" component={Race}/>

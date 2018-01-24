@@ -2,7 +2,7 @@
     "Name": "Zerg",
     "Description": "The Zerg is a terrifying amalgamation of biologically advanced aliens. The zerg use large numbers of fast, weaker units that can be built or rebuilt quickly as long as they can establish a good starting economy, which can be one of their toughest challenges. ",
     "Icon": "",
-    "Color": "#4a654d",
+    "Color": "#d8ffdc",
     "Worker": "Zerg Drone",
     "Resource Depot": "Zerg Hatchery",
     "Refinery": "Zerg Extractor",
@@ -12,7 +12,7 @@
     "Name": "Terran",
     "Description": "Terrans are the scrappy improvisers of StarCraft, relying on cobbled-together technology and a resilient spirit. Terran units vary wildly and have high potential cost-efficiency, which is in line with their reputation as the most adaptable race.",
     "Icon": "",
-    "Color": "#183784",
+    "Color": "#a5b2d2",
     "Worker": "Terran SCV",
     "Resource Depot": "Terran Command Center",
     "Refinery": "Terran Refinery",
@@ -20,7 +20,7 @@
     "Supply Provider": "Terran Supply Depot"
 }, {
     "Name": "Protoss",
-    "Color": "#7d651b",
+    "Color": "#cec19b",
     "Description": "The protoss are a sapient humanoid race native to Aiur. The Protoss have access to powerful and diverse units, ranging from simple but sturdy early-game units to speedy fliers, stealthed damage dealers, long range siege units and devastating spellcasters. ",
     "Icon": "",
     "Worker": "Protoss Probe",

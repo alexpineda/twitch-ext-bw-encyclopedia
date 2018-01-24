@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import history from './history';
 
 const allUnits = require('./bwapi-data/json/units.json');
@@ -37,23 +37,23 @@ const createWeaponLink = (unitName, weaponName, race) => {
     const weapon = allWeapons.find(weapon => weapon.Name === weaponName);
     if (!weapon) return "N/A";
 
-    return <Link to={`/race/${race}/unit/${unitName}/weapon/${weapon.Name}`} title={weapon.Name}><i className={weapon.Icon}></i>{extra}</Link>
+    return <Link to={`/race/${race}/unit/${unitName}/weapon/${weapon.Name}`} title={weapon.Name} data-tip={weapon.Name}><i className={weapon.Icon}></i>{extra}</Link>
 };
 
 const createUpgradeLink = (unitName, upgradeName, race) => {
     const upgrade = allUpgrades.find(upgrade => upgrade.Name === upgradeName);
     if (!upgrade) return "";
-    return <Link to={`/race/${race}/unit/${unitName}/upgrade/${upgrade.Name}`} title={upgrade.Name}><i className={upgrade.Icon}></i></Link>
+    return <Link to={`/race/${race}/unit/${unitName}/upgrade/${upgrade.Name}`} title={upgrade.Name} data-tip={upgrade.Name}><i className={upgrade.Icon}></i></Link>
 };
 
 const createAbilityLink = (unitName, abilityName, race) => {
     const ability = allAbilities.find(ability => ability.Name === abilityName);
-    return <Link to={`/race/${race}/unit/${unitName}/ability/${ability.Name}`} title={ability.Name}><i className={ability.Icon}></i></Link>
+    return <Link to={`/race/${race}/unit/${unitName}/ability/${ability.Name}`} title={ability.Name} data-tip={ability.Name}><i className={ability.Icon}></i></Link>
 };
 
 const createUnitLink = (unitName, race) => {
     if (!unitName) return '';
-    
+
     let extra = '';
     switch (unitName){
         case '2 x Protoss High Templar':
@@ -68,7 +68,7 @@ const createUnitLink = (unitName, race) => {
     }
     const unit = allUnits.find(unit => unit.Name == unitName);
 
-    return <Link to={`/race/${race}/unit/${unitName}`} title={unitName}><i className={unit.Icon}></i>{extra}</Link>
+    return <Link to={`/race/${race}/unit/${unitName}/stats`} title={unitName} data-tip={unit.Name} ><i className={unit.Icon}></i>{extra}</Link>
 };
 
 
@@ -88,11 +88,14 @@ const Ability = ({match}) => {
                 <tbody>
                     <tr>
                         <td>Cost</td>
-                        <td>{ability['Cost']}</td>
+                        <td>
+                            <img src="/resources/Mineral.gif" alt="Minerals"/> {ability['Mineral Cost']}&nbsp;
+                            <img src="/resources/Vespine.gif" alt="Vespine" /> {ability['Vespine Cost']} &nbsp;
+                        </td>
                     </tr>
                     <tr>
                         <td>Research Time</td>
-                        <td>{ability['Research Time']}</td>
+                        <td>{ability['Research Time']} seconds (fastest)</td>
                     </tr>
                     <tr>
                         <td>Energy Cost</td>
@@ -177,29 +180,66 @@ const Weapon = ({match}) => {
 const Upgrade = ({match}) => {
     const upgrade = allUpgrades.find(upgrade => upgrade.Name == match.params.upgrade);
 
+    const getLevelLink = (level) => {
+        if (level > upgrade['Maximum Level'] || upgrade['Maximum Level'] == 1)  {
+            return '';
+        }
+
+        return <Link to={`/race/${match.params.race}/unit/${match.params.unit}/upgrade/${upgrade.Name}/${level}`} className='action-item'><span>{level} </span></Link>;
+    }
+    
     return <div className='upgrade'>
+
+            <div style={{float:'right', display:upgrade['Maximum Level'] == 1 ? 'none' : 'block'}}>
+                <span>Level </span>
+                {getLevelLink(1)}
+                {getLevelLink(2)}
+                {getLevelLink(3)}
+            </div>
+
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link></div>
             <div className='upgrade__title'><i className={upgrade.Icon}></i> {upgrade.Name}</div> 
-            <dl>
-                <dt>Cost</dt>
-                <dd>{upgrade['Cost']}</dd>
 
-                <dt>Upgrade Time</dt>
-                <dd>{upgrade['Upgrade Time']}</dd>
+            
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Cost</td>
+                        
+                        <td>
+                            <img src="/resources/Mineral.gif" alt="Minerals"/> {upgrade.getMineralCost(match.params.more || 1)}&nbsp;
+                            <img src="/resources/Vespine.gif" alt="Vespine" /> {upgrade.getVespineCost(match.params.more || 1)} &nbsp;
+                        </td>
+                    </tr>
 
-                <dt>Maximum Level</dt>
-                <dd>{upgrade['Maximum Level']}</dd>
+                    <tr>
+                        <td>Upgrade Time</td>
+                        <td>{upgrade.getUpgradeTime(match.params.more || 1)} seconds (fastest)</td>
+                    </tr>
 
-                <dt>Upgraded at</dt>
-                <dd>{createUnitLink(upgrade['Upgraded at'], match.params.race)}</dd>
+                    <tr>
+                        <td>Maximum Level</td>
+                        <td>{upgrade['Maximum Level']}</td>
+                    </tr>
 
-                <dt>Level 2 Requires</dt>
-                <dd>{createUnitLink(upgrade['Level 2 Requires'], match.params.race)}</dd>
+                    <tr>
+                        <td>Upgraded at</td>
+                        <td>{createUnitLink(upgrade['Upgraded at'], match.params.race)}</td>
+                    </tr>
 
-                <dt>Level 3 Requires</dt>
-                <dd>{createUnitLink(upgrade['Level 3 Requires'], match.params.race)}</dd>
+                    <tr style={{display:upgrade['Maximum Level'] == 1 ? 'none' : 'table-row'}}>
+                        <td>Level 2 Requires</td>
+                        <td>{createUnitLink(upgrade['Level 2 Requires'], match.params.race)}</td>
+                    </tr>
 
-            </dl>
+                    <tr style={{display:upgrade['Maximum Level'] == 1 ? 'none' : 'table-row'}}>
+                        <td>Level 3 Requires</td>
+                        <td>{createUnitLink(upgrade['Level 3 Requires'], match.params.race)}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
         </div>;
 }
 
@@ -214,12 +254,29 @@ const Unit = ({match}) => {
     }
     const backLink = () => {
         if (showAdvanced === 'stats') {
-            return <Link to={`/race/${match.params.race}/unit/${unit.Name}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+            return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+            // return <Link to={`/race/${match.params.race}/unit/${unit.Name}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         } else if (showAdvanced === 'more') {
             return <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         } else {
             return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         }
+    }
+
+    const statSwitcher = () => {
+        if (showAdvanced === 'stats') {
+        return <div className="unit-stats-page-selector">
+            <img src='/resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
+            <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`}><img src='/resources/arrow-right.svg' alt="Page 2"/></Link>
+        </div>;
+
+        } else if (showAdvanced === 'more') {
+            return <div className="unit-stats-page-selector">
+                <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img src='/resources/arrow-left.svg' alt="Page 1"/></Link>
+                <img src='/resources/arrow-right.svg' className="unit-stats-page-selector--active" alt="Page 2"/>
+                </div>;
+        }
+        return '';
     }
 
     const getDescription = () => {
@@ -228,11 +285,20 @@ const Unit = ({match}) => {
         return unit.Description + ` <a target="_top" href="${unit.Link}">[1]</a>`;
     }
 
-    return <div className='unit'>
-        <div>{backLink()}</div>
-        <div><a onClick={goBack} href='#'>Back</a></div>
+    const tempRedirect = () => {
+        if (!showAdvanced) {
+            return <Redirect to={`/race/${match.params.race}/unit/${unit.Name}/stats`} />
+        }
+        return '';
+    }
 
-        <div className="unit__title" ><i className={unit.Icon}></i> {unit.Name}</div> 
+    return <div className='unit'>
+        {/* <div><a onClick={goBack} href='#'>Back</a></div> */}
+       {tempRedirect()}
+        {statSwitcher()}
+        <div >{backLink()}</div>
+        
+        <div className="unit__title" ><i className={unit.Icon}></i> <p>{unit.Name}</p></div> 
         <p style={{display: !showAdvanced ? 'block':'none'}} dangerouslySetInnerHTML={{__html:getDescription()}}></p>
 
         <div style={{textAlign:'center'}}>
@@ -295,10 +361,6 @@ const Unit = ({match}) => {
             </tbody>
         </table>
 
-        <div style={{textAlign:'center', paddingTop:'0.5em'}}>
-        <Link  className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/more`} style={{display:showAdvanced === 'stats' ? 'block':'none'}}> Show More</Link>
-        </div>
-
         <table style={{display:showAdvanced === 'more' ? 'block':'none'}}>
             <tbody>
                 <tr style={{display:strToArray(unit['Upgrades']).length ? '' : 'none'}}>
@@ -349,7 +411,7 @@ const Unit = ({match}) => {
 }
 
 const getUnitList = (units, start, match) => {
-return units.map(unit => <span  key={unit.Name} className="text">{createUnitLink(unit.Name, unit.Race)}</span>);
+return units.map(unit => <span  key={unit.Name} className="text" data-tip={unit.Name}>{createUnitLink(unit.Name, unit.Race)}</span>);
 };
 
 const Units = ({match}) => {

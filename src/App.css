@@ -16,6 +16,16 @@ a {
   background-color:#ddd;
 }
 
+.action-item {
+  font-family: Bungee, 'sans serif';
+  color:black;
+}
+
+.action-item:hover {
+  background-color: white;
+  color:black;
+}
+
 .text {
   padding: 4px;
   position: relative;
@@ -28,6 +38,25 @@ a {
 
 .races-container {
   padding: 1em;
+  height: 100%;
+}
+
+.starcraft {
+  color:#eee;
+}
+
+.starcraft .starcraft__title {
+  text-align: center;
+  margin:0.5em -0.5em 0.5em -1em;
+  /* background-color: #333; */
+  
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.starcraft .race {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 2px;
 }
 
 .races {
@@ -48,23 +77,47 @@ a {
   justify-content: center;
 }
 
-.action-item {
-  font-family: Bungee, 'sans serif';
-}
-
 .races-list-item:hover {
   background-color: white;
 }
+
+
+
+.action-item--negative {
+  color:white;
+}
+
+
 
 .races-list-item a {
   text-decoration: none;
   color:black;
 }
 
+
 .race {
   /* flex:1; */
   padding: 1em;
+  height: 100%;
 }
+
+.race__title {
+  text-align: center;
+  margin:0.5em -0.5em 0.5em -1em;
+  /* background-color: #333; */
+  color:#eee;
+  font-weight: bold;
+  font-size: 2em;
+}    
+
+.race__description {
+  text-align: center;
+  margin-left: -1em;
+  margin-right: -1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  padding:0.5em;
+}   
 
 .unit-labels-container {
   padding: 1em;
@@ -75,6 +128,8 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   background-color: black;
+  padding: 1em;
+  border-radius: 5px;
   /* height: 100%; */
 }
 
@@ -88,8 +143,14 @@ a {
 
 .unit__title, .upgrade__title, .ability__title, .weapon__title {
   text-align: center;
-  padding: 1em;
-}
+  padding: 0.5em 0 0 0;
+  margin-left: -1em;
+  margin-right: -1em;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}    
+    
 
 .unit__title i, .upgrade__title i, .ability__title i, .weapon__title i{
   zoom:1.4;
@@ -111,3 +172,14 @@ a {
   height: 3.5em;
 }
 
+.unit-stats-page-selector {
+  float:right;
+}
+
+.unit-stats-page-selector img.unit-stats-page-selector--active {
+  opacity: 0.5;
+}
+
+.unit-stats-page-selector img {
+  width:20px;
+}
