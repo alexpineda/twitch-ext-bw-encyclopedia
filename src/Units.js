@@ -82,6 +82,7 @@ const Ability = ({match}) => {
 
     return <div className='ability'>
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
+            <span className='unit-header'>Ability</span>
             <div className="ability__title"><i className={ability.Icon}></i> {ability.Name}</div>
             <p>{getAbilityDescription()}</p>
             <table>
@@ -93,19 +94,19 @@ const Ability = ({match}) => {
                             <img src="resources/Vespine.gif" alt="Vespine" /> {ability['Vespine Cost']} &nbsp;
                         </td>
                     </tr>
-                    <tr>
+                    <tr style={{display:ability['Research Time'] ? '':'none'}}>
                         <td>Research Time</td>
                         <td>{ability['Research Time']} seconds (fastest)</td>
                     </tr>
-                    <tr>
+                    <tr style={{display:ability['Energy Cost'] ? '':'none'}}>
                         <td>Energy Cost</td>
                         <td>{ability['Energy Cost']}</td>
                     </tr>
-                    <tr>
+                    <tr style={{display:ability['Duration'] ? '':'none'}}>
                         <td>Duration</td>
                         <td>{ability.Duration}</td>
                     </tr>
-                    <tr>
+                    <tr style={{display:ability['Researched at'] ? '':'none'}}>
                         <td>Researched at</td>
                         <td>{createUnitLink(ability['Researched at'], match.params.race)}</td>
                     </tr>
@@ -113,6 +114,7 @@ const Ability = ({match}) => {
                         <td>Targets</td>
                         <td>{ability['Targets']}</td>
                     </tr>
+
                 </tbody>
             </table>
         </div>;
@@ -123,6 +125,7 @@ const Weapon = ({match}) => {
 
     return <div className='weapon'>
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
+            <span className='unit-header'>Weapon</span>
             <div className="weapon__title"><i className={weapon.Icon}></i> {weapon.Name}</div>
 
             <table>
@@ -180,6 +183,42 @@ const Weapon = ({match}) => {
 const Upgrade = ({match}) => {
     const upgrade = allUpgrades.find(upgrade => upgrade.Name == match.params.upgrade);
 
+    const getLevelLabel = (level) => {
+        if (upgrade['Maximum Level'] == 1)  {
+            return '';
+        }
+        return <span className='upgrade-stats-page-selector-label'>{level}</span>;
+    }
+
+    const getDownLevelLink = ({race, unit, more}) => {
+        const level = Number(more || 1);
+
+        if (upgrade['Maximum Level'] == 1)  {
+            return '';
+        }
+
+        if (level > 1) {
+            return <span className="upgrade-stats-page-selector"><Link to={`/race/${match.params.race}/unit/${unit}/upgrade/${upgrade.Name}/${level - 1 }`}><img src='resources/arrow-left.svg' alt="Page 2"/></Link></span>
+        }
+
+        return <span className="upgrade-stats-page-selector">
+             <img src='resources/arrow-left.svg' className="upgrade-stats-page-selector--active" alt="Page 1"/></span>;
+    }   
+
+    const getUpLevelLink = ({race, unit, more}) => {
+        const level = Number(more || 1);
+        if (upgrade['Maximum Level'] == 1)  {
+            return '';
+        }
+
+        if (level < upgrade['Maximum Level']) {
+            return <span className="upgrade-stats-page-selector"><Link to={`/race/${match.params.race}/unit/${unit}/upgrade/${upgrade.Name}/${level + 1 }`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link></span>
+        }
+
+        return <span className="upgrade-stats-page-selector">
+             <img src='resources/arrow-right.svg' className="upgrade-stats-page-selector--active" alt="Page 1"/></span>;
+    }
+
     const getLevelLink = (level) => {
         if (level > upgrade['Maximum Level'] || upgrade['Maximum Level'] == 1)  {
             return '';
@@ -189,15 +228,16 @@ const Upgrade = ({match}) => {
     }
     
     return <div className='upgrade'>
-
+            <span className='unit-header'>Upgrade</span>
             <div style={{float:'right', display:upgrade['Maximum Level'] == 1 ? 'none' : 'block'}}>
-                <span>Level </span>
-                {getLevelLink(1)}
-                {getLevelLink(2)}
-                {getLevelLink(3)}
+                {getDownLevelLink(match.params)}
+                {getLevelLabel(match.params.more || 1)}
+                {getUpLevelLink(match.params)}
             </div>
 
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
+            
+
             <div className='upgrade__title'><i className={upgrade.Icon}></i> {upgrade.Name}</div> 
 
             
@@ -249,7 +289,6 @@ const Unit = ({match}) => {
 
     const goBack = (event) => {
         event.preventDefault();
-        console.log(history);
         history.goBack();
     }
     const backLink = () => {
@@ -295,9 +334,11 @@ const Unit = ({match}) => {
     return <div className='unit'>
         {/* <div><a onClick={goBack} href='#'>Back</a></div> */}
        {tempRedirect()}
+       <span className='unit-header'>Unit</span>
         {statSwitcher()}
         <div >{backLink()}</div>
         
+
         <div className="unit__title" ><i className={unit.Icon}></i> <p>{unit.Name}</p></div> 
         <p style={{display: !showAdvanced ? 'block':'none'}} dangerouslySetInnerHTML={{__html:getDescription()}}></p>
 
@@ -305,7 +346,7 @@ const Unit = ({match}) => {
         <Link className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/stats`} style={{display: !showAdvanced ? 'block':'none'}}> Show Stats</Link>
         </div>
 
-        <table style={{display:showAdvanced === 'stats' ? 'block':'none'}}>
+        <table style={{display:showAdvanced === 'stats' ? 'table':'none'}}>
             <tbody>
             <tr>
                 <td>Hit Points</td>
@@ -361,7 +402,7 @@ const Unit = ({match}) => {
             </tbody>
         </table>
 
-        <table style={{display:showAdvanced === 'more' ? 'block':'none'}}>
+        <table style={{display:showAdvanced === 'more' ? 'table':'none'}}>
             <tbody>
                 <tr style={{display:strToArray(unit['Upgrades']).length ? '' : 'none'}}>
                     <td>Upgrades</td>

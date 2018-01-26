@@ -150,7 +150,7 @@ const mapStyles= (styles) => ({
   // transform: `rotate3d(1, ${styles.scale}, ${styles.scale}, ${styles.scale*-360}deg)`,
   // transform: `scale(${styles.scale},${styles.scale})`,
   // transform: `translateX(${(1-styles.scale)*100}%)`,
-  'z-index': styles.zindex,
+  zIndex: styles.zindex,
   opacity: easingEq(styles.opacity)
 });
 
