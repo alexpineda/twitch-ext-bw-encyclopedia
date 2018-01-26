@@ -22,6 +22,7 @@ import reducers from './reducers';
 
 import { AnimatedSwitch } from 'react-router-transition';
 
+import * as ImagesPromise from 'react-images-preload';
 
 
 
@@ -147,43 +148,63 @@ function logPageView(location) {
 var easingEq = require('eases/circ-in-out')
 
 const mapStyles= (styles) => ({
-  // transform: `rotate3d(1, ${styles.scale}, ${styles.scale}, ${styles.scale*-360}deg)`,
-  // transform: `scale(${styles.scale},${styles.scale})`,
-  // transform: `translateX(${(1-styles.scale)*100}%)`,
   zIndex: styles.zindex,
   opacity: easingEq(styles.opacity)
 });
 
+
+
+
+const routes = <AnimatedSwitch
+atEnter={{ opacity: 0.3, scale:0.95, zindex:0 }}
+atLeave={{ opacity: 0, scale:1.1, zindex:99 }}
+atActive={{ opacity: 1, scale:1, zindex:0}}
+mapStyles={mapStyles}
+className="twitch-extension"
+>
+  <Route exact path="/" component={Races}/>
+  <Route exact path="/links" component={Links}/>
+  <Route exact path="/race/:race" component={Race}/>
+  <Route exact path="/race/:race/units" component={Units}/>
+  <Route exact path="/race/:race/units/:page" component={Units}/>
+  <Route exact path="/race/:race/unit/:unit" component={Unit}/>
+  <Route exact path="/race/:race/unit/:unit/:more" component={Unit}/>
+  <Route exact path="/race/:race/unit/:unit/weapon/:weapon" component={Weapon}/>
+  <Route exact path="/race/:race/unit/:unit/weapon/:weapon/:more" component={Weapon}/>
+  <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade" component={Upgrade}/>
+  <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade/:more" component={Upgrade}/>
+  <Route exact path="/race/:race/unit/:unit/ability/:ability" component={Ability}/>
+  <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
+  <Route exact path="/compare" component={Compare}/>
+  <Route exact path="/compare/:race" component={Compare}/>
+</AnimatedSwitch>;
+
+
+const Preloader = ({images, isImagesLoaded}) =>  !isImagesLoaded ? <Races loading={true} /> : routes;
+
+const WithimagesLoaded = ImagesPromise.withImagesPromise({
+  title: 'resources/Starcraft.jpg',
+  terran: 'resources/Terran.jpg',
+  protoss: 'resources/Protoss.jpg',
+  zerg: 'resources/Zerg.jpg',
+  icons: 'cmdbtns.png',
+  backarrow: 'resources/backarrow.svg',
+  bwwhite: 'resources/backarrowwhite.svg',
+  al: 'resources/arrow-left.svg',
+  ar: 'resources/arrow-right.svg',
+  min: 'resources/Mineral.gif',
+  vesp: 'resources/Vespine.gif',
+  suppt: 'resources/Supply_Terran.png',
+  suppp: 'resources/Supply_Protoss.png',
+  suppz: 'resources/Supply_Zerg.png'
+}, Preloader);
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
       <Router>
-      <AnimatedSwitch
-          atEnter={{ opacity: 0.3, scale:0.95, zindex:0 }}
-          atLeave={{ opacity: 0, scale:1.1, zindex:99 }}
-          atActive={{ opacity: 1, scale:1, zindex:0}}
-          mapStyles={mapStyles}
-          className="twitch-extension"
-        >
-        {/* <ReactTooltip place="bottom" type="dark" effect="solid" offset={{top: -10, left: -10}} delayShow={500}/> */}
-         <Route exact path="/" component={Races}/>
-         <Route exact path="/links" component={Links}/>
-         <Route exact path="/race/:race" component={Race}/>
-         <Route exact path="/race/:race/units" component={Units}/>
-         <Route exact path="/race/:race/units/:page" component={Units}/>
-         <Route exact path="/race/:race/unit/:unit" component={Unit}/>
-         <Route exact path="/race/:race/unit/:unit/:more" component={Unit}/>
-         <Route exact path="/race/:race/unit/:unit/weapon/:weapon" component={Weapon}/>
-         <Route exact path="/race/:race/unit/:unit/weapon/:weapon/:more" component={Weapon}/>
-         <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade" component={Upgrade}/>
-         <Route exact path="/race/:race/unit/:unit/upgrade/:upgrade/:more" component={Upgrade}/>
-         <Route exact path="/race/:race/unit/:unit/ability/:ability" component={Ability}/>
-         <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
-         <Route exact path="/compare" component={Compare}/>
-         <Route exact path="/compare/:race" component={Compare}/>
-        </AnimatedSwitch>
+        <WithimagesLoaded />
       </Router>
       </Provider>
     );

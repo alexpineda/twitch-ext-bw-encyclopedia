@@ -10,6 +10,13 @@ a {
   text-decoration: none;
 }
 
+.reload {
+  background-image:url(reload.svg);
+  width:65px;
+  height:65px;
+  margin: 0 auto;
+}
+
 .twitch-extension {
   width:318px;
   height:420px;
@@ -63,7 +70,9 @@ a {
 
 .races-container {
   padding: 1em;
-  height: 100%;
+  width:318px;
+  height:420px;
+  /* height: 100%; */
 }
 
 .starcraft {

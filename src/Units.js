@@ -96,7 +96,7 @@ const Ability = ({match}) => {
                     </tr>
                     <tr style={{display:ability['Research Time'] ? '':'none'}}>
                         <td>Research Time</td>
-                        <td>{ability['Research Time']} seconds (fastest)</td>
+                        <td>{ability['Research Time']} seconds</td>
                     </tr>
                     <tr style={{display:ability['Energy Cost'] ? '':'none'}}>
                         <td>Energy Cost</td>
@@ -254,7 +254,7 @@ const Upgrade = ({match}) => {
 
                     <tr>
                         <td>Upgrade Time</td>
-                        <td>{upgrade.getUpgradeTime(match.params.more || 1)} seconds (fastest)</td>
+                        <td>{upgrade.getUpgradeTime(match.params.more || 1)} seconds</td>
                     </tr>
 
                     <tr>
@@ -363,7 +363,7 @@ const Unit = ({match}) => {
 
             <tr>
                 <td>Build Time</td>
-                <td>{unit['Build Time']} seconds (fastest)</td>
+                <td>{unit['Build Time']} seconds</td>
             </tr>
 
             <tr style={{display:unit['Ground Weapon']?'':'none'}}>
