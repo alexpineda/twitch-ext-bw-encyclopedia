@@ -79,7 +79,7 @@ class Compare extends Component {
   
     render() {
       return <div class='compare-container'>
-          <Link to={`/`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>
+          <Link to={`/`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>
           <span onClick={_=>this.scroll(-1)}>Up</span> <span onClick={_=>this.scroll(1)}>Down</span>
       <table>
           <thead>

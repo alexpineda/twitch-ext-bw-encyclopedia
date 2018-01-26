@@ -156,6 +156,10 @@ a {
   zoom:1.4;
 }
 
+.upgrade table, .weapon table {
+  margin-top:1em;
+}
+
 .back-button {
   opacity: 0.5;
 }

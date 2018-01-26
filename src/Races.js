@@ -32,7 +32,7 @@ const Race = ({match}) => {
     const name = '', description = '', liquipedia = '';
 
     return <div className={`race ${race.Name}`}>
-            <Link to="/"><img className='back-button' src='/resources/backarrowwhite.svg' alt='Back'/></Link>
+            <Link to="/"><img className='back-button' src='resources/backarrowwhite.svg' alt='Back'/></Link>
             <p className="race__title">{race.Name}</p>
             <div className='race__description'>
                 <p>{race.Description}</p> 

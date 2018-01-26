@@ -81,7 +81,7 @@ const Ability = ({match}) => {
     };
 
     return <div className='ability'>
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link></div>
+            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             <div className="ability__title"><i className={ability.Icon}></i> {ability.Name}</div>
             <p>{getAbilityDescription()}</p>
             <table>
@@ -89,8 +89,8 @@ const Ability = ({match}) => {
                     <tr>
                         <td>Cost</td>
                         <td>
-                            <img src="/resources/Mineral.gif" alt="Minerals"/> {ability['Mineral Cost']}&nbsp;
-                            <img src="/resources/Vespine.gif" alt="Vespine" /> {ability['Vespine Cost']} &nbsp;
+                            <img src="resources/Mineral.gif" alt="Minerals"/> {ability['Mineral Cost']}&nbsp;
+                            <img src="resources/Vespine.gif" alt="Vespine" /> {ability['Vespine Cost']} &nbsp;
                         </td>
                     </tr>
                     <tr>
@@ -122,7 +122,7 @@ const Weapon = ({match}) => {
     const weapon = allWeapons.find(weapon => weapon.Name == match.params.weapon);
 
     return <div className='weapon'>
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link></div>
+            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             <div className="weapon__title"><i className={weapon.Icon}></i> {weapon.Name}</div>
 
             <table>
@@ -197,7 +197,7 @@ const Upgrade = ({match}) => {
                 {getLevelLink(3)}
             </div>
 
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link></div>
+            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             <div className='upgrade__title'><i className={upgrade.Icon}></i> {upgrade.Name}</div> 
 
             
@@ -207,8 +207,8 @@ const Upgrade = ({match}) => {
                         <td>Cost</td>
                         
                         <td>
-                            <img src="/resources/Mineral.gif" alt="Minerals"/> {upgrade.getMineralCost(match.params.more || 1)}&nbsp;
-                            <img src="/resources/Vespine.gif" alt="Vespine" /> {upgrade.getVespineCost(match.params.more || 1)} &nbsp;
+                            <img src="resources/Mineral.gif" alt="Minerals"/> {upgrade.getMineralCost(match.params.more || 1)}&nbsp;
+                            <img src="resources/Vespine.gif" alt="Vespine" /> {upgrade.getVespineCost(match.params.more || 1)} &nbsp;
                         </td>
                     </tr>
 
@@ -254,26 +254,26 @@ const Unit = ({match}) => {
     }
     const backLink = () => {
         if (showAdvanced === 'stats') {
-            return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+            return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>;
             // return <Link to={`/race/${match.params.race}/unit/${unit.Name}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
         } else if (showAdvanced === 'more') {
-            return <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+            return <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>;
         } else {
-            return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>;
+            return <Link to={`/race/${match.params.race}/units`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>;
         }
     }
 
     const statSwitcher = () => {
         if (showAdvanced === 'stats') {
         return <div className="unit-stats-page-selector">
-            <img src='/resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
-            <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`}><img src='/resources/arrow-right.svg' alt="Page 2"/></Link>
+            <img src='resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
+            <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link>
         </div>;
 
         } else if (showAdvanced === 'more') {
             return <div className="unit-stats-page-selector">
-                <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img src='/resources/arrow-left.svg' alt="Page 1"/></Link>
-                <img src='/resources/arrow-right.svg' className="unit-stats-page-selector--active" alt="Page 2"/>
+                <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img src='resources/arrow-left.svg' alt="Page 1"/></Link>
+                <img src='resources/arrow-right.svg' className="unit-stats-page-selector--active" alt="Page 2"/>
                 </div>;
         }
         return '';
@@ -315,9 +315,9 @@ const Unit = ({match}) => {
             <tr style={{display:unit['Cost']?'':'none'}}>
                 <td>Cost</td>
                 <td>
-                <img src="/resources/Mineral.gif" alt="Minerals"/> {unit['Mineral Cost']}&nbsp;
-                <img src="/resources/Vespine.gif" alt="Vespine" /> {unit['Vespine Cost']} &nbsp;
-                <img src={`/resources/Supply_${unit.Race}.png`} alt="Supply" /> {unit['Supply Cost']}</td>
+                <img src="resources/Mineral.gif" alt="Minerals"/> {unit['Mineral Cost']}&nbsp;
+                <img src="resources/Vespine.gif" alt="Vespine" /> {unit['Vespine Cost']} &nbsp;
+                <img src={`resources/Supply_${unit.Race}.png`} alt="Supply" /> {unit['Supply Cost']}</td>
             </tr>
 
             <tr>
@@ -390,10 +390,10 @@ const Unit = ({match}) => {
                     <td>Sight Range</td>
                     <td>{unit['Sight Range']}</td>
                 </tr>
-                <tr style={{display:unit['Seek Range']?'':'none'}}>
+                {/* <tr style={{display:unit['Seek Range']?'':'none'}}>
                     <td>Seek Range</td>
                     <td>{unit['Seek Range']}</td>
-                </tr>
+                </tr> */}
                 <tr style={{display:strToArray(unit['Attributes']).length ? '' : 'none'}}>
                     <td>Attributes</td>
                     <td><small>{strToArray(unit['Attributes']).join(', ')}</small></td>
@@ -419,7 +419,7 @@ const Units = ({match}) => {
     const page = Number(match.params.page || 0);
     
     return <div className='unit-labels-container'>
-        <Link to={`/race/${match.params.race}`}><img className='back-button' src='/resources/backarrow.svg' alt='Back'/></Link>
+        <Link to={`/race/${match.params.race}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>
 
         <div className='unit-labels'>
             {getUnitList(units, page, match)}

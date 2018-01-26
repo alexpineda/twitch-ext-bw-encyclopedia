@@ -1082,7 +1082,7 @@
     "Target Attributes": ["Air", "Ground"]
 }, {
     "Name": "Nuclear Strike",
-    "Icon": "cmdbtn cmdbtn-icon311",
+    "Icon": "cmdbcmdbtn-icon311tn ",
     "Technology": "Nuclear Strike",
     "What uses this?": "Terran Ghost",
     "Damage": "600",
