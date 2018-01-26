@@ -6,7 +6,7 @@ const RaceItem = ({name, match}) => {
     const race = races.find(race => race.Name === name);
 
     return <div className='races-list-item'>
-        <Link to={`/race/${name}`} style={{color:race.Color}} className='race action-item'>{ name }</Link>
+        <Link to={`/race/${name}`} style={{color:race.Color}} className='race action-item-start'>{ name }</Link>
     </div>;
 }
 

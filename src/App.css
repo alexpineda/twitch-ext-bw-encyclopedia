@@ -16,6 +16,14 @@ a {
   background-color:#ddd;
 }
 
+.action-item-start {
+  font-family: Bungee, 'sans serif';
+}
+
+.action-item-start:hover {
+  color: white !important;
+}
+
 .action-item {
   font-family: Bungee, 'sans serif';
   color:black;
@@ -25,6 +33,16 @@ a {
   background-color: white;
   color:black;
 }
+
+
+.action-item--negative {
+  color:white;
+}
+
+.action-item--negative:hover {
+  color:black;
+}
+
 
 .text {
   padding: 4px;
@@ -76,17 +94,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
-.races-list-item:hover {
-  background-color: white;
-}
-
-
-
-.action-item--negative {
-  color:white;
-}
-
 
 
 .races-list-item a {
