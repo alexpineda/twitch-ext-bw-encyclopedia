@@ -20,8 +20,7 @@ import {
 
 import reducers from './reducers';
 
-import ReactTooltip from 'react-tooltip';
-import { readSync } from 'fs';
+import { AnimatedSwitch } from 'react-router-transition';
 
 
 
@@ -145,13 +144,29 @@ function logPageView(location) {
   ReactGA.pageview(location.pathname + location.search);
 }
 
+var easingEq = require('eases/circ-in-out')
+
+const mapStyles= (styles) => ({
+  // transform: `rotate3d(1, ${styles.scale}, ${styles.scale}, ${styles.scale*-360}deg)`,
+  // transform: `scale(${styles.scale},${styles.scale})`,
+  // transform: `translateX(${(1-styles.scale)*100}%)`,
+  'z-index': styles.zindex,
+  opacity: easingEq(styles.opacity)
+});
+
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
       <Router>
-        <div id='twitch-extension'>
+      <AnimatedSwitch
+          atEnter={{ opacity: 0.3, scale:0.95, zindex:0 }}
+          atLeave={{ opacity: 0, scale:1.1, zindex:99 }}
+          atActive={{ opacity: 1, scale:1, zindex:0}}
+          mapStyles={mapStyles}
+          className="twitch-extension"
+        >
         {/* <ReactTooltip place="bottom" type="dark" effect="solid" offset={{top: -10, left: -10}} delayShow={500}/> */}
          <Route exact path="/" component={Races}/>
          <Route exact path="/links" component={Links}/>
@@ -168,7 +183,7 @@ class App extends Component {
          <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
          <Route exact path="/compare" component={Compare}/>
          <Route exact path="/compare/:race" component={Compare}/>
-        </div>
+        </AnimatedSwitch>
       </Router>
       </Provider>
     );

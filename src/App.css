@@ -10,10 +10,17 @@ a {
   text-decoration: none;
 }
 
-#twitch-extension {
+.twitch-extension {
   width:320px;
   height:400px;
   background-color:#ddd;
+  position: relative;
+}
+
+.twitch-extension > div {
+  width:320px;
+  height:400px;
+  position: absolute;
 }
 
 .action-item-start {
@@ -106,6 +113,7 @@ a {
   /* flex:1; */
   padding: 1em;
   height: 100%;
+  
 }
 
 .race__title {
@@ -128,6 +136,8 @@ a {
 
 .unit-labels-container {
   padding: 1em;
+  background-color:#ddd;
+  height: 100%;
 }
 
 .unit-labels {
@@ -137,7 +147,7 @@ a {
   background-color: black;
   padding: 1em;
   border-radius: 5px;
-  /* height: 100%; */
+  
 }
 
 .unit-label {
@@ -146,6 +156,8 @@ a {
 
 .unit, .upgrade, .ability, .weapon {
   padding: 1em;
+  background-color:#ddd;
+  height: 100%;
 }
 
 .unit__title, .upgrade__title, .ability__title, .weapon__title {
