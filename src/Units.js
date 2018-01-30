@@ -353,6 +353,11 @@ const Unit = ({match}) => {
                 <td>{unit['Hit Points']}</td>
             </tr>
 
+            <tr style={{display:unit['Shields']?'':'none'}}>
+                <td>Shields</td>
+                <td>{unit['Shields']}</td>
+            </tr>
+
             <tr style={{display:unit['Cost']?'':'none'}}>
                 <td>Cost</td>
                 <td>
@@ -460,6 +465,7 @@ const Units = ({match}) => {
     const page = Number(match.params.page || 0);
     
     return <div className='unit-labels-container'>
+    <span class="unit-header">{match.params.race.toUpperCase()}</span>
         <Link to={`/race/${match.params.race}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>
 
         <div className='unit-labels'>

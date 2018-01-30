@@ -90,12 +90,17 @@ a {
 
 .starcraft .race {
   background-color: rgba(0,0,0,0.5);
+  background-image: linear-gradient(rgb(90, 79, 68), rgb(27, 27, 27));
   border-radius: 2px;
+  border: 1px solid black;
+  padding: 0.55em;
+  
 }
 
 .races {
   flex-direction: row;
   display: flex;
+  padding:2em 0;
   
 }
 
@@ -105,10 +110,9 @@ a {
 }
 
 .races-list-item {
-  flex:1;
-  display:flex;
-  align-items: center;
-  justify-content: center;
+  flex:1 0;
+  justify-content: space-between;
+  flex-basis: 7em;
 }
 
 
@@ -159,7 +163,7 @@ a {
   background-color: black;
   padding: 1em;
   border-radius: 40px;
-  
+  margin: 1.2em 0.4em;
 }
 
 .unit-label {
@@ -261,4 +265,8 @@ table {
   text-align: center;
   top: 10px;
   left: 0;
+}
+
+.unit-header.unit-header--light {
+  color: #dfe2e8;
 }
