@@ -1,14 +1,19 @@
 [{
     "Name": "Stim Packs",
-    "Description": "Reduces the cooldown and increases the movement speed of {unit} by 50%. Stim Pack effects are not cumulative. If the {unit} has 10 or less health they cannot use Stimpack.",
+    "Description": "Reduces the cooldown and increases the movement speed by 50%. Stim Pack effects are not cumulative. If the affected unit has 10 or less health they cannot use Stimpack.",
+    "Link": "http://liquipedia.net/starcraft/Firebat#Stim_Pack",
     "Icon": "cmdbtn cmdbtn-icon237",
     "Race": "Terran",
     "Cost": "100  100",
+    "_Duration": "9.76 seconds",
     "Research Time": "1200 frames",
     "Researched at": "Terran Academy",
     "Used by": ["Terran Firebat", "Terran Marine", "Hero Jim Raynor Marine", "Hero Gui Montag"]
 }, {
     "Name": "Lockdown",
+    "Description": "Disables targeted mechanical unit.",
+    "Link": "http://liquipedia.net/starcraft/Ghost#Lockdown",
+    "Duration": "44 seconds",
     "Icon": "cmdbtn cmdbtn-icon240",
     "Race": "Terran",
     "Cost": "200  200",
@@ -21,6 +26,8 @@
     "Used by": ["Terran Ghost", "Hero Alexei Stukov", "Hero Sarah Kerrigan", "Hero Infested Duran", "Hero Samir Duran"]
 }, {
     "Name": "EMP Shockwave",
+    "Description": "EMP fires a special missile that flies to the targeted point and explodes. Any unit or building within a 3-matrix radius of the blast point will have its shields and energy reduced to zero.",
+    "Link": "http://liquipedia.net/starcraft/EMP_Shockwave",
     "Icon": "cmdbtn cmdbtn-icon241",
     "Race": "Terran",
     "Cost": "200  200",
@@ -33,6 +40,8 @@
     "Used by": ["Terran Science Vessel", "Hero Magellan"]
 }, {
     "Name": "Spider Mines",
+    "Description": "Deploys a Spider Mine on the targeted spot. Spider Mines explode dealing 125 explosive damage.",
+    "Link": "http://liquipedia.net/starcraft/Vulture#Spider_Mine",
     "Icon": "cmdbtn cmdbtn-icon243",
     "Race": "Terran",
     "Cost": "100  100",
@@ -41,17 +50,22 @@
     "Targets": "Positions",
     "Weapon": "Spider Mines",
     "Order": "PlaceMine",
-    "Used by": ["Terran Vulture", "Hero Jim Raynor Vulture"]
+    "Used by": "Terran Vulture"
 }, {
     "Name": "Scanner Sweep",
+    "Description": "Temporarily reveals and provides detection for a targeted area on the map. Note that invisible enemies that move outside the range of the sweep remain visible until the scan wears off.",
     "Icon": "cmdbtn cmdbtn-icon250",
     "Race": "Terran",
     "Energy Cost": "50",
     "Targets": ["Positions", "Units"],
     "Order": "CastScannerSweep",
+    "Research Time": "0 frames",
+    "Researched at": "Terran Comsat Station",
     "Used by": "Terran Comsat Station"
 }, {
     "Name": "Tank Siege Mode",
+    "Description": "Transforms the Tank into Siege Mode where it gains Splash Damage, greatly increased range and damage at the cost of losing all mobility, having a minimum range, and a slower firing rate.",
+    "Duration":"Until returned to Tank Mode",
     "Icon": "cmdbtn cmdbtn-icon245",
     "Race": "Terran",
     "Cost": "150  150",
@@ -60,14 +74,21 @@
     "Used by": ["Terran Siege Tank Tank Mode", "Terran Siege Tank Siege Mode", "Hero Edmund Duke Tank Mode", "Hero Edmund Duke Siege Mode"]
 }, {
     "Name": "Defensive Matrix",
+    "Description": "Defensive Matrix creates a 250 Hit Point non-regenerating shield around the target unit. The effect wears off even if the shields haven't run out of Hit Points. Defensive Matrix has 0 armor and absorbs full damage of every damage type like protoss shields.",
+    "Link": "http://liquipedia.net/starcraft/Defensive_Matrix",
     "Icon": "cmdbtn cmdbtn-icon247",
     "Race": "Terran",
     "Energy Cost": "100",
+    "Duration": "60 seconds",
     "Targets": "Units",
     "Order": "CastDefensiveMatrix",
+    "Research Time": "0 frames",
+    "Researched at": "Terran Science Facility",
     "Used by": ["Terran Science Vessel", "Hero Magellan"]
 }, {
     "Name": "Irradiate",
+    "Description": "Irradiate surrounds the targeted unit with an aura of radioactive energy. It can be cast on any unit and deals 250 damage over a period of 37 in-game seconds to all biological units within a 2 hex radius of the affected unit.",
+    "Link": "http://liquipedia.net/starcraft/Irradiate",
     "Icon": "cmdbtn cmdbtn-icon242",
     "Race": "Terran",
     "Cost": "200  200",
@@ -80,6 +101,8 @@
     "Used by": ["Terran Science Vessel", "Hero Magellan"]
 }, {
     "Name": "Yamato Gun",
+    "Description": "Yamato Gun fires an intense blast of concentrated energy at the target, doing 260 points of explosive damage. The attack has a longer range than the Battlecruiser's sight range, allowing you to destroy towers and other defensive structures from a safe distance.",
+    "Link": "http://liquipedia.net/starcraft/Yamato_Gun",
     "Icon": "cmdbtn cmdbtn-icon251",
     "Race": "Terran",
     "Cost": "100  100",
@@ -92,17 +115,20 @@
     "Used by": ["Hero Hyperion", "Terran Battlecruiser", "Hero Gerard DuGalle", "Hero Norad II"]
 }, {
     "Name": "Cloaking Field",
+    "Description": "Makes the Wraith invisible to all units except when Detection is present.",
+    "Link": "http://liquipedia.net/starcraft/Wraith#Cloak",
     "Icon": "cmdbtn cmdbtn-icon252",
     "Race": "Terran",
     "Cost": "150  150",
     "Research Time": "1500 frames",
     "Energy Cost": "25",
+    "Duration": "Until it uncloaks or energy is depleted",
     "Researched at": "Terran Control Tower",
     "Used by": ["Terran Wraith", "Hero Tom Kazansky"]
 }, {
     "Name": "Personnel Cloaking",
     "Description": "Makes the Ghost invisible to all units except detectors.",
-    "Duration": "0.93 energy drain per second",
+    "Duration": "Until it uncloaks or energy is depleted",
     "Icon": "cmdbtn cmdbtn-icon252",
     "Race": "Terran",
     "Cost": "100  100",
@@ -112,6 +138,8 @@
     "Used by": ["Terran Ghost", "Hero Alexei Stukov", "Hero Sarah Kerrigan", "Hero Infested Duran", "Hero Infested Kerrigan", "Hero Samir Duran"]
 }, {
     "Name": "Restoration",
+    "Link": "http://liquipedia.net/starcraft/Medic#Restoration",
+    "Description":"Removes Lockdown, Optic Flare, Irradiate, Plague, Ensnare, Parasite, and Maelstrom from targeted unit.",
     "Icon": "cmdbtn cmdbtn-icon366",
     "Race": "Terran",
     "Cost": "100  100",
@@ -124,6 +152,8 @@
     "Used by": "Terran Medic"
 }, {
     "Name": "Optical Flare",
+    "Link":"http://liquipedia.net/starcraft/Optical_Flare",
+    "Description": "This spell can be cast on a single unit. The sight range of the targeted unit is permanently reduced to 1 matrix. It also removes any detection ability that unit may possess. The affected unit will display a 'Blinded' tag in its information box when selected.",
     "Icon": "cmdbtn cmdbtn-icon373",
     "Race": "Terran",
     "Cost": "100  100",
@@ -136,12 +166,15 @@
     "Used by": "Terran Medic"
 }, {
     "Name": "Healing",
+    "Description": "Automatically (or on order) heals a close-by friendly biological ground unit. On Fastest Game Speed, heals 18.6 health per second.",
     "Icon": "cmdbtn cmdbtn-icon365",
     "Race": "Terran",
     "Energy Cost": "1",
     "Targets": ["Positions", "Units"],
     "Order": "MedicHeal",
-    "Used by": "Terran Medic"
+    "Used by": "Terran Medic",
+    "Researched at": "Terran Academy",
+    "Research Time": "0 frames"
 }, {
     "Name": "Nuclear Strike",
     "Description": "Launches a nuclear strike at the targeted spot. Requires a Nuclear Silo equipped with a Nuke.",
@@ -149,11 +182,15 @@
     "Race": "Terran",
     "Targets": ["Positions", "Units"],
     "Weapon": "Nuclear Strike",
+    "Researched at": "Terran Nuclear Silo",
+    "Research Time": "0 frames",
     "Order": "NukePaint",
     "Used by": "Terran Ghost"
 }, {
     "Name": "Burrowing",
     "Icon": "cmdbtn cmdbtn-icon259",
+    "Link": "http://liquipedia.net/starcraft/Burrow",
+    "Description": "Burrow is a first tier Zerg ability that enables ground units to burrow in the ground, visible only to detectors. A burrowed unit cannot move or attack, but it still provides vision.",
     "Race": "Zerg",
     "Cost": "100  100",
     "Research Time": "1200 frames",
@@ -161,6 +198,8 @@
     "Used by": ["Hero Hunter Killer", "Zerg Zergling", "Hero Devouring One", "Zerg Defiler", "Zerg Hydralisk", "Zerg Drone", "Zerg Infested Terran", "Hero Unclean One", "Zerg Lurker"]
 }, {
     "Name": "Infestation",
+    "Link": "http://liquipedia.net/starcraft/Infest_Command_Center",
+    "Description": "Infests heavily damaged (< 1/2 HP) Terran Command Center to make an Infested Command Center.",
     "Icon": "cmdbtn cmdbtn-icon313",
     "Race": "Zerg",
     "Targets": "Units",
@@ -168,6 +207,8 @@
     "Used by": ["Zerg Queen", "Hero Matriarch"]
 }, {
     "Name": "Spawn Broodlings",
+    "Link": "http://liquipedia.net/starcraft/Spawn_Broodling",
+    "Description": "A Queen with this ability can instantaneously destroy any non-robotic ground unit in the game as the Broodling larvae she plants rapidly mature and, feeding on the victim from the inside, destroy their host.",
     "Icon": "cmdbtn cmdbtn-icon40",
     "Race": "Zerg",
     "Cost": "100  100",
@@ -180,15 +221,21 @@
     "Used by": ["Zerg Queen", "Hero Matriarch"]
 }, {
     "Name": "Dark Swarm",
+    "Link": "http://liquipedia.net/starcraft/Dark_Swarm",
+    "Description": "Dark Swarm is a defensive spell encompassing a 6x6 matrix area in which ground units take no damage from ranged weapons. Only melee attacks, splash damage, or special weaponry are able to affect a unit underneath Dark Swarm. The Dark Swarm lasts for approximately 38 seconds each time it is cast. All ground units, including enemy units, are protected.",
     "Icon": "cmdbtn cmdbtn-icon270",
     "Race": "Zerg",
     "Energy Cost": "100",
     "Targets": ["Positions", "Units"],
     "Weapon": "Dark Swarm",
+    "Researched at": "Zerg Defiler Mound",
+    "Research Time": "0 frames",
     "Order": "CastDarkSwarm",
     "Used by": ["Zerg Defiler", "Hero Unclean One"]
 }, {
     "Name": "Plague",
+    "Link": "http://liquipedia.net/starcraft/Plague",
+    "Description": "Plague affects any unit or building with a 4x4 matrix of the target. A unit affected by a Plague slowly begins to lose hit points (at about 11.8 damage per second) until either the maximum of 300 points of damage is done or the unit reaches one health.",
     "Icon": "cmdbtn cmdbtn-icon265",
     "Race": "Zerg",
     "Cost": "200  200",
@@ -201,6 +248,8 @@
     "Used by": ["Zerg Defiler", "Hero Unclean One"]
 }, {
     "Name": "Consume",
+    "Link": "http://liquipedia.net/starcraft/Consume",
+    "Description": "Consume replenishes the Defiler's energy points by sacrificing the life of one of your own Zerg units.",
     "Icon": "cmdbtn cmdbtn-icon302",
     "Race": "Zerg",
     "Cost": "100  100",
@@ -212,6 +261,8 @@
     "Used by": ["Zerg Defiler", "Hero Unclean One", "Hero Infested Kerrigan", "Hero Infested Duran"]
 }, {
     "Name": "Ensnare",
+    "Link": "http://liquipedia.net/starcraft/Ensnare",
+    "Description": "The viscous green goo expelled when a Queen uses her Ensnare ability will cover any unburrowed unit in a 4x4 matrix area, affecting them for about 25 seconds. Units covered with the goo have their movement rate cut by half. This can cause a host of problems for the enemy.",
     "Icon": "cmdbtn cmdbtn-icon267",
     "Race": "Zerg",
     "Cost": "100  100",
@@ -224,15 +275,20 @@
     "Used by": ["Zerg Queen", "Hero Matriarch", "Hero Infested Kerrigan"]
 }, {
     "Name": "Parasite",
+    "Link": "http://liquipedia.net/starcraft/Parasite",
+    "Description": "Queens can launch the parasitic creatures onto the unsuspecting host from up to 12 matrices away. Once the Parasite is attached, the controller of the Parasite can now see what the affected unit sees. If a unit with cloak detection has an attached parasite, then cloaked units will also be seen by the Parasite.",
     "Icon": "cmdbtn cmdbtn-icon271",
     "Race": "Zerg",
     "Energy Cost": "75",
     "Targets": "Units",
     "Weapon": "Parasite",
+    "Researched at": "Zerg Queens Nest",
+    "Research Time": "0 frames",
     "Order": "CastParasite",
     "Used by": ["Zerg Queen", "Hero Matriarch"]
 }, {
     "Name": "Lurker Aspect",
+    "Description": "Enables Hydralisks to morph into Lurkers.",
     "Icon": "cmdbtn cmdbtn-icon376",
     "Race": "Zerg",
     "Cost": "200  200",
@@ -242,6 +298,8 @@
     "Used by": "Zerg Hydralisk"
 }, {
     "Name": "Psionic Storm",
+    "Link": "http://liquipedia.net/starcraft/Psionic_Storm",
+    "Description": "When casting Psionic Storm lightning-like images appear over a 3x3 matrix area. Units in this area rapidly receive 8 volleys of 14 damage. This damage is received regardless of armour or unit size. You can dodge Storms with proper micro, sparing your units from some damage.",
     "Icon": "cmdbtn cmdbtn-icon275",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -254,6 +312,8 @@
     "Used by": ["Hero Infested Kerrigan", "Protoss High Templar", "Hero Tassadar"]
 }, {
     "Name": "Hallucination",
+    "Link": "http://liquipedia.net/starcraft/Hallucination",
+    "Description": "Hallucination creates two Hallucinations which have the same appearance as a targeted unit - friendly or otherwise. To your enemy, these Hallucinations will look like regular units, whereas to you they will look like blueish copies, distinguishing them from your regular units.",
     "Icon": "cmdbtn cmdbtn-icon277",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -265,6 +325,8 @@
     "Used by": ["Protoss High Templar", "Hero Tassadar"]
 }, {
     "Name": "Recall",
+    "Link": "http://liquipedia.net/starcraft/Recall",
+    "Description": "Recall opens a 5x5 wormhole which teleports all friendly units in the wormhole to the caster. You cannot Recall allied units, only your own.",
     "Icon": "cmdbtn cmdbtn-icon280",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -276,6 +338,8 @@
     "Used by": ["Protoss Arbiter", "Hero Danimoth"]
 }, {
     "Name": "Stasis Field",
+    "Link": "http://liquipedia.net/starcraft/Stasis_Field",
+    "Description": "Stasis Field freezes units in a 3x3 around the target area for approximately 60 in-game seconds. Stasised units cannot move, attack, be attacked or be affected by spells for the duration of the stasis.",
     "Icon": "cmdbtn cmdbtn-icon278",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -288,12 +352,17 @@
     "Used by": ["Protoss Arbiter", "Hero Danimoth"]
 }, {
     "Name": "Archon Warp",
+    "Description": "Two High Templars, when selected together, can merge into an Archon.",
     "Icon": "cmdbtn cmdbtn-icon68",
     "Race": "Protoss",
     "Targets": "Units",
-    "Used by": "Protoss High Templar"
+    "Used by": "Protoss High Templar",
+    "Researched at": "Protoss Templar Archives",
+    "Research Time": "0 frames"
 }, {
     "Name": "Disruption Web",
+    "Description": "Disruption Web affects a 120x80 pixel area for a short duration, preventing all units and buildings under it from attacking. Casters are still able to cast, and spider mines will still activate.",
+    "Link": "http://liquipedia.net/starcraft/Disruption_Web",
     "Icon": "cmdbtn cmdbtn-icon369",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -306,6 +375,8 @@
     "Used by": ["Protoss Corsair", "Hero Raszagal"]
 }, {
     "Name": "Mind Control",
+    "Description": "Mind Control is an offensive spell cast by the Protoss Dark Archon which dominates the mind of a single controllable unit, transferring control of the unit to the player who casts the spell. A unit Mind Controlled retains its unique upgrades, but not its bonuses to Attack, Armor or Shields.",
+    "Link": "http://liquipedia.net/starcraft/Mind_Control",
     "Icon": "cmdbtn cmdbtn-icon371",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -318,12 +389,17 @@
     "Used by": "Protoss Dark Archon"
 }, {
     "Name": "Dark Archon Meld",
+    "Description": "Two Dark Templars, when selected together, can merge into a Dark Archon",
     "Icon": "cmdbtn cmdbtn-icon63",
     "Race": "Protoss",
     "Targets": "Units",
-    "Used by": "Protoss Dark Templar"
+    "Used by": "Protoss Dark Templar",
+    "Researched at": "Protoss Templar Archives",
+    "Research Time": "0 frames"
 }, {
     "Name": "Feedback",
+    "Description": "Feedback, when cast on unit, that unit loses all of its energy and will take the amount of damage equal to the energy lost.",
+    "Link": "http://liquipedia.net/starcraft/Feedback",
     "Icon": "cmdbtn cmdbtn-icon372",
     "Race": "Protoss",
     "Cost": "100  100",
@@ -332,9 +408,13 @@
     "Targets": "Units",
     "Weapon": "Feedback",
     "Order": "CastFeedback",
-    "Used by": "Protoss Dark Archon"
+    "Used by": "Protoss Dark Archon",
+    "Researched at": "Protoss Templar Archives",
+    "Research Time": "0 frames"
 }, {
     "Name": "Maelstrom",
+    "Description": "Maelstrom is an area of effect (3 matrix radius) ability that will instantly stun (prevents the affected units from moving, attacking, or utilizing any special abilities) all organic ground or air units for a short duration.",
+    "Link": "http://liquipedia.net/starcraft/Maelstrom",
     "Icon": "cmdbtn cmdbtn-icon381",
     "Race": "Protoss",
     "Cost": "100  100",

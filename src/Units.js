@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import history from './history';
+import { isBuffer } from 'util';
 
 const allUnits = require('./bwapi-data/json/units.json');
 const allWeapons = require('./bwapi-data/json/weapons.json');
@@ -17,26 +18,21 @@ const strToArray = (strOrArray) => {
     return strOrArray;
 }
 
+const createDescriptionContent= (unit) => {
+    if (!unit.Description) return '';
+    if (!unit.Link) return unit.Description;
+    return unit.Description + ` <a target="_top" href="${unit.Link}">[1]</a>`;
+}
+
 const createWeaponLink = (unitName, weaponName, race) => {
-    let extra = '';
-    switch (weaponName){
-        case 'Psi Blades x 2':
-            weaponName = 'Psi Blades';
-            extra = ' (x2)';
-            break;
-        case 'Flame Thrower x 3':
-            weaponName = 'Flame Thrower';
-            extra = ' (x3)';
-            break;
-        case 'Halo Rockets x 4':
-            weaponName = 'Halo Rockets';
-            extra = ' (x4)';
-            break;
-        default:
-    }
+    
     const weapon = allWeapons.find(weapon => weapon.Name === weaponName);
     if (!weapon) return "N/A";
 
+    let extra = '';
+    if (weapon.Multiplier) {
+        extra = ` (x${weapon.Multiplier})`
+    }
     return <Link to={`/race/${race}/unit/${unitName}/weapon/${weapon.Name}`} title={weapon.Name} data-tip={weapon.Name}><i className={weapon.Icon}></i>{extra}</Link>
 };
 
@@ -75,16 +71,11 @@ const createUnitLink = (unitName, race) => {
 const Ability = ({match}) => {
     const ability = allAbilities.find(ability => ability.Name == match.params.ability);
 
-    const getAbilityDescription = () => {
-        if (!ability.Description) return '';
-        return ability.Description.replace(/{unit}/g, match.params.unit);
-    };
-
     return <div className='ability'>
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             <span className='unit-header'>Ability</span>
-            <div className="ability__title"><i className={ability.Icon}></i> {ability.Name}</div>
-            <p>{getAbilityDescription()}</p>
+            <div className="ability__title"><i className={ability.Icon}></i> <span>{ability.Name}</span></div>
+            <p className="ability__description" dangerouslySetInnerHTML={{__html:createDescriptionContent(ability)}}></p>
             <table>
                 <tbody>
                     <tr>
@@ -110,7 +101,7 @@ const Ability = ({match}) => {
                         <td>Researched at</td>
                         <td>{createUnitLink(ability['Researched at'], match.params.race)}</td>
                     </tr>
-                    <tr>
+                    <tr style={{display:ability['Targets'] ? '':'none'}}>
                         <td>Targets</td>
                         <td>{ability['Targets']}</td>
                     </tr>
@@ -126,7 +117,7 @@ const Weapon = ({match}) => {
     return <div className='weapon'>
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             <span className='unit-header'>Weapon</span>
-            <div className="weapon__title"><i className={weapon.Icon}></i> {weapon.Name}</div>
+            <div className="weapon__title"><i className={weapon.Icon}></i> <span>{weapon.Name}</span></div>
 
             <table>
                 <tbody>
@@ -238,8 +229,8 @@ const Upgrade = ({match}) => {
             <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
             
 
-            <div className='upgrade__title'><i className={upgrade.Icon}></i> {upgrade.Name}</div> 
-
+            <div className='upgrade__title'><i className={upgrade.Icon}></i> <span>{upgrade.Name}</span></div> 
+            <p className="upgrade__description" dangerouslySetInnerHTML={{__html:createDescriptionContent(upgrade)}}></p>
             
             <table>
                 <tbody>
@@ -334,13 +325,13 @@ const Unit = ({match}) => {
     return <div className='unit'>
         {/* <div><a onClick={goBack} href='#'>Back</a></div> */}
        {tempRedirect()}
-       <span className='unit-header'>Unit</span>
+       <span className='unit-header'>{unit.isBuilding ? 'Building' : 'Unit'}</span>
         {statSwitcher()}
         <div >{backLink()}</div>
         
 
-        <div className="unit__title" ><i className={unit.Icon}></i> <p>{unit.Name}</p></div> 
-        <p style={{display: !showAdvanced ? 'block':'none'}} dangerouslySetInnerHTML={{__html:getDescription()}}></p>
+        <div className="unit__title" ><i className={unit.Icon}></i> <span>{unit.Name}</span></div> 
+        <p style={{display: !showAdvanced ? 'block':'none'}} dangerouslySetInnerHTML={{__html:createDescriptionContent(unit)}}></p>
 
         <div style={{textAlign:'center'}}>
         <Link className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/stats`} style={{display: !showAdvanced ? 'block':'none'}}> Show Stats</Link>
@@ -353,102 +344,131 @@ const Unit = ({match}) => {
                 <td>{unit['Hit Points']}</td>
             </tr>
 
-            <tr style={{display:unit['Shields']?'':'none'}}>
-                <td>Shields</td>
-                <td>{unit['Shields']}</td>
-            </tr>
+            {
+                unit['Shields'] ?
+                <tr style={{display:unit['Shields']?'':'none'}}>
+                    <td>Shields</td>
+                    <td>{unit['Shields']}</td>
+                </tr> : ''
+            }
 
-            <tr style={{display:unit['Cost']?'':'none'}}>
-                <td>Cost</td>
-                <td>
-                <img src="resources/Mineral.gif" alt="Minerals"/> {unit['Mineral Cost']}&nbsp;
-                <img src="resources/Vespine.gif" alt="Vespine" /> {unit['Vespine Cost']} &nbsp;
-                <img src={`resources/Supply_${unit.Race}.png`} alt="Supply" /> {unit['Supply Cost']}</td>
-            </tr>
-
+            {
+                unit['Cost'] ?
+                <tr >
+                    <td>Cost</td>
+                    <td>
+                    <img src="resources/Mineral.gif" alt="Minerals"/> {unit['Mineral Cost']}&nbsp;
+                    <img src="resources/Vespine.gif" alt="Vespine" /> {unit['Vespine Cost']} &nbsp;
+                    <img src={`resources/Supply_${unit.Race}.png`} alt="Supply" /> {unit['Supply Cost']}</td>
+                </tr> : ''
+            }
+            
             <tr>
                 <td>Build Time</td>
                 <td>{unit['Build Time']} seconds</td>
             </tr>
 
-            <tr style={{display:unit['Ground Weapon']?'':'none'}}>
-                <td>Ground Weapon</td>
-                <td>{createWeaponLink(unit.Name, unit['Ground Weapon'], match.params.race)}</td>
-            </tr>
+            {
+                unit['Ground Weapon'] ? 
+                <tr>
+                    <td>Ground Weapon</td>
+                    <td>{createWeaponLink(unit.Name, unit['Ground Weapon'], match.params.race)}</td>
+                </tr> : ''
+            }
+            
+            {
+                unit['Air Weapon'] ?
+                <tr >
+                    <td>Air Weapon</td>
+                    <td>{createWeaponLink(unit.Name, unit['Air Weapon'], match.params.race)}</td>
+                </tr> : ''
+            }
+            
+            {
+                unit['Supply Provided'] ?
+                <tr>
+                    <td>Supply Provided</td>
+                    <td>{""+(unit['Supply Provided']/2)}</td>
+                </tr> : ''
+            }
 
-            <tr style={{display:unit['Air Weapon']?'':'none'}}>
-                <td>Air Weapon</td>
-                <td>{createWeaponLink(unit.Name, unit['Air Weapon'], match.params.race)}</td>
-            </tr>
+            
 
-            <tr style={{display:unit['Supply Provided'] ? '' :'none'}}>
-                <td>Supply Provided</td>
-                <td>{""+(unit['Supply Provided']/2)}</td>
+            <tr>
+                <td>Armor</td>
+                <td>{unit['Armor']}</td>
             </tr>
+            
+            { strToArray(unit['Upgrades']).length ? 
+                 <tr >
+                        <td>Upgrades</td>
+                        <td>
+                            {
+                                strToArray(unit['Upgrades']).map(upgrade => {
+                                return <span key={upgrade}>{createUpgradeLink(unit.Name, upgrade, match.params.race)} </span>
+                            })}
+                        </td>
+                </tr> : '' 
+            }
 
-            <tr style={{display:strToArray(unit['Abilities']).length ? '' : 'none'}}>
-                <td>Abilities</td>
-                <td>
-                {
-                    strToArray(unit['Abilities']).map(ability => {
-                    return <span key={ability}>{createAbilityLink(unit.Name, ability, match.params.race)}</span>
-                })}
-                </td>
-            </tr>
-
-            <tr style={{display:strToArray(unit['Required Units']).length ? '' : 'none'}}>
-                <td>Required Units</td>
-                <td>
-                {
-                    strToArray(unit['Required Units']).map(requiredUnit => {
-                    return <span key={requiredUnit}>{createUnitLink(requiredUnit, match.params.race)} </span>
-                })}</td>
-            </tr>
             </tbody>
         </table>
 
         <table style={{display:showAdvanced === 'more' ? 'table':'none'}}>
             <tbody>
-                <tr style={{display:strToArray(unit['Upgrades']).length ? '' : 'none'}}>
-                    <td>Upgrades</td>
-                    <td>
+                { strToArray(unit['Abilities']).length ?
+                    <tr >
+                        <td>Abilities</td>
+                        <td>
                         {
-                            strToArray(unit['Upgrades']).map(upgrade => {
-                            return <span key={upgrade}>{createUpgradeLink(unit.Name, upgrade, match.params.race)} </span>
+                            strToArray(unit['Abilities']).map(ability => {
+                            return <span key={ability}>{createAbilityLink(unit.Name, ability, match.params.race)}</span>
                         })}
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Armor</td>
-                    <td>{unit['Armor']}</td>
-                </tr>
-
+                        </td>
+                    </tr> : ''
+                }
                 <tr>
                     <td>Size</td>
                     <td>{unit['SizeType']}</td>
                 </tr>
-                <tr style={{display:strToArray(unit['Top Speed']).length ? '' : 'none'}}>
-                    <td>Speed</td>
-                    <td>{unit['Top Speed']}</td>
-                </tr>
-                <tr style={{display:unit['Sight Range']?'':'none'}}>
-                    <td>Sight Range</td>
-                    <td>{unit['Sight Range']}</td>
-                </tr>
-                {/* <tr style={{display:unit['Seek Range']?'':'none'}}>
-                    <td>Seek Range</td>
-                    <td>{unit['Seek Range']}</td>
-                </tr> */}
-                <tr style={{display:strToArray(unit['Attributes']).length ? '' : 'none'}}>
-                    <td>Attributes</td>
-                    <td><small>{strToArray(unit['Attributes']).join(', ')}</small></td>
-                </tr>
+                { strToArray(unit['Top Speed']).length ?
+                    <tr>
+                        <td>Speed</td>
+                        <td>{unit['Top Speed']}</td>
+                    </tr> : ''
+                }
 
-                <tr style={{display:unit['Created By'] ? '' : 'none'}}>
-                    <td>Created By</td>
-                    <td>{createUnitLink(unit['Created By'], unit.Race)}</td>
-                </tr>
+                { unit['Sight Range'] ?
+                    <tr>
+                        <td>Sight Range</td>
+                        <td>{unit['Sight Range']}</td>
+                    </tr> : ''
+                }
+
+                { strToArray(unit['Attributes']).length ? 
+                    <tr>
+                        <td>Attributes</td>
+                        <td><small>{strToArray(unit['Attributes']).join(', ')}</small></td>
+                    </tr> : ''
+                }
+
+                { strToArray(unit['Required Units']).length ?
+                    <tr>
+                        <td>Required Units</td>
+                        <td>
+                        {
+                            strToArray(unit['Required Units']).map(requiredUnit => {
+                            return <span key={requiredUnit}>{createUnitLink(requiredUnit, match.params.race)} </span>
+                        })}</td>
+                    </tr> : ''
+                }
+
+                { unit['Created By'] ?
+                    <tr>
+                        <td>Created By</td>
+                        <td>{createUnitLink(unit['Created By'], unit.Race)}</td>
+                    </tr> : ''
+                }
 
             </tbody>
         </table>
@@ -456,21 +476,73 @@ const Unit = ({match}) => {
     </div>;
 }
 
-const getUnitList = (units, start, match) => {
-return units.map(unit => <span  key={unit.Name} className="text" data-tip={unit.Name}>{createUnitLink(unit.Name, unit.Race)}</span>);
+
+
+
+
+const getBuildingListForRace = (race) => {
+    const units = allUnits.filter(unit => unit.Race === race);
+    return units.filter(unit => unit.isBuilding).map(unit => <span  key={unit.Name} className="text" data-tip={unit.Name}>{createUnitLink(unit.Name, unit.Race)}</span>);
 };
+
+const getUnitListForRace = (race) => {
+    const units = allUnits.filter(unit => unit.Race === race);
+    return units.filter(unit => !unit.isBuilding).map(unit => <span  key={unit.Name} className="text" data-tip={unit.Name}>{createUnitLink(unit.Name, unit.Race)}</span>);
+};
+const getAbilityListForRace = (race) => {
+    
+    const abilities = allAbilities.filter(unit => unit.Race === race);
+    return abilities.map(ability => <span  key={ability.Name} className="text" data-tip={ability.Name}>{createAbilityLink(ability['Researched at'],ability.Name, ability.Race)}</span>);
+}
+
+const getUpgradeListForRace = (race) => {
+    
+    const upgrades = allUpgrades.filter(unit => unit.Race === race);
+    return upgrades.map(upgrade => <span  key={upgrade.Name} className="text" data-tip={upgrade.Name}>{createUpgradeLink(upgrade['Upgraded at'],upgrade.Name, upgrade.Race)}</span>);
+
+}
 
 const Units = ({match}) => {
     const units = allUnits.filter(unit => unit.Race == match.params.race);
-    const page = Number(match.params.page || 0);
+    const page = Number(match.params.page || 1);
     
     return <div className='unit-labels-container'>
     <span class="unit-header">{match.params.race.toUpperCase()}</span>
         <Link to={`/race/${match.params.race}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>
 
-        <div className='unit-labels'>
-            {getUnitList(units, page, match)}
+        <div className="unit-labels-container__switcher">
+            <ul>
+                <li><Link to={`/race/${match.params.race}/units/1`} className={page === 1 ? 'active':''}>Units</Link></li>
+                <li><Link to={`/race/${match.params.race}/units/2`} className={page === 2 ? 'active':''}>Buildings</Link></li>
+                <li><Link to={`/race/${match.params.race}/units/3`} className={page === 3 ? 'active':''}>Abilities</Link></li>
+                <li><Link to={`/race/${match.params.race}/units/4`} className={page === 4 ? 'active':''}>Upgrades</Link></li>
+            </ul>
         </div>
+
+        { page === 1 ? 
+            <div className='unit-labels'>
+                {getUnitListForRace(match.params.race)}
+            </div> : ''
+        }
+
+        { page === 2 ? 
+            <div className='unit-labels'>
+                {getBuildingListForRace(match.params.race)}
+            </div> : ''
+        }
+
+        { page === 3 ? 
+            <div className="unit-labels">
+            {getAbilityListForRace(match.params.race)}
+            </div>: ''
+        }
+
+        { page === 4 ? 
+            <div className="unit-labels">
+            {getUpgradeListForRace(match.params.race)}
+            </div> : ''
+        }
+        
 
     </div>;
 };

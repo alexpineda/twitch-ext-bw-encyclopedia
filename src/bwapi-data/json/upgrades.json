@@ -1,5 +1,6 @@
 [ {
     "Name": "Terran Infantry Armor",
+    "Description": "Increases armor level of SCVs, Marines, Medics, Firebats, and Ghosts by +1 per level.",
     "Icon": "cmdbtn cmdbtn-icon292",
     "Race": "Terran",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -11,6 +12,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "Terran Vehicle Plating",
+    "Description": "Researching these three upgrades will increase the armor of Tanks, Goliaths, and Vultures by +3 (+1 per upgrade)",
     "Icon": "cmdbtn cmdbtn-icon293",
     "Race": "Terran",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -22,6 +24,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "Terran Ship Plating",
+    "Description": "Researching all of the Ship Armor upgrades will increase armor by +3 (+1 per upgrade) for all Terran air units.",
     "Icon": "cmdbtn cmdbtn-icon291",
     "Race": "Terran",
     "Cost": "150 + lvl*75  150 + lvl*75",
@@ -33,6 +36,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "Terran Infantry Weapons",
+    "Description": "Increases attack level of Marines and Ghosts by +1 per level. Increases attack level of Firebats by +2 per level.",
     "Icon": "cmdbtn cmdbtn-icon288",
     "Race": "Terran",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -44,6 +48,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "Terran Vehicle Weapons",
+    "Description": "Researching these three upgrades will increase Goliaths by +3 (+1 per upgrade) for ground attack and +12 (+3 per) for air attack, Vultures by +6 (+3 per), and Tanks +9 (+3 per upgrade) in Tank mode and by +15 (+5 per level) in Siege Mode.",
     "Icon": "cmdbtn cmdbtn-icon289",
     "Race": "Terran",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -55,6 +60,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "Terran Ship Weapons",
+    "Description": "Researching all of the Ship Weapons upgrades will increase Wraiths by +3 (+1 per upgrade) for ground attack and air attack by +6 (+2 per upgrade), Valkyries by +3 (+1 per), and Battlecruisers by +9 (+3 per).",
     "Icon": "cmdbtn cmdbtn-icon290",
     "Race": "Terran",
     "Cost": "100 + lvl*50  100 + lvl*50",
@@ -66,6 +72,7 @@
     "Level 3 Requires": "Terran Science Facility"
 }, {
     "Name": "U 238 Shells",
+    "Description": "Increases all Marines' ground and air attack range by 1 (from 4 to 5).",
     "Icon": "cmdbtn cmdbtn-icon238",
     "Race": "Terran",
     "Cost": "150  150",
@@ -74,6 +81,7 @@
     "Used by": "Terran Marine"
 }, {
     "Name": "Ion Thrusters",
+    "Description": "Increases Vulture speed by +50%.",
     "Icon": "cmdbtn cmdbtn-icon287",
     "Race": "Terran",
     "Cost": "100  100",
@@ -82,6 +90,7 @@
     "Used by": "Terran Vulture"
 }, {
     "Name": "Titan Reactor",
+    "Description": "Increases Science Vessel's starting energy to 62 and maximum energy to 250.",
     "Icon": "cmdbtn cmdbtn-icon248",
     "Race": "Terran",
     "Cost": "150  150",
@@ -90,6 +99,7 @@
     "Used by": "Terran Science Vessel"
 }, {
     "Name": "Ocular Implants",
+    "Description": "ncreases Ghost sight by 2 (from 9 to 11), and Nuke range also by 2 (from 8 to 10).",
     "Icon": "cmdbtn cmdbtn-icon249",
     "Race": "Terran",
     "Cost": "100  100",
@@ -98,6 +108,7 @@
     "Used by": "Terran Ghost"
 }, {
     "Name": "Moebius Reactor",
+    "Description": "Increases a Ghost's starting Energy to 62 and maximum Energy to 250",
     "Icon": "cmdbtn cmdbtn-icon256",
     "Race": "Terran",
     "Cost": "150  150",
@@ -106,6 +117,7 @@
     "Used by": "Terran Ghost"
 }, {
     "Name": "Apollo Reactor",
+    "Description": "Increases Wraith's starting energy to 62 and maximum energy to 250.",
     "Icon": "cmdbtn cmdbtn-icon284",
     "Race": "Terran",
     "Cost": "200  200",
@@ -114,6 +126,7 @@
     "Used by": "Terran Wraith"
 }, {
     "Name": "Colossus Reactor",
+    "Description": "Increases the starting energy of the Battlecruiser to 62 and maximum energy to 250.",
     "Icon": "cmdbtn cmdbtn-icon285",
     "Race": "Terran",
     "Cost": "150  150",
@@ -122,6 +135,7 @@
     "Used by": "Terran Battlecruiser"
 }, {
     "Name": "Caduceus Reactor",
+    "Description": "Increases a Medic's starting Energy to 62 and maximum Energy to 250.",
     "Icon": "cmdbtn cmdbtn-icon384",
     "Race": "Terran",
     "Cost": "150  150",
@@ -130,6 +144,7 @@
     "Used by": "Terran Medic"
 }, {
     "Name": "Charon Boosters",
+    "Description": "Increases every Goliath's air attack range by three and changes the missile graphics.",
     "Icon": "cmdbtn cmdbtn-icon380",
     "Race": "Terran",
     "Cost": "100  100",
@@ -139,6 +154,7 @@
     "Level 1 Requires": "Terran Armory"
 }, {
     "Name": "Zerg Carapace",
+    "Description": "Increases the armor value of all Zerg ground forces.",
     "Icon": "cmdbtn cmdbtn-icon297",
     "Race": "Zerg",
     "Cost": "150 + lvl*75  150 + lvl*75",
@@ -150,28 +166,31 @@
     "Level 3 Requires": "Zerg Hive"
 }, {
     "Name": "Zerg Flyer Carapace",
+    "Description": "Each upgrade adds +1 to the Flyer Carapace for a total of +3 when fully upgraded.",
     "Icon": "cmdbtn cmdbtn-icon298",
     "Race": "Zerg",
     "Cost": "150 + lvl*75  150 + lvl*75",
     "Upgrade Time": "4000 + lvl*480 frames",
     "Maximum Level": "3",
     "Upgraded at": "Zerg Spire",
-    "Used by": ["Zerg Overlord", "Zerg Mutalisk", "Zerg Guardian", "Zerg Queen", "Hero Kukulza Mutalisk", "Zerg Scourge", "Hero Yggdrasill", "Hero Matriarch", "Hero Kukulza Guardian", "Zerg Devourer"],
+    "Used by": ["Zerg Overlord", "Zerg Mutalisk", "Zerg Guardian", "Zerg Queen", "Zerg Scourge", "Zerg Devourer"],
     "Level 2 Requires": "Zerg Lair",
     "Level 3 Requires": "Zerg Hive"
 }, {
     "Name": "Zerg Melee Attacks",
+    "Description": "Increases the attack damage of Zerglings, Ultralisks, and Broodlings.",
     "Icon": "cmdbtn cmdbtn-icon299",
     "Race": "Zerg",
     "Cost": "100 + lvl*50  100 + lvl*50",
     "Upgrade Time": "4000 + lvl*480 frames",
     "Maximum Level": "3",
     "Upgraded at": "Zerg Evolution Chamber",
-    "Used by": ["Zerg Zergling", "Hero Devouring One", "Hero Infested Kerrigan", "Zerg Ultralisk", "Zerg Broodling", "Hero Torrasque"],
+    "Used by": ["Zerg Zergling", "Zerg Ultralisk", "Zerg Broodling"],
     "Level 2 Requires": "Zerg Lair",
     "Level 3 Requires": "Zerg Hive"
 }, {
     "Name": "Zerg Missile Attacks",
+    "Description": "Increases the attack damage of Hydralisks and Lurkers.",
     "Icon": "cmdbtn cmdbtn-icon300",
     "Race": "Zerg",
     "Cost": "100 + lvl*50  100 + lvl*50",
@@ -183,6 +202,7 @@
     "Level 3 Requires": "Zerg Hive"
 }, {
     "Name": "Zerg Flyer Attacks",
+    "Description": "Each upgrade adds +1 to the Flyer Attack for a total of +3 when fully upgraded.",
     "Icon": "cmdbtn cmdbtn-icon301",
     "Race": "Zerg",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -194,6 +214,7 @@
     "Level 3 Requires": "Zerg Hive"
 }, {
     "Name": "Ventral Sacs",
+    "Description": "Overlords gain the ability to Load and Unload units.",
     "Icon": "cmdbtn cmdbtn-icon261",
     "Race": "Zerg",
     "Cost": "200  200",
@@ -202,6 +223,7 @@
     "Used by": "Zerg Overlord"
 }, {
     "Name": "Antennae",
+    "Description": "Increases the sight and detection range of all Overlords.",
     "Icon": "cmdbtn cmdbtn-icon262",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -210,6 +232,7 @@
     "Used by": "Zerg Overlord"
 }, {
     "Name": "Pneumatized Carapace",
+    "Description": "Greatly Increases movement speed of Overlords. Increases speed by 400%.",
     "Icon": "cmdbtn cmdbtn-icon296",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -218,6 +241,7 @@
     "Used by": "Zerg Overlord"
 }, {
     "Name": "Metabolic Boost",
+    "Description": "Zerglings' movement speed is greatly improved.",
     "Icon": "cmdbtn cmdbtn-icon263",
     "Race": "Zerg",
     "Cost": "100  100",
@@ -226,6 +250,7 @@
     "Used by": "Zerg Zergling"
 }, {
     "Name": "Adrenal Glands",
+    "Description": "Greatly enhances Zerglings' attack speed (by 33%).",
     "Icon": "cmdbtn cmdbtn-icon264",
     "Race": "Zerg",
     "Cost": "200  200",
@@ -235,6 +260,7 @@
     "Level 1 Requires": "Zerg Hive"
 }, {
     "Name": "Muscular Augments",
+    "Description": "Increases Hydralisk speed.",
     "Icon": "cmdbtn cmdbtn-icon266",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -243,6 +269,7 @@
     "Used by": "Zerg Hydralisk"
 }, {
     "Name": "Grooved Spines",
+    "Description": "Increases Hydralisk range from four to five.",
     "Icon": "cmdbtn cmdbtn-icon268",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -251,6 +278,7 @@
     "Used by": "Zerg Hydralisk"
 }, {
     "Name": "Gamete Meiosis",
+    "Description": "Increases Queen starting energy by 12 and maximum energy by 50.",
     "Icon": "cmdbtn cmdbtn-icon294",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -259,6 +287,7 @@
     "Used by": "Zerg Queen"
 }, {
     "Name": "Metasynaptic Node",
+    "Description": "Defilers gain +12 starting energy and +50 maximum energy.",
     "Icon": "cmdbtn cmdbtn-icon295",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -267,6 +296,7 @@
     "Used by": "Zerg Defiler"
 }, {
     "Name": "Chitinous Plating",
+    "Description": "Upgrade provides improved Ultralisk Armor ( +2 ).",
     "Icon": "cmdbtn cmdbtn-icon379",
     "Race": "Zerg",
     "Cost": "150  150",
@@ -275,6 +305,7 @@
     "Used by": "Zerg Ultralisk"
 }, {
     "Name": "Anabolic Synthesis",
+    "Description": "Upgrade provides faster Ultralisk movement.",
     "Icon": "cmdbtn cmdbtn-icon378",
     "Race": "Zerg",
     "Cost": "200  200",
@@ -283,6 +314,7 @@
     "Used by": "Zerg Ultralisk"
 }, {
     "Name": "Protoss Ground Armor",
+    "Description": "Increases the armor of all Protoss ground forces.",
     "Icon": "cmdbtn cmdbtn-icon303",
     "Race": "Protoss",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -294,6 +326,7 @@
     "Level 3 Requires": "Protoss Templar Archives"
 }, {
     "Name": "Protoss Air Armor",
+    "Description": "Each Upgrade adds +1 to Armor for a total of +3 with all three upgrades.",
     "Icon": "cmdbtn cmdbtn-icon304",
     "Race": "Protoss",
     "Cost": "150 + lvl*75  150 + lvl*75",
@@ -305,6 +338,7 @@
     "Level 3 Requires": "Protoss Fleet Beacon"
 }, {
     "Name": "Protoss Ground Weapons",
+    "Description": "Increases the attack damage of Zealots, Dragoons, Dark Templars and Archons.",
     "Icon": "cmdbtn cmdbtn-icon305",
     "Race": "Protoss",
     "Cost": "100 + lvl*50  100 + lvl*50",
@@ -316,6 +350,7 @@
     "Level 3 Requires": "Protoss Templar Archives"
 }, {
     "Name": "Protoss Air Weapons",
+    "Description": "Ground attack is upgraded +1 per upgrade for a total of +3. Air attack is upgraded +1 per upgrade (except for the Scout, which receives +2 since it has two attacks) for a total of +3 (+6 for Scout).",
     "Icon": "cmdbtn cmdbtn-icon306",
     "Race": "Protoss",
     "Cost": "100 + lvl*75  100 + lvl*75",
@@ -327,6 +362,7 @@
     "Level 3 Requires": "Protoss Fleet Beacon"
 }, {
     "Name": "Protoss Plasma Shields",
+    "Description": "Upgrades the armour of shields for all Protoss units and structures.",
     "Icon": "cmdbtn cmdbtn-icon310",
     "Race": "Protoss",
     "Cost": "200 + lvl*100  200 + lvl*100",
@@ -338,6 +374,7 @@
     "Level 3 Requires": "Protoss Cybernetics Core"
 }, {
     "Name": "Singularity Charge",
+    "Description": "Increases Dragoons' range +2 from 4 to 6.",
     "Icon": "cmdbtn cmdbtn-icon281",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -346,6 +383,7 @@
     "Used by": "Protoss Dragoon"
 }, {
     "Name": "Leg Enhancements",
+    "Description": "ncreases the Zealot's movement speed.",
     "Icon": "cmdbtn cmdbtn-icon307",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -354,6 +392,7 @@
     "Used by": "Protoss Zealot"
 }, {
     "Name": "Scarab Damage",
+    "Description": "Scarab Damage is increased by 25 to 125.",
     "Icon": "cmdbtn cmdbtn-icon314",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -362,6 +401,7 @@
     "Used by": "Protoss Reaver"
 }, {
     "Name": "Reaver Capacity",
+    "Description": "Increases the Reaver's Scarab Capacity from 5 to 10.",
     "Icon": "cmdbtn cmdbtn-icon315",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -370,6 +410,7 @@
     "Used by": "Protoss Reaver"
 }, {
     "Name": "Gravitic Drive",
+    "Description": "Increases the Shuttle speed.",
     "Icon": "cmdbtn cmdbtn-icon316",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -378,6 +419,7 @@
     "Used by": "Protoss Shuttle"
 }, {
     "Name": "Sensor Array",
+    "Description": "Increased Observer sight and detection range",
     "Icon": "cmdbtn cmdbtn-icon317",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -386,6 +428,7 @@
     "Used by": "Protoss Observer"
 }, {
     "Name": "Gravitic Boosters",
+    "Description": "Increases the Observer speed.",
     "Icon": "cmdbtn cmdbtn-icon276",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -394,6 +437,7 @@
     "Used by": "Protoss Observer"
 }, {
     "Name": "Khaydarin Amulet",
+    "Description": "Increases High Templar Energy limit +50 to 250.",
     "Icon": "cmdbtn cmdbtn-icon318",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -402,6 +446,7 @@
     "Used by": "Protoss High Templar"
 }, {
     "Name": "Apial Sensors",
+    "Description" : "Increases Scouts' sight range +2 from 8 to 10.",
     "Icon": "cmdbtn cmdbtn-icon319",
     "Race": "Protoss",
     "Cost": "100  100",
@@ -410,6 +455,7 @@
     "Used by": "Protoss Scout"
 }, {
     "Name": "Gravitic Thrusters",
+    "Description" : "Increases Scouts' movement speed.",
     "Icon": "cmdbtn cmdbtn-icon320",
     "Race": "Protoss",
     "Cost": "200  200",
@@ -418,6 +464,7 @@
     "Used by": "Protoss Scout"
 }, {
     "Name": "Carrier Capacity",
+    "Description" : "Increases the maximum number of Interceptors per Carrier from 4 to 8.",
     "Icon": "cmdbtn cmdbtn-icon321",
     "Race": "Protoss",
     "Cost": "100  100",
@@ -426,6 +473,7 @@
     "Used by": "Protoss Carrier"
 }, {
     "Name": "Khaydarin Core",
+    "Description" : "Arbiter energy capacity increases to from 200 to 250 (+50) and increases Arbiter starting energy form 50 to 62.",
     "Icon": "cmdbtn cmdbtn-icon322",
     "Race": "Protoss",
     "Cost": "150  150",
@@ -434,6 +482,7 @@
     "Used by": "Protoss Arbiter"
 }, {
     "Name": "Argus Jewel",
+    "Description" : "Increases Corsairs' maximum energy by 50",
     "Icon": "cmdbtn cmdbtn-icon383",
     "Race": "Protoss",
     "Cost": "100  100",
@@ -442,6 +491,7 @@
     "Used by": "Protoss Corsair"
 }, {
     "Name": "Argus Talisman",
+    "Description" : "Increases the Dark Archon's maximum Energy +50 to 250",
     "Icon": "cmdbtn cmdbtn-icon385",
     "Race": "Protoss",
     "Cost": "150  150",

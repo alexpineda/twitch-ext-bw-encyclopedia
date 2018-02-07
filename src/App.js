@@ -23,6 +23,7 @@ import reducers from './reducers';
 import { AnimatedSwitch } from 'react-router-transition';
 
 import * as ImagesPromise from 'react-images-preload';
+import { isBuffer } from 'util';
 
 
 
@@ -49,7 +50,7 @@ const allUpgrades = require('./bwapi-data/json/upgrades.json')
       if (level > upgrade['Maximum Level']) {
         return null;
       }
-      return Math.round((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/24);
+      return Math.ceil((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/24);
     }
 
     const cost = upgrade.Cost.match(/([0-9]+)\s+[+]\slvl\*([0-9]+)\s+([0-9]+)\s+[+]\slvl\*([0-9]+)/);
@@ -108,6 +109,16 @@ const allAbilities = require('./bwapi-data/json/abilities.json')
     return ability;
   })
 
+const isBuilding = (unit) => {
+    if (!unit.Attributes) {
+        return false;
+    }
+    if (!Array.isArray(unit.Attributes)){
+        unit.Attributes = [unit.Attributes];
+    }
+    return !!unit.Attributes.filter(attr => attr === 'Building').length;
+};
+
 const allUnits = require('./bwapi-data/json/units.json')
     .filter(unit=>unit.Race !== 'None')
     .map(unit => {
@@ -119,8 +130,24 @@ const allUnits = require('./bwapi-data/json/units.json')
         unit['Build Time'] = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
         unit['Seek Range'] = unit['Seek Range']/32;
         unit['Sight Range'] = unit['Sight Range']/32;
+        unit.isBuilding = isBuilding(unit);
+
+        if (unit['Ground Weapon']) {
+          unit.groundWeapon = allWeapons.find(weapon => weapon.Name === unit['Ground Weapon']);
+        }
+        if (unit['Air Weapon']) {
+          unit.airWeapon = allWeapons.find(weapon => weapon.Name === unit['Air Weapon']);
+        }
         return unit;
     });
+
+
+    allUnits.map(unit => {
+      if (unit.isBuilding) {
+        unit.Builds = allUnits.filter(unit => unit["Created By"] === unit.Name);
+      } 
+      return unit;
+    })
 
 // history
 

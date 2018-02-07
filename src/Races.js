@@ -19,7 +19,7 @@ const Races = (props) => {
         {props.loading ? 
         
         <div>
-            <div class='reload'></div>
+            <div className='reload'></div>
         </div> :  
         
         
@@ -45,7 +45,7 @@ const Race = ({match}) => {
             <p className="race__title">{race.Name}</p>
             <div className='race__description'>
                 <p>{race.Description}</p> 
-                <p style={{textAlign:'center'}}><Link to={`/race/${race.Name}/units`} className='action-item action-item--negative'>See {race.Name} Units</Link></p>
+                <p style={{textAlign:'center'}}><Link to={`/race/${race.Name}/units`} className='action-item action-item--negative'>See {race.Name} Units, Buildings, Abilities and Upgrades</Link></p>
             </div>
             
             {/* <p style={{textAlign:'center'}}>or</p>

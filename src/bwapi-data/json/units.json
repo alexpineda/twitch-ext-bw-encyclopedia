@@ -15,7 +15,7 @@
     "Acceleration": "1",
     "Halt Distance": "1",
     "Turn Radius": "40",
-    "Ground Weapon": "Flame Thrower x 3",
+    "Ground Weapon": "Flame Thrower",
     "Size": "23x22 px; 1x1 tiles",
     "SizeType": "Small",
     "Space Required": "1",
@@ -391,7 +391,7 @@
     "Acceleration": "65",
     "Halt Distance": "21901",
     "Turn Radius": "30",
-    "Air Weapon": "Halo Rockets x 4",
+    "Air Weapon": "Halo Rockets",
     "Size": "49x37 px; 2x2 tiles",
     "SizeType": "Large",
     "Seek Range": "0",
@@ -431,6 +431,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Terran Academy",
+    "Description":"The Academy, like the Armory, does not produce Terran units, but instead provides the technology for its complementary building, the Barracks, to do so.",
+    "Link":"http://liquipedia.net/starcraft/Academy",
     "Icon": "cmdbtn cmdbtn-icon112",
     "Race": "Terran",
     "Hit Points": "600",
@@ -448,6 +450,8 @@
     "Attributes": ["Mechanical", "Building"]
 }, {
     "Name": "Terran Armory",
+    "Description":"The Armory is a building constructed by Terran to enable production of advanced units such as Valkyries and Goliaths. In addition there are four available upgrades from the Armory.",
+    "Link":"http://liquipedia.net/starcraft/Armory",
     "Icon": "cmdbtn cmdbtn-icon123",
     "Race": "Terran",
     "Hit Points": "750",
@@ -465,6 +469,8 @@
     "Attributes": ["Mechanical", "Building"]
 }, {
     "Name": "Terran Barracks",
+    "Description":"The Barracks (or Rax for short) is the infantry production building for Terran.",
+    "Link":"http://liquipedia.net/starcraft/Barracks",
     "Icon": "cmdbtn cmdbtn-icon111",
     "Race": "Terran",
     "Hit Points": "1000",
@@ -486,6 +492,8 @@
     "Attributes": ["Mechanical", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Bunker",
+    "Description":"The Bunker is an important Terran defensive structure. Unlike defensive buildings like the Missile Turret, Zerg Sunken Colony or Protoss Photon Cannon, the Bunker does not directly attack (i.e. defend against) opponents on its own. To be effective, the Bunker must be filled with one to four infantry units.",
+    "Link":"http://liquipedia.net/starcraft/Bunker",
     "Icon": "cmdbtn cmdbtn-icon125",
     "Race": "Terran",
     "Hit Points": "350",
@@ -508,6 +516,8 @@
     "Attributes": ["Mechanical", "Building"]
 }, {
     "Name": "Terran Command Center",
+    "Description":"The Command Center (Commonly abbreviated as CC) is the most important Terran building. Terran players start the game with one Command Center. It produces SCVs, the worker unit, and is at the root of the Terran Tech tree.",
+    "Link":"http://liquipedia.net/starcraft/Command_Center",
     "Icon": "cmdbtn cmdbtn-icon106",
     "Race": "Terran",
     "Hit Points": "1500",
@@ -530,6 +540,8 @@
     "Attributes": ["Mechanical", "ResourceDepot", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Engineering Bay",
+    "Description":"The Engineering Bay (commonly abbreviated as E-Bay) is a building constructed by Terran for the purpose of improving infantry weapons and armor. It also allows the player to construct Missile Turrets, so building an Engineering Bay is common even if infantry upgrades are not researched.",
+    "Link":"http://liquipedia.net/starcraft/Engineering_Bay",
     "Icon": "cmdbtn cmdbtn-icon122",
     "Race": "Terran",
     "Hit Points": "850",
@@ -551,6 +563,8 @@
     "Attributes": ["Mechanical", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Factory",
+    "Description":"The Factory is a Terran building that can be used to produce the Vulture, Siege Tank, and Goliath. No research upgrades can be directly performed on the Factory, but a Machine Shop add-on can be constructed onto the Factory that allows various upgrades relating to Factory-produced units.",
+    "Link":"http://liquipedia.net/starcraft/Factory",
     "Icon": "cmdbtn cmdbtn-icon113",
     "Race": "Terran",
     "Hit Points": "1250",
@@ -572,6 +586,8 @@
     "Attributes": ["Mechanical", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Missile Turret",
+    "Description":"The Missile Turret (or Turret for short) is a Terran defensive building, which once constructed will attack flying units and buildings. It cannot be lifted off. It is also one of the modes of detection for Terran as it reveals cloaked units (including ground units) within its range of attack.",
+    "Link":"http://liquipedia.net/starcraft/Missile_Turret",
     "Icon": "cmdbtn cmdbtn-icon124",
     "Race": "Terran",
     "Hit Points": "200",
@@ -591,6 +607,8 @@
     "Attributes": ["Mechanical", "Detector", "Building"]
 }, {
     "Name": "Terran Refinery",
+    "Description":"The Refinery is the gas extraction building for Terran. When constructed on top of a Vespene Gas Geyser it allows the Terran player to collect Vespene Gas by sending SCVs into it.",
+    "Link":"http://liquipedia.net/starcraft/Refinery",
     "Icon": "cmdbtn cmdbtn-icon110",
     "Race": "Terran",
     "Hit Points": "750",
@@ -612,6 +630,8 @@
     "Attributes": ["Mechanical", "ResourceContainer", "Refinery", "Building"]
 }, {
     "Name": "Terran Science Facility",
+    "Description":"The Science Facility is an advanced tech/late game building built by Terran following construction of the Starport. Although the Science Facility does not directly build any units, they enable the production of the Science Vessel at Starports.",
+    "Link":"http://liquipedia.net/starcraft/Science_Facility",
     "Icon": "cmdbtn cmdbtn-icon116",
     "Race": "Terran",
     "Hit Points": "850",
@@ -633,6 +653,8 @@
     "Attributes": ["Mechanical", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Starport",
+    "Description":"The Starport is an advanced building constructed by Terran. Its primarily serves to construct air units.",
+    "Link":"http://liquipedia.net/starcraft/Starport",
     "Icon": "cmdbtn cmdbtn-icon114",
     "Race": "Terran",
     "Hit Points": "1300",
@@ -654,6 +676,8 @@
     "Attributes": ["Mechanical", "FlyingBuilding", "Building"]
 }, {
     "Name": "Terran Supply Depot",
+    "Description":"The Supply Depot is a building constructed by Terran for the purpose of providing supply. Each Supply Depot raises the Terran's population limit by eight.",
+    "Link":"http://liquipedia.net/starcraft/Supply_Depot",
     "Icon": "cmdbtn cmdbtn-icon109",
     "Race": "Terran",
     "Hit Points": "500",
@@ -672,6 +696,8 @@
     "Attributes": ["Mechanical", "Building"]
 }, {
     "Name": "Terran Comsat Station",
+    "Description":"The Comsat Station add-on, often called a \"Scanner,\" allows Terran to gain vision and Detection over a finite area on the map for a short amount of time (from about seven to ten seconds).",
+    "Link":"http://liquipedia.net/starcraft/Comsat_Station",
     "Icon": "cmdbtn cmdbtn-icon107",
     "Race": "Terran",
     "Hit Points": "500",
@@ -691,6 +717,8 @@
     "Attributes": ["Mechanical", "Addon", "Building"]
 }, {
     "Name": "Terran Control Tower",
+    "Description":"The Control Tower is a Terran add-on for the Starport. This add-on allows the production of Dropships amongst other units and upgrades.",
+    "Link":"http://liquipedia.net/starcraft/Control_Tower",
     "Icon": "cmdbtn cmdbtn-icon115",
     "Race": "Terran",
     "Hit Points": "500",
@@ -708,6 +736,8 @@
     "Attributes": ["Mechanical", "Addon", "Building"]
 }, {
     "Name": "Terran Covert Ops",
+    "Description":"The Covert Ops is an add-on for the Terran Science Facility. The Covert Ops unlocks the ability to produce Ghosts from the Barracks and Nukes.",
+    "Link":"http://liquipedia.net/starcraft/Covert_Ops",
     "Icon": "cmdbtn cmdbtn-icon117",
     "Race": "Terran",
     "Hit Points": "750",
@@ -725,6 +755,8 @@
     "Attributes": ["Mechanical", "Addon", "Building"]
 }, {
     "Name": "Terran Machine Shop",
+    "Description":"The Machine Shop is a Terran add-on for the Factory. It allows the production of Siege Tanks from the Factory and Tier Two Tech upgrades.",
+    "Link":"http://liquipedia.net/starcraft/Machine_Shop",
     "Icon": "cmdbtn cmdbtn-icon120",
     "Race": "Terran",
     "Hit Points": "750",
@@ -743,6 +775,8 @@
 }, {
     "Name": "Terran Nuclear Silo",
     "Icon": "cmdbtn cmdbtn-icon108",
+    "Description":"The Nuclear Silo is an add-on to the Command Center that allows the Terran player to build and store one Nuclear Missile. Each armed Nuclear Missile costs eight supply, 200 minerals and 200 gas. Once it is armed, a Ghost can launch the Nuke.",
+    "Link":"http://liquipedia.net/starcraft/Nuclear_Silo",
     "Race": "Terran",
     "Hit Points": "600",
     "Armor": "1",
@@ -760,6 +794,8 @@
     "Attributes": ["Mechanical", "Addon", "Building"]
 }, {
     "Name": "Terran Physics Lab",
+    "Description":"The Physics Lab is an add-on for the Terran Science Facility. The other available add-on for the Science Facility is the Covert Ops and only one add-on can be attached and utilized at a time.",
+    "Link":"http://liquipedia.net/starcraft/Physics_Lab",
     "Icon": "cmdbtn cmdbtn-icon118",
     "Race": "Terran",
     "Hit Points": "600",
@@ -778,6 +814,8 @@
     "Attributes": ["Mechanical", "Addon", "Building"]
 }, {
     "Name": "Protoss Archon",
+    "Description":"The Archon is a powerful Protoss unit formed when two High Templar decide to become an Archon by merging.",
+    "Link":"http://liquipedia.net/starcraft/Archon",
     "Icon": "cmdbtn cmdbtn-icon68",
     "Race": "Protoss",
     "Hit Points": "10",
@@ -805,6 +843,8 @@
     "Attributes": ""
 }, {
     "Name": "Protoss Dark Archon",
+    "Description":"The Dark Archon is a Protoss spell-caster that does not have the ability to attack directly. Rather, it is a supporting Protoss unit that is capable of three powerful spells. It is formed by merging two Dark Templars, which are produced by the Gateway.",
+    "Link":"http://liquipedia.net/starcraft/Dark_Archon",
     "Icon": "cmdbtn cmdbtn-icon63",
     "Race": "Protoss",
     "Hit Points": "25",
@@ -832,6 +872,8 @@
     "Attributes": ""
 }, {
     "Name": "Protoss Dark Templar",
+    "Description":"The Dark Templar, commonly abbreviated as DT, is a permanently cloaked Protoss ground unit. It is built from the Gateway if there is an existing Templar Archives. ",
+    "Link":"http://liquipedia.net/starcraft/Dark_Templar",
     "Icon": "cmdbtn cmdbtn-icon61",
     "Race": "Protoss",
     "Hit Points": "80",
@@ -859,6 +901,8 @@
     "Attributes": ["Organic", "PermanentCloak"]
 }, {
     "Name": "Protoss Dragoon",
+    "Description":"The Dragoon is a ranged ground unit that can be warped in at the Protoss Gateway if a Cybernetics Core has been warped in. They are one of the most versatile units in the game.",
+    "Link":"http://liquipedia.net/starcraft/Dragoon",
     "Icon": "cmdbtn cmdbtn-icon66",
     "Race": "Protoss",
     "Hit Points": "100",
@@ -886,6 +930,8 @@
     "Attributes": "Mechanical"
 }, {
     "Name": "Protoss High Templar",
+    "Description":"The High Templar is a Protoss spell-caster unit. It is considered one of the most powerful non-attack units in the game due to its Psionic Storm.",
+    "Link":"http://liquipedia.net/starcraft/High_Templar",
     "Icon": "cmdbtn cmdbtn-icon67",
     "Race": "Protoss",
     "Hit Points": "40",
@@ -913,6 +959,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Protoss Probe",
+    "Description":"The Probe is the Protoss worker. It harvests Resources, has a low-powered ranged attack (with a range of one), and can build any Protoss building.",
+    "Link":"http://liquipedia.net/starcraft/Probe",
     "Icon": "cmdbtn cmdbtn-icon64",
     "Race": "Protoss",
     "Hit Points": "20",
@@ -939,6 +987,8 @@
     "Attributes": ["Mechanical", "Robotic", "Worker"]
 }, {
     "Name": "Protoss Reaver",
+    "Description":"The Reaver is a powerful Protoss siege unit produced from the Robotics Facility. Construction of Reavers also requires the Robotics Support Bay. The Robotics Support Bay also provides various upgrades to increase the potency of the Reaver.",
+    "Link":"http://liquipedia.net/starcraft/Reaver",
     "Icon": "cmdbtn cmdbtn-icon83",
     "Race": "Protoss",
     "Hit Points": "100",
@@ -964,6 +1014,8 @@
     "Attributes": ["Mechanical", "Robotic"]
 }, {
     "Name": "Protoss Scarab",
+    "Description":"Scarabs are projectiles produced by Reavers that are required for the Reaver to attack. Scarabs are individually produced and stored in the Reaver until the Reaver is ordered to attack. ",
+    "Link":"http://liquipedia.net/starcraft/Scarab",
     "Icon": "cmdbtn cmdbtn-icon85",
     "Race": "Protoss",
     "Hit Points": "20",
@@ -987,6 +1039,8 @@
     "Attributes": ["Invincible", "Mechanical"]
 }, {
     "Name": "Protoss Zealot",
+    "Description":"The Zealot is the Protoss first tier melee unit. Zealots only deal damage to ground units, so are vulnerable to air attack units.",
+    "Link":"http://liquipedia.net/starcraft/Zealot",
     "Icon": "cmdbtn cmdbtn-icon65",
     "Race": "Protoss",
     "Hit Points": "100",
@@ -1001,7 +1055,7 @@
     "Acceleration": "1",
     "Halt Distance": "1",
     "Turn Radius": "40",
-    "Ground Weapon": "Psi Blades x 2",
+    "Ground Weapon": "Psi Blades",
     "Size": "23x19 px; 1x1 tiles",
     "SizeType": "Small",
     "Space Required": "2",
@@ -1013,6 +1067,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Protoss Arbiter",
+    "Description":"The Arbiter is one of the highest technology units in the Protoss arsenal. It's a support unit with a passive ability which cloaks any units underneath it.",
+    "Link":"http://liquipedia.net/starcraft/Arbiter",
     "Icon": "cmdbtn cmdbtn-icon71",
     "Race": "Protoss",
     "Hit Points": "200",
@@ -1041,6 +1097,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Protoss Carrier",
+    "Description":"Carriers are a late-game Protoss air unit that are the largest and most costly unit available for Protoss. Carriers are produced from the Stargate and requires a pre-existing Fleet Beacon.",
+    "Link":"http://liquipedia.net/starcraft/Carrier",
     "Icon": "cmdbtn cmdbtn-icon72",
     "Race": "Protoss",
     "Hit Points": "300",
@@ -1065,6 +1123,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Protoss Corsair",
+    "Description":"First introduced in the expansion set, Corsairs are fast, highly mobile units with considerable harassing and scouting potential. They have a small 50% splash attack that is very useful against clumps of enemy air units.",
+    "Link":"http://liquipedia.net/starcraft/Corsair",
     "Icon": "cmdbtn cmdbtn-icon60",
     "Race": "Protoss",
     "Hit Points": "100",
@@ -1092,6 +1152,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Protoss Interceptor",
+    "Description":"Interceptors are small flying attacking units built and transported by Carriers. The player cannot control them; they are launched automatically when the Carrier is given an attack command and quickly fly in roughly circular paths around the target attacking it.",
+    "Link":"http://liquipedia.net/starcraft/Interceptor",
     "Icon": "cmdbtn cmdbtn-icon73",
     "Race": "Protoss",
     "Hit Points": "40",
@@ -1118,6 +1180,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Protoss Observer",
+    "Description":"The Observer is a permanently cloaked Protoss air unit that cannot attack. Its primary purpose is for scouting and Detection.",
+    "Link":"http://liquipedia.net/starcraft/Observer",
     "Icon": "cmdbtn cmdbtn-icon84",
     "Race": "Protoss",
     "Hit Points": "40",
@@ -1142,6 +1206,8 @@
     "Attributes": ["Flyer", "Mechanical", "Robotic", "Detector", "PermanentCloak"]
 }, {
     "Name": "Protoss Scout",
+    "Description":"The Scout is a power Protoss air unit that is produced from the Stargate.",
+    "Link":"http://liquipedia.net/starcraft/Scout",
     "Icon": "cmdbtn cmdbtn-icon70",
     "Race": "Protoss",
     "Hit Points": "150",
@@ -1168,6 +1234,8 @@
     "Attributes": ["Flyer", "Mechanical"]
 }, {
     "Name": "Protoss Shuttle",
+    "Description":"The Shuttle is the Protoss's transport unit. It is slow at first, but its speed can be upgraded at the Robotics Support Bay.",
+    "Link":"http://liquipedia.net/starcraft/Shuttle",
     "Icon": "cmdbtn cmdbtn-icon69",
     "Race": "Protoss",
     "Hit Points": "80",
@@ -1193,6 +1261,8 @@
     "Attributes": ["Flyer", "Mechanical", "Robotic"]
 }, {
     "Name": "Protoss Arbiter Tribunal",
+    "Description":"The Arbiter Tribunal is a building warped-in by Protoss for the main purpose of allowing the production of Arbiters from the Stargate.",
+    "Link":"http://liquipedia.net/starcraft/Arbiter_Tribunal",
     "Icon": "cmdbtn cmdbtn-icon170",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1213,6 +1283,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Assimilator",
+    "Description":"The Arbiter Tribunal is a building warped-in by Protoss for the main purpose of allowing the production of Arbiters from the Stargate.",
+    "Link":"http://liquipedia.net/starcraft/Assimilator",
     "Icon": "cmdbtn cmdbtn-icon157",
     "Race": "Protoss",
     "Hit Points": "450",
@@ -1233,6 +1305,8 @@
     "Attributes": ["Mechanical", "ResourceContainer", "Refinery", "Building"]
 }, {
     "Name": "Protoss Citadel of Adun",
+    "Description":"The Citadel of Adun, or Citadel for short, is a building warped-in by Protoss as a prerequisite for the Templar Archives. Additionally, the Citadel researches the Zealot Leg Enhancements upgrade.",
+    "Link":"http://liquipedia.net/starcraft/Citadel_of_Adun",
     "Icon": "cmdbtn cmdbtn-icon163",
     "Race": "Protoss",
     "Hit Points": "450",
@@ -1253,6 +1327,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Cybernetics Core",
+    "Description":"The Cybernetics Core is an important Protoss tech building. It unlocks the production of the Protoss ranged ground unit, the Dragoon, and allows the research of the Dragoon range upgrade. It unlocks advanced buildings.",
+    "Link":"http://liquipedia.net/starcraft/Cybernetics_Core",
     "Icon": "cmdbtn cmdbtn-icon164",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1273,6 +1349,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Fleet Beacon",
+    "Description":"The Fleet Beacon is a Protoss technology building at the very end of its tech tree. The Fleet Beacon opens up several aerial upgrades as well as allowing the Protoss player to construct Carriers. . It also unlocks second and third levels or air weapons and air armor upgrades at the Cybernetics Core. ",
+    "Link":"http://liquipedia.net/starcraft/Fleet_Beacon",
     "Icon": "cmdbtn cmdbtn-icon169",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1293,6 +1371,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Forge",
+    "Description":"The Forge allows the Protoss player to build Photon Cannons, a highly versatile and cheap defensive structure. It also allows the Protoss player to access three upgrades: ground attack, ground armor and shields.",
+    "Link":"http://liquipedia.net/starcraft/Forge",
     "Icon": "cmdbtn cmdbtn-icon166",
     "Race": "Protoss",
     "Hit Points": "550",
@@ -1313,6 +1393,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Gateway",
+    "Description":"The Gateway is a Protoss building that is used for building infantry units. Protoss players make heavy use of every unit produced at the Gateway, making it the most important production building in every Protoss match-up.",
+    "Link":"http://liquipedia.net/starcraft/Gateway",
     "Icon": "cmdbtn cmdbtn-icon160",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1333,6 +1415,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Nexus",
+    "Description":"The Nexus is the most important Protoss building. It produces Probes, the worker unit, and is at the root of the Protoss tech tree. It is also the Protoss resource gathering center; without it the player cannot gather resources.",
+    "Link":"http://liquipedia.net/starcraft/Nexus",
     "Icon": "cmdbtn cmdbtn-icon154",
     "Race": "Protoss",
     "Hit Points": "750",
@@ -1354,6 +1438,8 @@
     "Attributes": ["Mechanical", "ResourceDepot", "Building"]
 }, {
     "Name": "Protoss Observatory",
+    "Description":"The Observatory is an advanced Protoss building. It allows the Robotics Facility to produce Observers, which are very useful for scouting, as they are permanently cloaked and are also detectors The Observatory allows the research of a sight range and movement speed upgrade for Observers.",
+    "Link":"http://liquipedia.net/starcraft/Observatory",
     "Icon": "cmdbtn cmdbtn-icon159",
     "Race": "Protoss",
     "Hit Points": "250",
@@ -1374,6 +1460,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Photon Cannon",
+    "Description":"The Photon Cannon, often simply called a Cannon, is a versatile Protoss defensive building capable of attacking both air and ground targets with a ranged attack. They are also detectors for the Protoss, thus often used to counter cloaked opponent units.",
+    "Link":"http://liquipedia.net/starcraft/Photon_Cannon",
     "Icon": "cmdbtn cmdbtn-icon162",
     "Race": "Protoss",
     "Hit Points": "100",
@@ -1396,6 +1484,8 @@
     "Attributes": ["Mechanical", "Detector", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Pylon",
+    "Description":"The Pylon is a vital Protoss building. Pylons are warped in for the dual purpose of providing Psi, which raises the population limit, and for providing the Psionic Matrix, which extends in a circle outward from the Pylon.",
+    "Link":"http://liquipedia.net/starcraft/Pylon",
     "Icon": "cmdbtn cmdbtn-icon156",
     "Race": "Protoss",
     "Hit Points": "300",
@@ -1417,6 +1507,8 @@
     "Attributes": ["Mechanical", "Building"]
 }, {
     "Name": "Protoss Robotics Facility",
+    "Description":"The Robotics Facility (or Robo for short) allows the production of Shuttles, a flying transport unit which allows the player to bypass cliffs and access islands. It also allows the construction of more advanced robotics buildings: the Robotics Support Bay and the Observatory.",
+    "Link":"http://liquipedia.net/starcraft/Robotics_Facility",
     "Icon": "cmdbtn cmdbtn-icon155",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1437,6 +1529,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Robotics Support Bay",
+    "Description":"The Robotics Support Bay is an advanced Protoss building. It allows the Robotics Facility to produce Reavers and unlocks a speed upgrade for Shuttles. It also offers upgrades that make Reavers more effective by increasing its Scarab capacity and the damage dealt by Scarabs.",
+    "Link":"http://liquipedia.net/starcraft/Robotics_Support_Bay",
     "Icon": "cmdbtn cmdbtn-icon171",
     "Race": "Protoss",
     "Hit Points": "450",
@@ -1457,6 +1551,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Shield Battery",
+    "Description":"The Shield Battery is an uncommonly used Protoss defensive building which can replenish the Plasma Shields of an injured Protoss unit.",
+    "Link":"http://liquipedia.net/starcraft/Shield_Battery",
     "Icon": "cmdbtn cmdbtn-icon172",
     "Race": "Protoss",
     "Hit Points": "200",
@@ -1478,6 +1574,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Stargate",
+    "Description":"The Stargate is a building warped in by Protoss for the main purpose of producing most of the air units in the Protoss arsenal.",
+    "Link":"http://liquipedia.net/starcraft/Stargate",
     "Icon": "cmdbtn cmdbtn-icon167",
     "Race": "Protoss",
     "Hit Points": "600",
@@ -1498,6 +1596,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Protoss Templar Archives",
+    "Description":"The Templar Archives is an advanced Protoss tech building. The structure allows the Protoss to produce High Templars and Dark Templars from the Gateway. In addition, the Templar Archives allow the unlocking of level 2 and 3 ground weapon and armor at the Forge.",
+    "Link":"http://liquipedia.net/starcraft/Templar_Archives",
     "Icon": "cmdbtn cmdbtn-icon165",
     "Race": "Protoss",
     "Hit Points": "500",
@@ -1518,6 +1618,8 @@
     "Attributes": ["Mechanical", "Building", "RequiresPsi"]
 }, {
     "Name": "Zerg Broodling",
+    "Description":"The Broodling is a small Zerg unit spawned when a Queen casts Spawn Broodling on a target. Two Broodlings spawn per spell cast. Upon their creation, they have a fixed amount of \"energy\" that represents their life span.",
+    "Link":"http://liquipedia.net/starcraft/Broodling",
     "Icon": "cmdbtn cmdbtn-icon40",
     "Race": "Zerg",
     "Hit Points": "30",
@@ -1540,6 +1642,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Defiler",
+    "Description":"The Defiler is a Zerg Hive tech unit. It is one of the Zerg's most powerful spell casters. A support unit, it is most well known for its Dark Swarm and Plague abilities.",
+    "Link":"http://liquipedia.net/starcraft/Defiler",
     "Icon": "cmdbtn cmdbtn-icon46",
     "Race": "Zerg",
     "Hit Points": "80",
@@ -1566,6 +1670,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Drone",
+    "Description":"The Drone is the Zerg Worker. It can gather Minerals and Vespene Gas, it has a low-damage ranged attack, and it can morph into a Zerg building anywhere on the Creep generated from Creep Colonies and Hatcheries, even when the creep is created by neutral or enemy buildings.",
+    "Link":"http://liquipedia.net/starcraft/Drone",
     "Icon": "cmdbtn cmdbtn-icon41",
     "Race": "Zerg",
     "Hit Points": "40",
@@ -1592,6 +1698,8 @@
     "Attributes": ["Organic", "Worker", "RegeneratesHP"]
 }, {
     "Name": "Zerg Egg",
+    "Description":"The Egg is the unit Larvae and Hydralisks turn into during the morphing process to another Zerg unit (Lurkers for Hydralisks). An Egg has a very high armor value, making it hard to kill.",
+    "Link":"http://liquipedia.net/starcraft/Egg",
     "Icon": "cmdbtn cmdbtn-icon36",
     "Race": "Zerg",
     "Hit Points": "200",
@@ -1610,6 +1718,8 @@
     "Attributes": "Organic"
 }, {
     "Name": "Zerg Hydralisk",
+    "Description":"The Hydralisk is a versatile Zerg ranged unit that can attack both air and ground targets using needle spines. Hydralisks can be morphed from Larvae after building a Hydralisk Den. Hydralisks deal explosive damage, which makes them good against buildings and large units.",
+    "Link":"http://liquipedia.net/starcraft/Hydralisk",
     "Icon": "cmdbtn cmdbtn-icon38",
     "Race": "Zerg",
     "Hit Points": "80",
@@ -1637,6 +1747,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Infested Terran",
+    "Description":"The Infested Terran is a rarely-used Zerg suicide unit produced from the Infested Command Center, which is created by Queens from damaged Command Centers.",
+    "Link":"http://liquipedia.net/starcraft/Infested_Terran",
     "Icon": "cmdbtn cmdbtn-icon50",
     "Race": "Zerg",
     "Hit Points": "60",
@@ -1663,6 +1775,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Larva",
+    "Description":"The Larva (Plural: Larvae) is a Zerg unit that automatically spawns directly below every Hatchery, Lair, and Hive, with a maximum of 3 Larvae at any one of these buildings.",
+    "Link":"http://liquipedia.net/starcraft/Larva_(Unit)",
     "Icon": "cmdbtn cmdbtn-icon35",
     "Race": "Zerg",
     "Hit Points": "25",
@@ -1685,6 +1799,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Lurker",
+    "Description":"The Lurker is a unique unit added in the Brood Wars expansion in that it attacks while burrowed with linear splash spikes. The Lurker is morphed from the Hydralisk after the appropriate Lair-tech upgrade is researched from the Hydralisk Den.",
+    "Link":"http://liquipedia.net/starcraft/Lurker",
     "Icon": "cmdbtn cmdbtn-icon103",
     "Race": "Zerg",
     "Hit Points": "125",
@@ -1711,26 +1827,9 @@
     "Created By": "Zerg Hydralisk",
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
-    "Name": "Zerg Lurker Egg",
-    "Icon": "cmdbtn cmdbtn-icon97",
-    "Race": "Zerg",
-    "Hit Points": "200",
-    "Armor": "10",
-    "Armor Upgrade": "Zerg Carapace",
-    "Cost": "1  1  0",
-    "Build Time": "1 frames",
-    "Destroy Score": "500",
-    "Size": "32x32 px; 1x1 tiles",
-    "SizeType": "Medium",
-    "Seek Range": "0",
-    "Sight Range": "128",
-    "Upgrades": "Zerg Carapace",
-    "Requires Technology": "Lurker Aspect",
-    "Required Units": "Zerg Hydralisk",
-    "Created By": "Zerg Hydralisk",
-    "Attributes": "Organic"
-}, {
     "Name": "Zerg Ultralisk",
+    "Description":"The Ultralisk is a late-game Hive-tech unit that is only available once the Zerg player has an Ultralisk Cavern. It is very expensive with 200 Vespene Gas but has a great deal of health and Zergling-like after upgrades. ",
+    "Link":"http://liquipedia.net/starcraft/Ultralisk",
     "Icon": "cmdbtn cmdbtn-icon39",
     "Race": "Zerg",
     "Hit Points": "400",
@@ -1756,6 +1855,8 @@
     "Attributes": ["Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Zergling",
+    "Description":"The Zergling is the earliest attack unit the Zerg player has access to. Zerglings can be morphed after construction of the Spawning Pool. They are melee units with low health individually but incredible damage for the cost.",
+    "Link":"http://liquipedia.net/starcraft/Zergling",
     "Icon": "cmdbtn cmdbtn-icon37",
     "Race": "Zerg",
     "Hit Points": "35",
@@ -1782,6 +1883,8 @@
     "Attributes": ["Organic", "TwoUnitsInOneEgg", "RegeneratesHP"]
 }, {
     "Name": "Zerg Cocoon",
+    "Description":"The Cocoon is the transitional Zerg unit Mutalisks turn into during the morphing process to Guardians or Devourers.",
+    "Link":"http://liquipedia.net/starcraft/Cocoon",
     "Icon": "cmdbtn cmdbtn-icon59",
     "Race": "Zerg",
     "Hit Points": "200",
@@ -1800,6 +1903,8 @@
     "Attributes": ["Flyer", "Organic"]
 }, {
     "Name": "Zerg Devourer",
+    "Description":"The Devourer is a rarely used Hive-tech exclusively air-to-air unit that requires a Greater Spire to morph from a Mutalisk, through a Cocoon.",
+    "Link":"http://liquipedia.net/starcraft/Devourer",
     "Icon": "cmdbtn cmdbtn-icon62",
     "Race": "Zerg",
     "Hit Points": "250",
@@ -1824,6 +1929,8 @@
     "Attributes": ["Flyer", "Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Guardian",
+    "Description":"The Guardian is a Zerg Hive-tech flying siege unit. Guardians are morphed from Mutalisks. The Guardian is very slow moving, but its power lies in its long attack range.",
+    "Link":"http://liquipedia.net/starcraft/Guardian",
     "Icon": "cmdbtn cmdbtn-icon44",
     "Race": "Zerg",
     "Hit Points": "150",
@@ -1848,6 +1955,8 @@
     "Attributes": ["Flyer", "Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Mutalisk",
+    "Description":"The Mutalisk is a fast moving air unit. Its attack deals the same damage against ground units making it a potent harasser and its health and mobility makes it a match for other single-target air-to-air units and low masses of most ground-to-air units with Zerg's typical economy.",
+    "Link":"http://liquipedia.net/starcraft/Mutalisk",
     "Icon": "cmdbtn cmdbtn-icon43",
     "Race": "Zerg",
     "Hit Points": "120",
@@ -1873,6 +1982,8 @@
     "Attributes": ["Flyer", "Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Overlord",
+    "Description":"The Overlord is a multi-purpose Zerg supply providing unit. It has a long sight range and is a detector. Zerg players start with one Overlord at the start of a game.",
+    "Link":"http://liquipedia.net/starcraft/Overlord",
     "Icon": "cmdbtn cmdbtn-icon42",
     "Race": "Zerg",
     "Hit Points": "200",
@@ -1898,6 +2009,8 @@
     "Attributes": ["Flyer", "Organic", "Detector", "RegeneratesHP"]
 }, {
     "Name": "Zerg Queen",
+    "Description":"The Queen is a quick-flying Zerg air unit with the ability to cast multiple spells.",
+    "Link":"http://liquipedia.net/starcraft/Queen",
     "Icon": "cmdbtn cmdbtn-icon45",
     "Race": "Zerg",
     "Hit Points": "120",
@@ -1923,6 +2036,8 @@
     "Attributes": ["Flyer", "Organic", "RegeneratesHP"]
 }, {
     "Name": "Zerg Scourge",
+    "Description":"Scourge are suicidal Zerg anti-air units that require a Spire and thus Lair-tech to build. They serve as the Zerg primary airborne anti-air with Mutalisk.",
+    "Link":"http://liquipedia.net/starcraft/Scourge",
     "Icon": "cmdbtn cmdbtn-icon47",
     "Race": "Zerg",
     "Hit Points": "25",
@@ -1947,6 +2062,8 @@
     "Attributes": ["Flyer", "Organic", "TwoUnitsInOneEgg", "RegeneratesHP"]
 }, {
     "Name": "Zerg Creep Colony",
+    "Description":"The Creep Colony are Zerg structures that extend the Creep, on which the Zerg can place its buildings. It can also morph into two types of defensive static buildings.",
+    "Link":"http://liquipedia.net/starcraft/Creep_Colony",
     "Icon": "cmdbtn cmdbtn-icon143",
     "Race": "Zerg",
     "Hit Points": "400",
@@ -1965,6 +2082,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Defiler Mound",
+    "Description":"The Defiler Mound is an essential high-tech building for the Zerg. The Defiler Mound does not build any units directly, but rather enables Defiler production at the Hive. Various upgrades affecting the Defiler can be researched at the Defiler Mound",
+    "Link":"http://liquipedia.net/starcraft/Defiler_Mound",
     "Icon": "cmdbtn cmdbtn-icon136",
     "Race": "Zerg",
     "Hit Points": "850",
@@ -1983,6 +2102,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Evolution Chamber",
+    "Description":"The Evolution Chamber is a Zerg building that allows the Zerg player to morph Creep Colonies into Spore Colonies, which both act as detectors and as anti-air defensive buildings.",
+    "Link":"http://liquipedia.net/starcraft/Evolution_Chamber",
     "Icon": "cmdbtn cmdbtn-icon139",
     "Race": "Zerg",
     "Hit Points": "750",
@@ -2001,6 +2122,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Extractor",
+    "Description":"he Extractor is a required building for Zerg to harvest Vespene Gas Extractors can only be built on Vespene Gas Geysers.",
+    "Link":"http://liquipedia.net/starcraft/Extractor",
     "Icon": "cmdbtn cmdbtn-icon149",
     "Race": "Zerg",
     "Hit Points": "750",
@@ -2019,6 +2142,8 @@
     "Attributes": ["Organic", "ResourceContainer", "Refinery", "Building", "RegeneratesHP"]
 }, {
     "Name": "Zerg Greater Spire",
+    "Description":"The Greater Spire is morphed from the Zerg Spire and requires a Hive to be morphed. It allows the Zerg player's Mutalisks to morph into Guardians and Devourers. The Greater Spire does not build any units directly.",
+    "Link":"http://liquipedia.net/starcraft/Greater_Spire",
     "Icon": "cmdbtn cmdbtn-icon137",
     "Race": "Zerg",
     "Hit Points": "1000",
@@ -2037,6 +2162,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Hatchery",
+    "Description":"The Hatchery is the Zerg's most important building. The Hatchery allows the harvesting of resources and automatically creates Larvae over time. Each Hatchery will only produce up to three Larvae until Larvae are morphed into other Zerg Units",
+    "Link":"http://liquipedia.net/starcraft/Hatchery",
     "Icon": "cmdbtn cmdbtn-icon131",
     "Race": "Zerg",
     "Hit Points": "1250",
@@ -2056,6 +2183,8 @@
     "Attributes": ["Organic", "ResourceDepot", "Building", "ProducesLarva", "RegeneratesHP"]
 }, {
     "Name": "Zerg Hive",
+    "Description":"The Hive is a key building for Zerg technology. The Hive originates from morphing of the Lair and is the last stage of the Hatchery tech tree. It enables the construction of buildings such as the Greater Spire, Ultralisk Cavern, Nydus Canal and Defiler Mound.",
+    "Link":"http://liquipedia.net/starcraft/Hive",
     "Icon": "cmdbtn cmdbtn-icon133",
     "Race": "Zerg",
     "Hit Points": "2500",
@@ -2075,6 +2204,8 @@
     "Attributes": ["Organic", "ResourceDepot", "Building", "ProducesLarva", "RegeneratesHP"]
 }, {
     "Name": "Zerg Hydralisk Den",
+    "Description":"The Hydralisk Den is an early to mid game Zerg tech building that allows the Zerg player to create Hydralisks. The Hydralisk Den does not produce units directly, but rather enable Hydralisk morphing at the Hatchery. The Hydralisk Den allows upgrades to the speed and range of Hydralisks.",
+    "Link":"http://liquipedia.net/starcraft/Hydralisk_Den",
     "Icon": "cmdbtn cmdbtn-icon135",
     "Race": "Zerg",
     "Hit Points": "850",
@@ -2093,6 +2224,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Infested Command Center",
+    "Description":"An Infested Command Center is a rarely seen building that is produced when a Queen uses Infest Command Center on a damaged Command Center. The Command Center must have less than 750/1500 HP to be infested.",
+    "Link":"http://liquipedia.net/starcraft/Infested_Command_Center",
     "Icon": "cmdbtn cmdbtn-icon130",
     "Race": "Zerg",
     "Hit Points": "1500",
@@ -2113,6 +2246,8 @@
     "Attributes": ["Organic", "FlyingBuilding", "Building", "RegeneratesHP"]
 }, {
     "Name": "Zerg Lair",
+    "Description":"The Lair is a key building for Zerg technology. The Lair is the second stage of the Hatchery tech tree. Originating from morphing of the Hatchery, the Lair can then be morphed into the Hive after the Queen's Nest is built.",
+    "Link":"http://liquipedia.net/starcraft/Lair",
     "Icon": "cmdbtn cmdbtn-icon132",
     "Race": "Zerg",
     "Hit Points": "1800",
@@ -2132,6 +2267,8 @@
     "Attributes": ["Organic", "ResourceDepot", "Building", "ProducesLarva", "RegeneratesHP"]
 }, {
     "Name": "Zerg Nydus Canal",
+    "Description":"The Nydus Canal allows the Zerg player to instantly transport ground units between the two linked Nydus Canals. After the Nydus Canal is built, a second Nydus Canal (called a Nydus Canal Exit) can then be built on Creep anywhere on the map that is within vision.",
+    "Link":"http://liquipedia.net/starcraft/Nydus_Canal",
     "Icon": "cmdbtn cmdbtn-icon134",
     "Race": "Zerg",
     "Hit Points": "250",
@@ -2150,6 +2287,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Queens Nest",
+    "Description":"The Queen's Nest allows the Zerg player to upgrade the Lair into a Hive. The Queen's Nest does not build any units directly, but enables the Queen to be morphed at the Lair or Hive. The structure also allows the research of the Queen's available upgrades.",
+    "Link":"http://liquipedia.net/starcraft/Queen%27s_Nest",
     "Icon": "cmdbtn cmdbtn-icon138",
     "Race": "Zerg",
     "Hit Points": "850",
@@ -2168,6 +2307,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Spawning Pool",
+    "Description":"The Spawning Pool is the first building Zerg that can be morphed in a new Starcraft match, after the Hatchery. Construction of the Spawning Pool unlocks the ability of the Hatchery to morph Zerglings.",
+    "Link":"http://liquipedia.net/starcraft/Spawning_Pool",
     "Icon": "cmdbtn cmdbtn-icon142",
     "Race": "Zerg",
     "Hit Points": "750",
@@ -2186,6 +2327,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Spire",
+    "Description":"The Spire is a mid-game Zerg tech building that allows the player to create Mutalisks and Scourge, both of which are built at the Hatchery. The Spire does not build any units directly.",
+    "Link":"http://liquipedia.net/starcraft/Spire",
     "Icon": "cmdbtn cmdbtn-icon141",
     "Race": "Zerg",
     "Hit Points": "600",
@@ -2204,6 +2347,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Spore Colony",
+    "Description":"The Spore Colony is a Zerg base anti-air defense structure. It deals 15 points of damage with a high rate of fire and provides the Zerg with static detection of cloaked units.",
+    "Link":"http://liquipedia.net/starcraft/Spore_Colony",
     "Icon": "cmdbtn cmdbtn-icon144",
     "Race": "Zerg",
     "Hit Points": "400",
@@ -2223,6 +2368,8 @@
     "Attributes": ["Organic", "Detector", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Sunken Colony",
+    "Description":"The Sunken Colony is a Zerg base defense structure that deals 40 explosive damage. The Sunken Colony requires Spawning Pool technology before it can be morphed from Creep Colony.",
+    "Link":"http://liquipedia.net/starcraft/Sunken_Colony",
     "Icon": "cmdbtn cmdbtn-icon146",
     "Race": "Zerg",
     "Hit Points": "300",
@@ -2242,6 +2389,8 @@
     "Attributes": ["Organic", "Building", "RequiresCreep", "RegeneratesHP"]
 }, {
     "Name": "Zerg Ultralisk Cavern",
+    "Description":"The Ultralisk Cavern is a late-game Tech building created by Zerg for the purpose of allowing the production of Ultralisks. Ultralisks are produced at the Hive, as the Ultralisk Cavern does not build any units.",
+    "Link":"http://liquipedia.net/starcraft/Ultralisk_Cavern",
     "Icon": "cmdbtn cmdbtn-icon140",
     "Race": "Zerg",
     "Hit Points": "600",
