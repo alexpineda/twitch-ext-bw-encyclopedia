@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { Race, Races } from './Races';
-import { Unit, Units, Weapon, Upgrade, Ability } from './Units';
-import { Links } from './Extra';
+import Races from './Races';
+import Race from './Race';
+import Units from './Units';
+import Unit from './Unit';
+import Ability from './Ability';
+import Weapon from './Weapon';
+import Upgrade from './Upgrade';
+
 import Compare from './Compare';
 
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
@@ -24,130 +29,6 @@ import { AnimatedSwitch } from 'react-router-transition';
 
 import * as ImagesPromise from 'react-images-preload';
 import { isBuffer } from 'util';
-
-
-
-const allWeapons = require('./bwapi-data/json/weapons.json');
-  
-
-const allUpgrades = require('./bwapi-data/json/upgrades.json')
-  .map(upgrade => {
-    upgrade['Maximum Level'] = upgrade['Maximum Level'] || 1;
-
-
-    ///4000 + lvl*480 frames
-    const upgradeTime = upgrade['Upgrade Time'].match(/([0-9]+)\s+[+]\s+lvl\*([0-9]+)/);
-    if (upgradeTime) {
-      upgrade['Upgrade Time Base'] = Number(upgradeTime[1]);
-      upgrade['Upgrade Time Multiplier'] = Number(upgradeTime[2]);
-    } else {
-      const upgradeTime = upgrade['Upgrade Time'].match(/([0-9]+)\s+frames/);
-      upgrade['Upgrade Time Base'] = Number(upgradeTime[1]);
-      upgrade['Upgrade Time Multiplier'] = 0;
-    }
-
-    upgrade.getUpgradeTime = (level) => {
-      if (level > upgrade['Maximum Level']) {
-        return null;
-      }
-      return Math.ceil((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/24);
-    }
-
-    const cost = upgrade.Cost.match(/([0-9]+)\s+[+]\slvl\*([0-9]+)\s+([0-9]+)\s+[+]\slvl\*([0-9]+)/);
-
-    if (cost) {
-      upgrade['Base Mineral Cost'] = Number(cost[1]);
-      upgrade['Mineral Cost Multiplier'] = Number(cost[2]);
-      upgrade['Base Vespine Cost'] = Number(cost[3]);
-      upgrade['Vespine Cost Multiplier'] = Number(cost[4]);
-    } else {
-      const cost = upgrade.Cost.match(/([0-9]+)\s+([0-9]+)/);
-      upgrade['Base Mineral Cost'] = Number(cost[1]);
-      upgrade['Mineral Cost Multiplier'] = 0;
-      upgrade['Base Vespine Cost'] = Number(cost[2]);
-      upgrade['Vespine Cost Multiplier'] = 0;
-    }
-
-    upgrade.getMineralCost = (level) => {
-      if (level > upgrade['Maximum Level']) {
-        return null;
-      }
-
-      return upgrade['Base Mineral Cost'] + ((level-1) * upgrade['Mineral Cost Multiplier']);
-    }
-
-    upgrade.getVespineCost = (level) => {
-      if (level > upgrade['Maximum Level']) {
-        return null;
-      }
-
-      return upgrade['Base Vespine Cost'] + ((level-1) * upgrade['Vespine Cost Multiplier']);
-    }
-
-    return upgrade;
-  });
-
-const allAbilities = require('./bwapi-data/json/abilities.json')
-  .map(ability => {
-
-    if (ability.Cost) {
-      const cost = ability.Cost.match(/([0-9]+)\s+([0-9]+)/);
-      ability['Mineral Cost'] = cost[1];
-      ability['Vespine Cost'] = cost[2];
-    } else {
-      ability['Mineral Cost'] = 0;
-      ability['Vespine Cost'] = 0;
-    }
-
-    
-
-    if (ability['Research Time']) {
-      const researchTime = ability['Research Time'].match(/([0-9]+)\s+frames/);
-      ability['Research Time'] = researchTime ? Math.round(Number(researchTime[1])/24) : 0;
-    }
-
-    return ability;
-  })
-
-const isBuilding = (unit) => {
-    if (!unit.Attributes) {
-        return false;
-    }
-    if (!Array.isArray(unit.Attributes)){
-        unit.Attributes = [unit.Attributes];
-    }
-    return !!unit.Attributes.filter(attr => attr === 'Building').length;
-};
-
-const allUnits = require('./bwapi-data/json/units.json')
-    .filter(unit=>unit.Race !== 'None')
-    .map(unit => {
-        const cost = unit.Cost.match(/([0-9]+)\s+([0-9]+)\s+([0-9]+)/);
-        unit['Mineral Cost'] = cost[1];
-        unit['Vespine Cost'] = cost[2];
-        unit['Supply Cost'] = cost[3]/2;
-
-        unit['Build Time'] = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
-        unit['Seek Range'] = unit['Seek Range']/32;
-        unit['Sight Range'] = unit['Sight Range']/32;
-        unit.isBuilding = isBuilding(unit);
-
-        if (unit['Ground Weapon']) {
-          unit.groundWeapon = allWeapons.find(weapon => weapon.Name === unit['Ground Weapon']);
-        }
-        if (unit['Air Weapon']) {
-          unit.airWeapon = allWeapons.find(weapon => weapon.Name === unit['Air Weapon']);
-        }
-        return unit;
-    });
-
-
-    allUnits.map(unit => {
-      if (unit.isBuilding) {
-        unit.Builds = allUnits.filter(unit => unit["Created By"] === unit.Name);
-      } 
-      return unit;
-    })
 
 // history
 
@@ -180,8 +61,6 @@ const mapStyles= (styles) => ({
 });
 
 
-
-
 const routes = <AnimatedSwitch
 atEnter={{ opacity: 0.3, scale:0.95, zindex:0 }}
 atLeave={{ opacity: 0, scale:1.1, zindex:99 }}
@@ -190,7 +69,6 @@ mapStyles={mapStyles}
 className="twitch-extension"
 >
   <Route exact path="/" component={Races}/>
-  <Route exact path="/links" component={Links}/>
   <Route exact path="/race/:race" component={Race}/>
   <Route exact path="/race/:race/units" component={Units}/>
   <Route exact path="/race/:race/units/:page" component={Units}/>
