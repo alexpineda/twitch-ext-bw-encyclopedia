@@ -66,7 +66,7 @@ const Ability = ({match, history}) => {
             <div style={{display: !showAdvanced ? 'inherit':'none'}}> 
                 <p  dangerouslySetInnerHTML={{__html:createDescriptionContent(ability)}} className="ability__description"></p>
                 <div className="ability-image"> 
-                    <img src={`resources/Abilities/${ability.Name}.gif`} alt={ability.Name} />
+                    <img src={`https://s3.amazonaws.com/sctools.tv/bw-twitch-extension/${ability.Name.replace(/ /g, '_')}.gif`} alt={ability.Name} />
                 </div>
             </div>
                 

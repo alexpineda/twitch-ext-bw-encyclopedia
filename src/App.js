@@ -12,7 +12,7 @@ import Upgrade from './Upgrade';
 import Compare from './Compare';
 import BuildOrder from './BuildOrder';
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { MemoryRouter as Router, Route, Link } from 'react-router-dom'
 import history from './history';
 import ReactGA from 'react-ga';
 import logger from 'redux-logger';
@@ -30,6 +30,8 @@ import { AnimatedSwitch } from 'react-router-transition';
 
 import * as ImagesPromise from 'react-images-preload';
 import { isBuffer } from 'util';
+
+import { allUnits, allWeapons, allAbilities, allUpgrades } from './shared';
 
 // history
 
@@ -106,14 +108,23 @@ const WithimagesLoaded = ImagesPromise.withImagesPromise({
   suppz: 'resources/Supply_Zerg.png'
 }, Preloader);
 
+const doIt = _ => {
+
+  return allWeapons.concat(allUpgrades).concat(allAbilities).concat(allUnits)
+      .map(w=>w.Link).filter(w=>w).join(',');
+
+}
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-      <Router>
-        <WithimagesLoaded />
-      </Router>
-      </Provider>
+
+    // <div>{doIt()}</div>
+    
+    <Provider store={store}>
+    <Router>
+      <WithimagesLoaded />
+    </Router>
+    </Provider>
     );
   }
 }

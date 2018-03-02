@@ -51,7 +51,7 @@ class Units extends Component {
         const unit = this.state.selectedUnit;
 
         return <div className='unit-labels-container'>
-        <span class="unit-header">{this.state.race.toUpperCase()}</span>
+        <span className="unit-header">{this.state.race.toUpperCase()}</span>
             <Link to={`/race/${this.state.race}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link>
     
             <div className="unit-labels-container__switcher">

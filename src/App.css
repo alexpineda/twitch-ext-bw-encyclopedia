@@ -22,7 +22,7 @@ a {
   height:420px;
   background-color:#ddd;
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .twitch-extension > div {

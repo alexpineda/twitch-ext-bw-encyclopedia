@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { allUnits, createDescriptionContent, createUnitLink, createWeaponLink, createUpgradeLink, createAbilityLink, strToArray } from './shared';
-import * as ImagesPromise from 'react-images-preload';
 
 const Unit = ({match, history}) => {
     const unit = allUnits.find(unit => unit.Name === match.params.unit);
@@ -43,12 +42,6 @@ const Unit = ({match, history}) => {
         return '';
     }
 
-    const getDescription = () => {
-        if (!unit.Description) return '';
-        if (!unit.Link) return unit.Description;
-        return unit.Description + ` <a target="_top" href="${unit.Link}">[1]</a>`;
-    }
-
     return <div className='unit'>
        <span className='unit-header'><Link to={`/race/${match.params.race}/units`}>{unit.isBuilding ? 'Building' : 'Unit'}</Link></span>
         {statSwitcher()}
@@ -60,7 +53,7 @@ const Unit = ({match, history}) => {
         <div style={{display: !showAdvanced ? 'inherit':'none'}}> 
         <p  dangerouslySetInnerHTML={{__html:createDescriptionContent(unit)}} className="unit__description"></p>
         <div className="unit-image"> 
-            <img src={`resources/Units/${unit.Name}.gif`} alt={unit.Name} />
+            <img src={`https://s3.amazonaws.com/sctools.tv/bw-twitch-extension/${unit.Name.replace(/ /g, '_')}.gif`} alt={unit.Name} />
         </div>
         </div>
 
