@@ -10,6 +10,7 @@ import Weapon from './Weapon';
 import Upgrade from './Upgrade';
 
 import Compare from './Compare';
+import BuildOrder from './BuildOrder';
 
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import history from './history';
@@ -82,6 +83,7 @@ className="twitch-extension"
   <Route exact path="/race/:race/unit/:unit/ability/:ability/:more" component={Ability}/>
   <Route exact path="/compare" component={Compare}/>
   <Route exact path="/compare/:race" component={Compare}/>
+  <Route exact path="/build" component={BuildOrder}/>
 </AnimatedSwitch>;
 
 

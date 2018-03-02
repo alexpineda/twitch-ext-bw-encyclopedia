@@ -2,8 +2,29 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { allAbilities, createUnitLink, createDescriptionContent } from './shared';
 
-const Ability = ({match}) => {
+const Ability = ({match, history}) => {
     const ability = allAbilities.find(ability => ability.Name == match.params.ability);
+    const showAdvanced = match.params.more;
+
+    const statSwitcher = () => {
+        if (!showAdvanced) {
+            return <div className="unit-stats-page-selector">
+                <img src='resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
+                <Link to={`/race/${match.params.race}/unit/${match.params.unit}/ability/${ability.Name}/more`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link>
+            </div>;
+        } else if (showAdvanced === 'more') {
+            return <div className="unit-stats-page-selector">
+                <Link to={`/race/${match.params.race}/unit/${match.params.unit}/ability/${ability.Name}`}><img src='resources/arrow-left.svg' alt="Page 1" /></Link>
+                <img src='resources/arrow-right.svg' className="unit-stats-page-selector--active" alt="Page 2"/>
+                </div>;
+        }
+        return '';
+    }
+
+    const goBack = (event) => {
+        event.preventDefault();
+        history.goBack();   
+    }
 
     const abilityRows = [
         <tr key="cost">
@@ -36,11 +57,20 @@ const Ability = ({match}) => {
     ];
 
     return <div className='ability'>
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
-            <span className='unit-header'>Ability</span>
+            {statSwitcher()}
+            <div><a href="#back" onClick={goBack}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></a></div>
+            
+            <span className='unit-header'><Link to={`/race/${match.params.race}/units`}>Ability</Link></span>
             <div className="ability__title"><i className={ability.Icon}></i> <span>{ability.Name}</span></div>
-            <p className="ability__description" dangerouslySetInnerHTML={{__html:createDescriptionContent(ability)}}></p>
-            <table>
+
+            <div style={{display: !showAdvanced ? 'inherit':'none'}}> 
+                <p  dangerouslySetInnerHTML={{__html:createDescriptionContent(ability)}} className="ability__description"></p>
+                <div className="ability-image"> 
+                    <img src={`resources/Abilities/${ability.Name}.gif`} alt={ability.Name} />
+                </div>
+            </div>
+                
+            <table style={{display: showAdvanced ? 'inherit':'none'}}>
                 <tbody>
                     {abilityRows.filter(x => x).map(x=>x)}
                 </tbody>

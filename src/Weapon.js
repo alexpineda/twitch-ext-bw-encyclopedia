@@ -2,8 +2,14 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { allWeapons, createUpgradeLink } from './shared';
 
-const Weapon = ({match}) => {
+const Weapon = ({match, history}) => {
     const weapon = allWeapons.find(weapon => weapon.Name == match.params.weapon);
+
+    const goBack = (event) => {
+        event.preventDefault();
+        history.goBack();   
+    }
+
 
     const weaponRows = [
         <tr key="d">
@@ -45,8 +51,8 @@ const Weapon = ({match}) => {
     ];
 
     return <div className='weapon'>
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
-            <span className='unit-header'>Weapon</span>
+            <div><a href="#back" onClick={goBack}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></a></div>
+            <span className='unit-header'><Link to={`/race/${match.params.race}/units`}>Weapon</Link></span>
             <div className="weapon__title"><i className={weapon.Icon}></i> <span>{weapon.Name}</span></div>
 
             <table>

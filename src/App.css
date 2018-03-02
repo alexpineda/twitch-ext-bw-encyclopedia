@@ -22,7 +22,7 @@ a {
   height:420px;
   background-color:#ddd;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .twitch-extension > div {
@@ -190,7 +190,7 @@ a {
   margin-bottom: 0.7em;
 }    
 
-.ability__description, .upgrade__description {
+.ability__description, .upgrade__description, .unit__description {
   font-size: 0.75em;
 }
 
@@ -315,4 +315,16 @@ tr td:nth-child(2) {
   text-decoration: underline;
   text-decoration-style: dotted;
   color:#6b6d40;
+}
+
+.unit .unit-image, .ability .ability-image {
+  width:100%;
+}
+
+.unit .unit-image img,  .ability .ability-image img{
+  margin:0 auto;
+  width: 150px;
+  height: 150px;
+  display: block;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }

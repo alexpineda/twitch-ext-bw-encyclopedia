@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { allUnits, createDescriptionContent, createUnitLink, createWeaponLink, createUpgradeLink, createAbilityLink, strToArray } from './shared';
-import history from './history';
+import * as ImagesPromise from 'react-images-preload';
 
-const Unit = ({match}) => {
+const Unit = ({match, history}) => {
     const unit = allUnits.find(unit => unit.Name === match.params.unit);
     const showAdvanced = match.params.more;
 
@@ -23,11 +23,16 @@ const Unit = ({match}) => {
     }
 
     const statSwitcher = () => {
-        if (showAdvanced === 'stats') {
-        return <div className="unit-stats-page-selector">
-            <img src='resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
-            <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link>
-        </div>;
+        if (!showAdvanced) {
+            return <div className="unit-stats-page-selector">
+                <img src='resources/arrow-left.svg' className="unit-stats-page-selector--active" alt="Page 1"/>
+                <Link to={`/race/${match.params.race}/unit/${unit.Name}/stats`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link>
+            </div>;
+        } else if (showAdvanced === 'stats') {
+            return <div className="unit-stats-page-selector">
+                <Link to={`/race/${match.params.race}/unit/${unit.Name}/`}><img src='resources/arrow-left.svg' alt="Page 2"/></Link>
+                <Link to={`/race/${match.params.race}/unit/${unit.Name}/more`}><img src='resources/arrow-right.svg' alt="Page 2"/></Link>
+            </div>;
 
         } else if (showAdvanced === 'more') {
             return <div className="unit-stats-page-selector">
@@ -44,27 +49,21 @@ const Unit = ({match}) => {
         return unit.Description + ` <a target="_top" href="${unit.Link}">[1]</a>`;
     }
 
-    const tempRedirect = () => {
-        if (!showAdvanced) {
-            return <Redirect to={`/race/${match.params.race}/unit/${unit.Name}/stats`} />
-        }
-        return '';
-    }
-
     return <div className='unit'>
-        {/* <div><a onClick={goBack} href='#'>Back</a></div> */}
-       {tempRedirect()}
-       <span className='unit-header'>{unit.isBuilding ? 'Building' : 'Unit'}</span>
+       <span className='unit-header'><Link to={`/race/${match.params.race}/units`}>{unit.isBuilding ? 'Building' : 'Unit'}</Link></span>
         {statSwitcher()}
-        <div >{backLink()}</div>
-        
+        {/* <div >{backLink()}</div> */}
+        <div><a href="#back" onClick={goBack}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></a></div>
 
         <div className="unit__title" ><i className={unit.Icon}></i> <span>{unit.Name}</span></div> 
-        <p dangerouslySetInnerHTML={{__html:createDescriptionContent(unit)}}></p>
 
-        <div style={{textAlign:'center'}}>
-        <Link className='action-item' to={`/race/${match.params.race}/unit/${unit.Name}/stats`} style={{display: !showAdvanced ? 'block':'none'}}> Show Stats</Link>
+        <div style={{display: !showAdvanced ? 'inherit':'none'}}> 
+        <p  dangerouslySetInnerHTML={{__html:createDescriptionContent(unit)}} className="unit__description"></p>
+        <div className="unit-image"> 
+            <img src={`resources/Units/${unit.Name}.gif`} alt={unit.Name} />
         </div>
+        </div>
+
 
         <table style={{display:showAdvanced === 'stats' ? 'table':'none'}}>
             <tbody>
@@ -117,7 +116,7 @@ const Unit = ({match}) => {
                 unit['Supply Provided'] ?
                 <tr>
                     <td>Supply Provided</td>
-                    <td>{""+(unit['Supply Provided']/2)}</td>
+                    <td>{""+(unit['Supply Provided'])}</td>
                 </tr> : ''
             }
 

@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
+const FPS = 23.81;
+
 export const allWeapons = require('./bwapi-data/json/weapons.json');
   
 
@@ -25,7 +27,7 @@ export const allUpgrades = require('./bwapi-data/json/upgrades.json')
       if (level > upgrade['Maximum Level']) {
         return null;
       }
-      return Math.ceil((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/24);
+      return Math.ceil((upgrade['Upgrade Time Base'] + ((level-1) * upgrade['Upgrade Time Multiplier']))/FPS);
     }
 
     const cost = upgrade.Cost.match(/([0-9]+)\s+[+]\slvl\*([0-9]+)\s+([0-9]+)\s+[+]\slvl\*([0-9]+)/);
@@ -78,7 +80,7 @@ export const allAbilities = require('./bwapi-data/json/abilities.json')
 
     if (ability['Research Time']) {
       const researchTime = ability['Research Time'].match(/([0-9]+)\s+frames/);
-      ability['Research Time'] = researchTime ? Math.round(Number(researchTime[1])/24) : 0;
+      ability['Research Time'] = researchTime ? Math.round(Number(researchTime[1])/FPS) : 0;
     }
 
     return ability;
@@ -94,6 +96,16 @@ const isBuilding = (unit) => {
     return !!unit.Attributes.filter(attr => attr === 'Building').length;
 };
 
+const isWorker = (unit) => {
+  if (!unit.Attributes) {
+      return false;
+  }
+  if (!Array.isArray(unit.Attributes)){
+      unit.Attributes = [unit.Attributes];
+  }
+  return !!unit.Attributes.filter(attr => attr === 'Worker').length;
+};
+
 export const allUnits = require('./bwapi-data/json/units.json')
     .filter(unit=>unit.Race !== 'None')
     .map(unit => {
@@ -101,11 +113,16 @@ export const allUnits = require('./bwapi-data/json/units.json')
         unit['Mineral Cost'] = cost[1];
         unit['Vespine Cost'] = cost[2];
         unit['Supply Cost'] = cost[3]/2;
+        if (unit['Supply Provided']) {
+          unit['Supply Provided'] = unit['Supply Provided']/2;
+        }
 
-        unit['Build Time'] = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/24,2);
+        unit['Build Time Frames'] = Number((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0);
+        unit['Build Time'] = Math.round(((unit['Build Time']||'').match(/([0-9]+)\s+frames/)[1] || 0)/FPS,2);
         unit['Seek Range'] = unit['Seek Range']/32;
         unit['Sight Range'] = unit['Sight Range']/32;
         unit.isBuilding = isBuilding(unit);
+        unit.isWorker = isWorker(unit);
 
         if (unit['Ground Weapon']) {
           unit.groundWeapon = allWeapons.find(weapon => weapon.Name === unit['Ground Weapon']);
@@ -179,7 +196,31 @@ export const createUnitLink = (unitName, race) => {
     }
     const unit = allUnits.find(unit => unit.Name == unitName);
 
-    return <Link to={`/race/${race}/unit/${unitName}/stats`} title={unitName} data-tip={unit.Name} ><i className={unit.Icon}></i>{extra}</Link>
+    return <Link to={`/race/${race}/unit/${unitName}`} title={unitName} data-tip={unit.Name} >{createUnitIcon(unitName, race)}{extra}</Link>;
 };
 
+export const createUnitIcon = (unitName, race) => {
+  if (!unitName) return '';
+
+  let extra = '';
+  switch (unitName){
+      case '2 x Protoss High Templar':
+          unitName = 'Protoss High Templar';
+          extra = ' (x2)';
+          break;
+      case '2 x Protoss Dark Templar':
+          unitName = 'Protoss Dark Templar';
+          extra = ' (x2)';
+          break;
+      default:
+  }
+  const unit = allUnits.find(unit => unit.Name == unitName);
+
+  return <i className={unit.Icon}></i>;
+};
+
+export const getUnitLink = (unitName, race) => {
+  if (!unitName) return '';
+  return `/race/${race}/unit/${unitName}/stats`;
+};
     

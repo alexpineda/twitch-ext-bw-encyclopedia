@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { allUpgrades, createDescriptionContent, createUnitLink } from './shared';
 
-const Upgrade = ({match}) => {
+const Upgrade = ({match, history}) => {
     const upgrade = allUpgrades.find(upgrade => upgrade.Name == match.params.upgrade);
 
     const getLevelLabel = (level) => {
@@ -49,17 +49,21 @@ const Upgrade = ({match}) => {
         return <Link to={`/race/${match.params.race}/unit/${match.params.unit}/upgrade/${upgrade.Name}/${level}`} className='action-item'><span>{level} </span></Link>;
     }
     
+    const goBack = (event) => {
+        event.preventDefault();
+        history.goBack();   
+    }
+
     return <div className='upgrade'>
-            <span className='unit-header'>Upgrade</span>
+            <span className='unit-header'><Link to={`/race/${match.params.race}/units`}>Upgrade</Link></span>
             <div style={{float:'right', display:upgrade['Maximum Level'] == 1 ? 'none' : 'block'}}>
                 {getDownLevelLink(match.params)}
                 {getLevelLabel(match.params.more || 1)}
                 {getUpLevelLink(match.params)}
             </div>
 
-            <div><Link to={`/race/${match.params.race}/unit/${match.params.unit}`}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></Link></div>
+            <div><a href="#back" onClick={goBack}><img className='back-button' src='resources/backarrow.svg' alt='Back'/></a></div>
             
-
             <div className='upgrade__title'><i className={upgrade.Icon}></i> <span>{upgrade.Name}</span></div> 
             <p className="upgrade__description" dangerouslySetInnerHTML={{__html:createDescriptionContent(upgrade)}}></p>
             
