@@ -27,6 +27,8 @@ const Races = (props) => {
                 <RaceItem name="Terran" {...props} />
                 <RaceItem name="Protoss" {...props}/>
                 <RaceItem name="Zerg" {...props}/>
+                <Link to={'/battle'}>Battle</Link>
+                <Link to={'/battle'}>Build Order</Link>
         </div>}
 
         <p style={{textAlign:'center', opacity:0.5, position:'relative', marginTop:'6rem', fontSize:'0.5rem'}}>Data in part thanks to BWAPI and Liquipedia</p>

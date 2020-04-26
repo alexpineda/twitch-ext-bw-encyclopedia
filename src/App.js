@@ -11,6 +11,7 @@ import Upgrade from './Upgrade';
 
 import Compare from './Compare';
 import BuildOrder from './BuildOrder';
+import Battle from './Battle';
 
 import { MemoryRouter as Router, Route, Link } from 'react-router-dom'
 import history from './history';
@@ -86,6 +87,8 @@ className="twitch-extension"
   <Route exact path="/compare" component={Compare}/>
   <Route exact path="/compare/:race" component={Compare}/>
   <Route exact path="/build" component={BuildOrder}/>
+  <Route exact path="/battle" component={Battle}/>
+  
 </AnimatedSwitch>;
 
 
